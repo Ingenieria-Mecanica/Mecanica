@@ -1,31 +1,30 @@
 /* ==============================================================================
-   PORTAL WEB OFICIAL · INGENIERÍA ELÉCTRICA · UNAL SEDE MEDELLÍN
+   PORTAL WEB OFICIAL · INGENIERÍA MECÁNICA · UNAL SEDE MEDELLÍN
    ESTILOS DEL MÓDULO MI AVANCE
-   Diseñado con la paleta oficial de Ingeniería Eléctrica:
-   Cian Eléctrico (#00E5FF, #27AFC9), Volt Amarillo (#FFBB02, #FFD000),
-   Ámbar de Potencia (#E58E00) y Fondo Grafito Oscuro (#14100F, #201918).
+   Diseñado con la paleta oficial de Ingeniería Mecánica:
+   Azul medianoche (#0a1f3e), Amarillo mecánico (#f8af3c) y Blanco puro (#fefffd).
    Todos los derechos reservados © 2026.
    ============================================================================== */
 
 :root {
-  --fondo-avance: #14100F;           /* Fondo grafito oscuro de alto contraste */
-  --panel: #201918;                  /* Tarjetas y paneles en grafito cálido */
-  --panel-elevado: #2A2220;          /* Paneles elevados */
-  --borde: rgba(39, 175, 201, 0.28); /* Borde cian sutil */
-  --borde-brillo: rgba(0, 229, 255, 0.55);
-  --dorado-ambar: #FFBB02;           /* Volt Amarillo */
-  --dorado-suave: #FFF7DF;
-  --dorado-brillo: #FFD000;
-  --verde-minas: #27AFC9;
-  --verde-catalizador: #00E5FF;      /* Reemplazado por Cian Eléctrico */
-  --naranja-flama: #E58E00;          /* Ámbar de potencia */
-  --azul-geologico: #103848;
-  --azul-curso: #00E5FF;
-  --cian-electrico: #00E5FF;
-  --volt-amarillo: #FFBB02;
-  --ambar-electrico: #E58E00;
-  --suave: #B8AEAB;
-  --luz: #FFFFFF;
+  --fondo-avance: #061325;           /* Fondo azul noche de alto contraste */
+  --panel: #0a1f3e;                  /* Tarjetas y paneles en azul medianoche */
+  --panel-elevado: #132b50;          /* Paneles elevados */
+  --borde: rgba(248, 175, 60, 0.28); /* Borde dorado sutil */
+  --borde-brillo: rgba(248, 175, 60, 0.55);
+  --dorado-ambar: #f8af3c;           /* Amarillo Mecánica */
+  --dorado-suave: #fffdf5;
+  --dorado-brillo: #f8af3c;
+  --verde-minas: #0284c7;            /* Azul disciplinar */
+  --verde-catalizador: #f8af3c;
+  --naranja-flama: #f8af3c;          /* Amarillo Mecánica */
+  --azul-geologico: #0a1f3e;
+  --azul-curso: #38bdf8;
+  --cian-electrico: #38bdf8;
+  --volt-amarillo: #f8af3c;
+  --ambar-electrico: #f8af3c;
+  --suave: #94a3b8;
+  --luz: #fefffd;
 }
 
 body[data-pagina="avance"] {

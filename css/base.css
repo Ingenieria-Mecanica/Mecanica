@@ -1,69 +1,68 @@
 /**
- * PLATAFORMA DIGITAL · INGENIERÍA DE PETRÓLEOS (UNAL MEDELLÍN)
- * Diseño y Estilos por: Santiago Escobar Arias · Representante de Sistemas
- * © 2026 Santiago Escobar Arias. Todos los derechos reservados.
- * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
+ * PLATAFORMA DIGITAL · INGENIERÍA MECÁNICA (UNAL MEDELLÍN)
+ * Facultad de Minas · Universidad Nacional de Colombia Sede Medellín
+ * © 2026 Plataforma Estudiantil Oficial
  */
 /* =========================================================
-   INGENIERÍA DE PETRÓLEOS · UNAL MEDELLÍN — ESTILOS COMUNES
+   INGENIERÍA MECÁNICA · UNAL MEDELLÍN — ESTILOS COMUNES
    Los usan todas las páginas (módulos).
    1. Variables y base
-   2. Fondos con fotos
+   2. Fondos con textura
    3. Barra superior y navegación
    4. Portada
    5. Títulos de sección y mensajes
-   6. Pie (Diseño con dos tarjetas oficiales)
-   7. Mensaje flotante de bienvenida (Diseño modal oficial)
+   6. Pie (Diseño con tarjetas oficiales)
+   7. Mensaje flotante de bienvenida
    ========================================================= */
 
 
 /* ---------- 1. Variables y base ---------- */
 
 :root {
-  /* Paleta Oficial Ingeniería Eléctrica */
-  --ambar-electrico: #E58E00;       /* Primario: Ámbar de arco y potencia */
-  --volt-amarillo: #FFBB02;         /* Volt / Oro Eléctrico: Acento luminoso de alta energía */
-  --cian-electrico: #27AFC9;        /* Azul / Cian de Plasma Voltaico y circuitos */
-  --cian-brillante: #40C7E0;        /* Resplandor de descarga */
-  --gris-metalico: #B0A6A5;         /* Neutro metálico / Conductor */
-  --marron-grafito: #6D5C55;        /* Secundario: Grafito / Transformador / Bobinado */
-  --oscuro-profundo: #1E1918;       /* Fondo oscuro de alto contraste */
-  --oscuro-panel: #2A2322;          /* Paneles y tarjetas oscuras */
+  /* Paleta Oficial Ingeniería Mecánica */
+  --azul-mecanica: #0a1f3e;         /* Primario: Azul marino industrial */
+  --amarillo-mecanica: #f8af3c;     /* Acento: Amarillo dorado engranaje y potencia */
+  --blanco-puro: #fefffd;           /* Blanco puro de alto contraste */
+
+  --azul-panel: #11284d;            /* Paneles y tarjetas oscuras */
+  --azul-marino: #061428;           /* Fondo ultra oscuro */
+  --azul-resplandor: #1e3a6d;       /* Azul medio de contraste */
   --verde-minas: #006633;           /* Institucional: Verde oficial Facultad de Minas */
-  --papel: #FAF7F6;                 /* Fondo claro moderno */
-  --tinta: #1C1817;                 /* Texto principal */
-  --tinta-suave: #4A413D;
-  --gris: #786C67;
-  --linea: #E2DBD8;
+  --papel: #F8F9FA;                 /* Fondo claro moderno */
+  --tinta: #0a1f3e;                 /* Texto principal */
+  --tinta-suave: #2d3f5a;
+  --gris: #64748b;
+  --linea: #e2e8f0;
 
   /* Aliases para compatibilidad total con módulos existentes */
-  --azul-petroleo: var(--oscuro-profundo);
-  --dorado-ambar: var(--volt-amarillo);
-  --dorado-suave: #FFF7DF;
-  --negro-crudo: var(--oscuro-profundo);
-  --gris-arena: var(--papel);
-  --azul-acero: var(--cian-electrico);
-  --azul-marino: #181413;
-  --verde-bosque: #006633;
-  --turquesa: var(--cian-electrico);
-  --lima-vibrante: var(--volt-amarillo);
-  --lima-suave: #FFF7DF;
+  --dorado-ambar: #f8af3c;
+  --amarillo-dorado: #f8af3c;
+  --ambar-electrico: #f8af3c;
+  --volt-amarillo: #f8af3c;
+  --azul-petroleo: #0a1f3e;
+  --negro-crudo: #0a1f3e;
+  --cian-electrico: #f8af3c;
+  --cian-brillante: #f8af3c;
+  --gris-metalico: #94a3b8;
+  --marron-grafito: #11284d;
+  --oscuro-profundo: #0a1f3e;
+  --oscuro-panel: #11284d;
 
-  --color-primario: var(--ambar-electrico);
-  --color-acento: var(--volt-amarillo);
-  --color-secundario: var(--cian-electrico);
+  --color-primario: var(--azul-mecanica);
+  --color-acento: var(--amarillo-mecanica);
+  --color-secundario: #0284c7;
   --color-institucional: var(--verde-minas);
 
-  --azul: var(--cian-electrico);
-  --azul-oscuro: var(--oscuro-profundo);
-  --azul-brillante: var(--cian-electrico);
+  --azul: var(--azul-mecanica);
+  --azul-oscuro: var(--azul-mecanica);
+  --azul-brillante: #0284c7;
 
-  /* Colores de los componentes de la malla */
-  --fundamentacion: #27AFC9;        /* Cian Eléctrico / Ciencias Básicas */
-  --disciplinar: #E58E00;           /* Ámbar de Potencia / Profesional Disciplinar */
-  --libre: #FFBB02;                 /* Volt Amarillo / Libre Elección */
+  /* Colores oficiales de los componentes de la malla */
+  --fundamentacion: #7c3aed;        /* Púrpura de Ciencias Básicas */
+  --disciplinar: #0284c7;           /* Teal / Azul Disciplinar */
+  --libre: #f8af3c;                 /* Amarillo Libre Elección */
 
-  /* Tipografías modernas para Ingeniería Eléctrica */
+  /* Tipografías modernas para Ingeniería Mecánica */
   --letra-titulo: 'Space Grotesk', 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --letra-universidad: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --letra-texto: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -137,7 +136,7 @@ a { color: var(--azul-brillante); }
 }
 .foto::after {
   inset: 0;
-  background: linear-gradient(180deg, rgba(28, 24, 23, 0.96) 0%, rgba(20, 16, 15, 0.92) 58%, rgba(14, 11, 10, 0.98) 100%);
+  background: linear-gradient(180deg, rgba(10, 31, 62, 0.96) 0%, rgba(8, 24, 50, 0.94) 58%, rgba(6, 18, 38, 0.98) 100%);
 }
 .foto--entrada::before { background-image: url(../img/campus-entrada.jpg); }
 .foto--panoramica::before,
@@ -150,11 +149,11 @@ a { color: var(--azul-brillante); }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(28, 24, 23, 0.94);
+  background: rgba(10, 31, 62, 0.96);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 2px solid rgba(39, 175, 201, 0.45);
-  box-shadow: 0 12px 36px -10px rgba(0, 0, 0, 0.85), 0 0 25px rgba(39, 175, 201, 0.15);
+  border-bottom: 2px solid rgba(248, 175, 60, 0.45);
+  box-shadow: 0 12px 36px -10px rgba(10, 31, 62, 0.85), 0 0 25px rgba(248, 175, 60, 0.15);
   transition: background .2s ease, box-shadow .2s ease;
   overflow-x: clip;
 }
@@ -169,10 +168,7 @@ a { color: var(--azul-brillante); }
   height: 2px;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(39, 175, 201, 0.2) 15%, 
-    #FFBB02 45%, 
-    #27AFC9 55%, 
-    rgba(229, 142, 0, 0.3) 85%, 
+    rgba(248, 175, 60, 0.2) 15%, #f8af3c 45%, #fefffd 55%, rgba(248, 175, 60, 0.3) 85%, 
     transparent 100%);
   background-size: 200% 100%;
   animation: pulsoCorrienteBarra 5s linear infinite;
@@ -222,7 +218,7 @@ a { color: var(--azul-brillante); }
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(39, 175, 201, 0.6) 0%, rgba(255, 187, 2, 0.3) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(248, 175, 60, 0.6) 0%, rgba(10, 31, 62, 0.3) 50%, transparent 75%);
   opacity: 0.65;
   animation: haloInduccion 3s ease-in-out infinite alternate;
   pointer-events: none;
@@ -230,7 +226,7 @@ a { color: var(--azul-brillante); }
 
 @keyframes haloInduccion {
   0% { transform: scale(0.92) rotate(0deg); opacity: 0.4; }
-  100% { transform: scale(1.15) rotate(180deg); opacity: 0.85; filter: drop-shadow(0 0 8px rgba(39, 175, 201, 0.8)); }
+  100% { transform: scale(1.15) rotate(180deg); opacity: 0.85; filter: drop-shadow(0 0 8px rgba(248, 175, 60, 0.8)); }
 }
 
 .barra__escudo-img {
@@ -240,9 +236,7 @@ a { color: var(--azul-brillante); }
   object-fit: cover;
   padding: 1.5px;
   border: 2px solid var(--volt-amarillo);
-  background: #1C1817;
-  display: block;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6), 0 0 12px rgba(39, 175, 201, 0.4);
+  background: #0a1f3e; display: block; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 12px rgba(248, 175, 60, 0.4);
   position: relative;
   z-index: 1;
 }
@@ -272,206 +266,145 @@ a { color: var(--azul-brillante); }
 }
 
 /* =========================================================
-   RIEL DE NAVEGACIÓN: CIRCUITO CON ARCO DE PLASMA (INNOVADOR)
+   DOCK CINEMÁTICO DE NAVEGACIÓN MECÁNICA (SUPER INNOVADOR)
    ========================================================= */
 
-.nav-circuito,
-.nav-manifold {
+.dock-mecanico {
   position: relative;
   display: inline-flex;
   align-items: center;
-  background: linear-gradient(180deg, rgba(42, 35, 34, 0.88) 0%, rgba(26, 22, 21, 0.95) 100%);
-  border: 1.5px solid rgba(39, 175, 201, 0.4);
-  border-radius: 999px;
-  padding: 4px;
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6), 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 14px rgba(39, 175, 201, 0.12);
-  isolation: isolate;
 }
 
-/* Pista interna conductora con trazos PCB */
-.nav-circuito__pista,
-.nav-manifold__tuberia {
-  position: absolute;
-  inset: 4px;
-  border-radius: 999px;
-  pointer-events: none;
-  overflow: hidden;
-  z-index: 1;
-}
-
-/* Lienzo dinámico de rayo de plasma viajero entre pestañas */
-.nav-circuito__rayo-canvas {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 999px;
-  pointer-events: none;
-  z-index: 4;
-}
-
-/* Slider de Arco Voltaico / Descarga de Plasma */
-.nav-circuito__slider,
-.nav-manifold__crudo-slider {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #FFBB02 0%, #E58E00 45%, #27AFC9 100%);
-  box-shadow: 0 0 20px rgba(39, 175, 201, 0.75), 0 0 12px rgba(255, 187, 2, 0.6), inset 0 1px 2px rgba(255, 255, 255, 0.8);
-  pointer-events: none;
-  transform-origin: center;
-  will-change: left, width, transform;
-}
-
-/* Efecto de arco voltaico de alta descarga al viajar entre nodos */
-.nav-circuito__slider.is-descargando,
-.nav-manifold__crudo-slider.is-fluyendo {
-  background: linear-gradient(90deg, 
-    #27AFC9 0%, 
-    #40C7E0 25%, 
-    #FFFFFF 50%, 
-    #FFBB02 75%, 
-    #E58E00 100%);
-  background-size: 200% 100%;
-  animation: descargaElectrica .35s linear infinite;
-  box-shadow: 0 0 28px rgba(39, 175, 201, 0.95), 0 0 18px rgba(255, 187, 2, 0.9), inset 0 0 8px rgba(255, 255, 255, 1);
-}
-
-@keyframes descargaElectrica {
-  0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
-}
-
-.circuito-slider__arco,
-.crudo-slider__onda {
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
-  opacity: 0.8;
-}
-
-.circuito-slider__spark,
-.crudo-slider__gota {
-  position: absolute;
-  right: -3px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #FFFFFF;
-  box-shadow: 0 0 10px #40C7E0, 0 0 16px #FFBB02;
-  opacity: 0;
-  transition: opacity .2s;
-}
-
-.nav-circuito__slider.is-descargando .circuito-slider__spark,
-.nav-manifold__crudo-slider.is-fluyendo .crudo-slider__gota {
-  opacity: 1;
-}
-
-/* Nodos terminales del circuito */
-.nav-circuito__nodos,
-.nav-manifold__estaciones {
+.dock-mecanico__rail {
   position: relative;
-  z-index: 2;
   display: flex;
   align-items: center;
   gap: 3px;
+  padding: 4px 6px;
+  border-radius: 14px;
+  background: rgba(8, 24, 48, 0.78);
+  border: 1px solid rgba(248, 175, 60, 0.35);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.5), 0 4px 16px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-.nav-nodo,
-.nav-estacion {
+/* Patín cinemático deslizante de alta precisión */
+.dock-mecanico__sled {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  left: 0;
+  width: 0;
+  border-radius: 10px;
+  background: linear-gradient(180deg, rgba(248, 175, 60, 0.22) 0%, rgba(248, 175, 60, 0.08) 100%);
+  border: 1px solid rgba(248, 175, 60, 0.65);
+  box-shadow: 0 0 14px rgba(248, 175, 60, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+  transition: left 0.28s cubic-bezier(0.25, 1, 0.5, 1), width 0.28s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: left, width;
+}
+
+.dock-item {
   position: relative;
+  z-index: 2;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
-  border-radius: 999px;
+  gap: 7px;
+  padding: 8px 13px;
+  border-radius: 10px;
   text-decoration: none;
+  color: #cbd5e1;
   font-family: var(--letra-universidad);
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: .05em;
+  letter-spacing: .04em;
   text-transform: uppercase;
-  color: #D6CECC;
-  background: transparent;
-  border: none;
+  transition: color .2s ease;
   white-space: nowrap;
-  cursor: pointer;
-  transition: color .2s ease, text-shadow .2s ease;
   user-select: none;
 }
 
-.nav-nodo__tag,
-.nav-estacion__cod {
-  font-family: var(--letra-codigo);
-  font-size: 10px;
-  font-weight: 700;
-  color: var(--cian-brillante);
-  background: rgba(39, 175, 201, 0.16);
-  padding: 1px 5px;
-  border-radius: 4px;
-  letter-spacing: .02em;
-  transition: all .2s ease;
+.dock-item__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  color: #94a3b8;
+  transition: transform .25s cubic-bezier(0.16, 1, 0.3, 1), color .2s ease;
 }
 
-.nav-nodo__pin {
+.dock-item:hover {
+  color: #fefffd;
+}
+
+.dock-item:hover .dock-item__icon-box {
+  color: #f8af3c;
+  transform: rotate(35deg) scale(1.15);
+}
+
+.dock-item.is-activa {
+  color: #fefffd !important;
+}
+
+.dock-item.is-activa .dock-item__icon-box {
+  color: #f8af3c;
+  transform: scale(1.1);
+}
+
+.dock-item__indicador {
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) scale(0);
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: rgba(39, 175, 201, 0.4);
-  box-shadow: 0 0 4px rgba(39, 175, 201, 0.4);
-  margin-left: 1px;
-  transition: all .2s ease;
+  background: #f8af3c;
+  box-shadow: 0 0 6px #f8af3c;
+  transition: transform .25s ease;
 }
 
-.nav-nodo:hover,
-.nav-estacion:hover {
-  color: #FFFFFF;
-  text-shadow: 0 0 10px rgba(39, 175, 201, 0.5);
+.dock-item.is-activa .dock-item__indicador {
+  transform: translateX(-50%) scale(1);
 }
 
-.nav-nodo:hover .nav-nodo__tag,
-.nav-estacion:hover .nav-estacion__cod {
-  background: rgba(255, 187, 2, 0.25);
-  color: var(--volt-amarillo);
+/* Badge status de programa a la derecha */
+.barra__status-wrap {
+  display: flex;
+  align-items: center;
 }
 
-.nav-nodo:hover .nav-nodo__pin {
-  background: var(--volt-amarillo);
-  box-shadow: 0 0 8px var(--volt-amarillo);
-  transform: scale(1.3);
+.barra__status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(10, 31, 62, 0.8);
+  border: 1px solid rgba(248, 175, 60, 0.35);
+  font-family: var(--letra-codigo);
+  font-size: 11px;
+  font-weight: 700;
+  color: #f8af3c;
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
-/* Nodo activo: iluminado por el plasma */
-.nav-nodo.is-activa,
-.nav-estacion.is-activa {
-  color: #1C1817 !important;
-  font-weight: 800;
-  text-shadow: none;
+.status-pinion {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f8af3c;
+  box-shadow: 0 0 6px #f8af3c;
+  animation: pulsoBadge 2.5s infinite;
 }
 
-.nav-nodo.is-activa .nav-nodo__tag,
-.nav-estacion.is-activa .nav-estacion__cod {
-  color: #1C1817 !important;
-  background: rgba(28, 24, 23, 0.25);
-  font-weight: 800;
-}
-
-.nav-nodo.is-activa .nav-nodo__pin {
-  background: #1C1817;
-  box-shadow: 0 0 6px #1C1817;
-}
-
-.nav-nodo:focus-visible,
-.nav-estacion:focus-visible {
-  outline: 2px solid var(--volt-amarillo);
-  outline-offset: 2px;
+@keyframes pulsoBadge {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 10px #f8af3c; }
+  100% { transform: scale(0.9); opacity: 0.7; }
 }
 
 /* Botón menú móvil (disyuntor) */
@@ -481,7 +414,7 @@ a { color: var(--azul-brillante); }
   gap: 8px;
   padding: 8px 14px;
   border-radius: 999px;
-  border: 1.5px solid rgba(39, 175, 201, 0.5);
+  border: 1.5px solid rgba(248, 175, 60, 0.5);
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
   font-family: var(--letra-universidad);
@@ -582,8 +515,7 @@ a { color: var(--azul-brillante); }
   line-height: 1;
   letter-spacing: .02em;
   text-transform: uppercase;
-  color: var(--cian-electrico);
-  -webkit-text-stroke: .07em #ffffff;
+  color: #fefffd; -webkit-text-stroke: .07em #0a1f3e;
   paint-order: stroke fill;
 }
 .portada--corta .letras-varsity { font-size: clamp(32px, 7vw, 80px); }
@@ -592,17 +524,14 @@ a { color: var(--azul-brillante); }
   margin-top: 8px;
   font-size: clamp(34px, 8.5vw, 92px);
   letter-spacing: .02em;
-  color: var(--volt-amarillo);
-  -webkit-text-stroke: .07em #ffffff;
+  color: #f8af3c; -webkit-text-stroke: .07em #fefffd;
 }
 .letras-varsity::before {
   content: attr(data-texto);
   position: absolute;
   inset: 0;
   z-index: -1;
-  -webkit-text-stroke: .22em #1A1413;
-  paint-order: stroke fill;
-  filter: drop-shadow(0 0 20px rgba(0, 229, 255, 0.5)) drop-shadow(0 .06em 0 rgba(0, 0, 0, .8));
+  -webkit-text-stroke: .22em #051020; paint-order: stroke fill; filter: drop-shadow(0 0 18px rgba(248, 175, 60, 0.45)) drop-shadow(0 .06em 0 rgba(0, 0, 0, .85));
 }
 
 .portada__logo-wrap {
@@ -617,7 +546,7 @@ a { color: var(--azul-brillante); }
   position: absolute;
   inset: -12px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(39, 175, 201, 0.75) 0%, rgba(255, 187, 2, 0.4) 50%, transparent 75%);
+  background: radial-gradient(circle, rgba(248, 175, 60, 0.75) 0%, rgba(10, 31, 62, 0.4) 50%, transparent 75%);
   animation: haloEnergiaLogo 3s ease-in-out infinite alternate;
   filter: blur(10px);
   pointer-events: none;
@@ -632,8 +561,8 @@ a { color: var(--azul-brillante); }
   object-fit: cover;
   padding: 3px;
   border: 3.5px solid var(--volt-amarillo);
-  background: #1C1817;
-  box-shadow: 0 0 0 4px rgba(39, 175, 201, 0.55), 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 35px rgba(39, 175, 201, 0.5);
+  background: #0a1f3e;
+  box-shadow: 0 0 0 4px rgba(248, 175, 60, 0.55), 0 12px 32px rgba(0, 0, 0, 0.5), 0 0 35px rgba(248, 175, 60, 0.4);
   display: block;
   margin: 0 auto;
   transition: transform .25s ease, box-shadow .25s ease;
@@ -672,9 +601,9 @@ a { color: var(--azul-brillante); }
   list-style: none;
   border: 1.5px solid rgba(255, 187, 2, 0.4);
   border-radius: 20px;
-  background: rgba(30, 24, 23, 0.9);
+  background: rgba(10, 31, 62, 0.92);
   backdrop-filter: blur(12px);
-  box-shadow: 0 14px 34px -10px rgba(0,0,0,0.65), 0 0 20px rgba(39, 175, 201, 0.12);
+  box-shadow: 0 14px 34px -10px rgba(0,0,0,0.65), 0 0 20px rgba(248, 175, 60, 0.15);
 }
 .portada__cifras li {
   display: flex;
@@ -710,21 +639,24 @@ a { color: var(--azul-brillante); }
   margin-top: 28px;
   padding: 0 28px;
   border-radius: 999px;
-  background: var(--dorado-ambar);
-  color: var(--negro-crudo);
+  background: #f8af3c;
+  color: #0a1f3e;
+  border: 2px solid #f8af3c;
   font-family: var(--letra-universidad);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14.5px;
   letter-spacing: .08em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 8px 24px -4px rgba(212, 175, 55, .5), 0 0 0 3px rgba(11, 31, 58, 0.4);
+  box-shadow: 0 8px 24px -4px rgba(248, 175, 60, .55);
   transition: transform .15s, background .15s, box-shadow .15s;
 }
 .portada__boton:hover {
   transform: translateY(-2px);
-  background: #f7e8a4;
-  box-shadow: 0 12px 28px -4px rgba(212, 175, 55, .65), 0 0 0 3px var(--dorado-ambar);
+  background: #fefffd;
+  border-color: #fefffd;
+  color: #0a1f3e;
+  box-shadow: 0 12px 28px -4px rgba(248, 175, 60, .75);
 }
 .portada__boton svg { width: 18px; height: 18px; color: var(--negro-crudo); }
 
@@ -737,22 +669,24 @@ a { color: var(--azul-brillante); }
   margin-top: 28px;
 }
 .portada__acciones .portada__boton {
-  margin-top: 0;
-}
-.portada__boton--secundario {
-  background: rgba(11, 31, 58, .85);
-  color: #fff;
-  border: 1.5px solid rgba(212, 175, 55, .5);
-  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, .5);
-}
-.portada__boton--secundario:hover {
-  background: var(--azul-petroleo);
-  border-color: var(--dorado-ambar);
-  color: #fff;
-  box-shadow: 0 12px 26px -8px rgba(212, 175, 55, .4);
-}
-.portada__boton--secundario svg {
-  color: var(--dorado-ambar);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  height: 54px;
+  margin-top: 28px;
+  padding: 0 28px;
+  border-radius: 999px;
+  background: #f8af3c;
+  color: #0a1f3e;
+  border: 2px solid #f8af3c;
+  font-family: var(--letra-universidad);
+  font-weight: 800;
+  font-size: 14.5px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -4px rgba(248, 175, 60, .55);
+  transition: transform .15s, border-color .15s, box-shadow .15s;
 }
 
 
@@ -771,15 +705,15 @@ a { color: var(--azul-brillante); }
   font-weight: 700;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: var(--dorado-ambar);
+  color: #f8af3c;
 }
 .seccion-titulo h2 {
   margin-top: 6px;
   font-family: var(--letra-titulo);
-  font-weight: 700;
+  font-weight: 800;
   font-size: clamp(30px, 4.5vw, 44px);
   line-height: 1.15;
-  color: var(--azul-petroleo);
+  color: #0a1f3e;
   -webkit-text-stroke: 0;
   filter: none;
 }
@@ -789,13 +723,13 @@ a { color: var(--azul-brillante); }
   max-width: 560px;
   margin: 40px auto;
   padding: 22px 24px;
-  border: 2px dashed var(--dorado-ambar);
+  border: 2px dashed #f8af3c;
   border-radius: 18px;
   background: #fff;
   text-align: center;
   color: var(--tinta-suave);
 }
-.aviso strong { color: var(--azul-petroleo); }
+.aviso strong { color: #0a1f3e; }
 .aviso code {
   padding: 2px 6px;
   border-radius: 6px;
@@ -814,16 +748,29 @@ a { color: var(--azul-brillante); }
 }
 
 
-/* ---------- 6. Pie de Página (Idéntico al diseño con 2 tarjetas) ---------- */
+/* ---------- 6. Pie de Página Oficial ---------- */
 
 .pie {
-  background: #ecebe6;
-  border-top: 1px solid #dddcd6;
-  padding: 48px 16px 56px;
+  background: #0a1f3e;
+  border-top: 3px solid #f8af3c;
+  padding: 56px 16px 64px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
+  color: #fefffd;
+  position: relative;
+}
+
+.pie::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(248, 175, 60, 0.8) 50%, transparent 100%);
+  pointer-events: none;
 }
 
 .pie__marca-central {
@@ -831,14 +778,14 @@ a { color: var(--azul-brillante); }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 12px;
+  gap: 14px;
   max-width: 680px;
   margin: 0 auto;
 }
 
 .pie__escudo {
-  width: 58px;
-  height: 58px;
+  width: 68px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -846,14 +793,14 @@ a { color: var(--azul-brillante); }
 }
 
 .pie__escudo-img {
-  width: 58px;
-  height: 58px;
+  width: 68px;
+  height: 68px;
   border-radius: 50%;
-  object-fit: contain;
-  background: #ffffff;
-  padding: 4px;
-  border: 1px solid #d4d3cc;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  object-fit: cover;
+  background: #0a1f3e;
+  padding: 2.5px;
+  border: 2px solid #f8af3c;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(248, 175, 60, 0.35);
   display: block;
 }
 
@@ -863,66 +810,53 @@ a { color: var(--azul-brillante); }
   justify-content: center;
   gap: 12px;
   flex-wrap: wrap;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .pie__pildora {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 16px;
+  gap: 8px;
+  padding: 8px 18px;
   border-radius: 999px;
-  background: #ffffff;
-  border: 1px solid #dfded8;
-  font-size: 13px;
-  font-weight: 600;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(248, 175, 60, 0.35);
+  font-family: var(--letra-universidad);
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .03em;
   text-decoration: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: transform .15s, border-color .15s, box-shadow .15s;
+  color: #fefffd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform .2s, background .2s, color .2s, box-shadow .2s;
 }
 
 .pie__pildora:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  background: #f8af3c;
+  color: #0a1f3e;
+  box-shadow: 0 6px 18px rgba(248, 175, 60, 0.4);
 }
 
-.pie__pildora--ig {
-  color: var(--azul-petroleo);
-  border-color: var(--dorado-ambar);
-}
-.pie__pildora--ig:hover {
-  background: rgba(212, 175, 55, 0.1);
-  border-color: var(--azul-petroleo);
-}
+.pie__pildora--ig svg { color: #f8af3c; }
+.pie__pildora--ig:hover svg { color: #0a1f3e; }
 
-.pie__pildora--wpp {
-  color: var(--verde-minas);
-  border-color: var(--verde-minas);
-}
-.pie__pildora--wpp:hover {
-  background: rgba(0, 102, 51, 0.08);
-  border-color: var(--verde-minas);
-}
+.pie__pildora--wpp svg { color: #25D366; }
+.pie__pildora--wpp:hover svg { color: #0a1f3e; }
 
-.pie__pildora--drive {
-  color: var(--azul-petroleo);
-  border-color: var(--dorado-ambar);
-}
-.pie__pildora--drive:hover {
-  background: rgba(212, 175, 55, 0.12);
-  border-color: var(--azul-petroleo);
-}
+.pie__pildora--drive svg { color: #f8af3c; }
+.pie__pildora--drive:hover svg { color: #0a1f3e; }
 
 .pie__titulo-carrera {
   font-size: 13.5px;
-  color: #4b5563;
+  color: #cbd5e1;
   line-height: 1.5;
-  margin: 0;
+  margin: 4px 0 0;
 }
 
 .pie__titulo-carrera strong {
-  color: #1f2937;
-  font-weight: 700;
+  color: #f8af3c;
+  font-weight: 800;
 }
 
 /* Rejilla de dos tarjetas */
@@ -1379,56 +1313,57 @@ a { color: var(--azul-brillante); }
     display: inline-flex;
     flex-shrink: 0;
   }
-  .nav-circuito,
-  .nav-manifold {
+  .dock-mecanico {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(26, 22, 21, 0.98);
+    background: rgba(10, 31, 62, 0.98);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-radius: 0;
-    border: none;
-    border-bottom: 3.5px solid var(--volt-amarillo);
+    border-bottom: 3.5px solid #f8af3c;
     box-shadow: 0 16px 36px -6px rgba(0, 0, 0, .85);
     padding: 16px;
-    flex-direction: column;
     max-height: calc(100vh - 65px);
     overflow-y: auto;
   }
-  .barra.is-menu-abierto .nav-circuito,
-  .barra.is-menu-abierto .nav-manifold {
+  .barra.is-menu-abierto .dock-mecanico {
     display: flex;
     animation: menuDesplegar .2s ease-out;
   }
-  .nav-circuito__pista,
-  .nav-manifold__tuberia {
-    display: none;
-  }
-  .nav-circuito__nodos,
-  .nav-manifold__estaciones {
+  .dock-mecanico__rail {
     flex-direction: column;
     width: 100%;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
     gap: 8px;
   }
-  .nav-nodo,
-  .nav-estacion {
+  .dock-mecanico__sled {
+    display: none;
+  }
+  .dock-item {
     width: 100%;
     justify-content: flex-start;
     padding: 12px 18px;
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(39, 175, 201, 0.25);
+    border: 1px solid rgba(248, 175, 60, 0.25);
     color: #fff;
   }
-  .nav-nodo.is-activa,
-  .nav-estacion.is-activa {
-    background: linear-gradient(90deg, var(--volt-amarillo) 0%, var(--ambar-electrico) 100%) !important;
-    color: #1C1817 !important;
+  .dock-item.is-activa {
+    background: linear-gradient(90deg, #f8af3c 0%, #e09424 100%) !important;
+    color: #0a1f3e !important;
     border-color: #FFF3C4;
     font-weight: 800;
+  }
+  .dock-item.is-activa .dock-item__icon-box {
+    color: #0a1f3e !important;
+  }
+  .barra__status-wrap {
+    display: none;
   }
 }
 
@@ -1542,14 +1477,17 @@ a { color: var(--azul-brillante); }
 .instalar-fila--portada { justify-content: center; margin: 22px 0 4px; }
 .instalar-btn {
   display: inline-flex; align-items: center; gap: 9px;
-  padding: 10px 20px; border: 2px solid var(--dorado-ambar); border-radius: 999px;
-  background: var(--azul-petroleo); color: var(--dorado-ambar);
+  padding: 11px 24px; border: 2px solid #f8af3c; border-radius: 999px;
+  background: rgba(10, 31, 62, 0.9); color: #f8af3c;
   font-family: var(--letra-texto); font-size: 14px; font-weight: 700; letter-spacing: .02em;
   cursor: pointer; transition: background .15s, color .15s, transform .15s, box-shadow .15s;
-  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .6);
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .6), 0 0 14px rgba(248, 175, 60, 0.25);
 }
 .instalar-btn svg { width: 17px; height: 17px; flex: none; }
-.instalar-btn:hover, .instalar-btn:focus-visible { background: var(--dorado-ambar); color: var(--azul-petroleo); transform: translateY(-1px); }
+.instalar-btn:hover, .instalar-btn:focus-visible {
+  background: #f8af3c; color: #0a1f3e; transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(248, 175, 60, 0.5);
+}
 .instalar-btn:focus-visible { outline: 3px solid var(--azul-petroleo); outline-offset: 3px; }
 
 .instalar-dialogo {

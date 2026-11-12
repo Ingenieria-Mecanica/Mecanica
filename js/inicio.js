@@ -1,40 +1,46 @@
 /**
- * PLATAFORMA DIGITAL · INGENIERÍA ELÉCTRICA (UNAL MEDELLÍN)
+ * PLATAFORMA DIGITAL · INGENIERÍA MECÁNICA (UNAL MEDELLÍN)
  * Desarrollado por: Santiago Escobar Arias · Representante de Sistemas
- * Colaborador: Kevin David Aristizabal Giraldo · Karistizabalg@unal.edu.co
+ * Delegados de la Representación: Sebastian Leonel Ruiz y Santiago Espinosa López
  * © 2026 Santiago Escobar Arias. Todos los derechos reservados.
  * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
  */
 /* =============================================
-   MÓDULO INICIO · INGENIERÍA ELÉCTRICA
+   MÓDULO INICIO · INGENIERÍA MECÁNICA
    - Carga programa.json al inicio
    - Carga perfil.json y grupos.json por intersección
-   - Laboratorio de Alta Tensión & Bobina de Tesla Interactiva
-   - Simulador Dinámico de Flujo de Potencia & Redes Inteligentes
+   - Escenario Cinemático de Engranajes y Turbina Interactiva
+   - Simulador Dinámico de Sistemas Mecánicos & Simulación Computacional
    ============================================= */
 
 const ICONOS_PERFIL = {
+  diseno: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/>',
+  energia: '<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+  manufactura: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  mecatronica: '<rect width="16" height="16" x="4" y="4" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M15 9h.01M9 15h.01M15 15h.01"/>',
+  gestion: '<path d="M12 20v-6M6 20V10M18 20V4"/>',
   potencia: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
-  maquinas: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/>',
-  protecciones: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M13 8l-3 4h4l-2 4"/>',
-  transicion: '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>',
-  control: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 15V9l4 6V9"/><path d="M17 9v6"/>',
-  renovables: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M12 6a6 6 0 0 1 6 6"/>',
-  ciencia: '<path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 15h9"/>',
 };
 
 const ICONOS_RUTAS = {
-  potencia: '<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>',
-  maquinas: '<circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/>',
-  protecciones: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
-  renovables: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
-  control: '<path d="M3 12h4l3-9 4 18 3-9h4"/>',
+  diseno: '<rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/>',
+  energia: '<path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>',
+  manufactura: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
+  mecatronica: '<rect width="16" height="16" x="4" y="4" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M15 9h.01M9 15h.01M15 15h.01"/>',
+  gestion: '<path d="M12 20v-6M6 20V10M18 20V4"/>',
 };
 
-const icono = (nombre) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS_PERFIL[nombre] || ICONOS_PERFIL.potencia}</svg>`;
-const iconoRuta = (nombre) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS_RUTAS[nombre] || ICONOS_RUTAS.potencia}</svg>`;
+const icono = (nombre) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS_PERFIL[nombre] || ICONOS_PERFIL.diseno}</svg>`;
+const iconoRuta = (nombre) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONOS_RUTAS[nombre] || ICONOS_RUTAS.diseno}</svg>`;
 
 const ICONO_SELLO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/><path d="m9.5 9 1.8 1.8L15 7.2"/></svg>';
+
+const ICONOS_REDES = {
+  ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>',
+  wpp: '<svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.63C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.07 7.71C8.89 7.71 8.6 7.78 8.36 8.04C8.11 8.3 7.41 8.96 7.41 10.3C7.41 11.63 8.38 12.92 8.52 13.1C8.66 13.29 10.42 16 13.12 17.17C15.36 18.14 15.82 17.95 16.31 17.9C16.8 17.86 17.88 17.26 18.11 16.63C18.33 16 18.33 15.46 18.26 15.35C18.2 15.24 18.01 15.18 17.73 15.04C17.45 14.9 16.08 14.23 15.83 14.13C15.57 14.04 15.39 13.99 15.2 14.27C15.02 14.55 14.49 15.18 14.33 15.36C14.17 15.55 14.01 15.57 13.73 15.43C13.45 15.29 12.27 14.9 10.87 13.65C9.78 12.68 9.05 11.48 8.84 11.12C8.63 10.76 8.82 10.56 8.96 10.42C9.09 10.29 9.25 10.08 9.39 9.92C9.53 9.76 9.58 9.64 9.67 9.46C9.76 9.27 9.72 9.11 9.65 8.97C9.58 8.83 9.07 7.58 8.86 7.07C8.66 6.58 8.45 6.64 8.3 6.63C8.15 6.63 7.97 6.63 7.78 6.63"/></svg>',
+  web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15" height="15" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+  correo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="15" height="15" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>'
+};
 
 
 /* ---------- 1. Programa ---------- */
@@ -54,7 +60,7 @@ function pintarPrograma(p) {
     <div class="seccion-titulo">
       <p class="seccion-titulo__antetitulo">${esc(p.facultad)} · ${esc(p.sede)}</p>
       <h2 id="programa-titulo">Definición y Misión del Pregrado</h2>
-      <p class="seccion-titulo__intro">Ingeniería Eléctrica · Rigor científico, soberanía energética y liderazgo en la transición sostenible</p>
+      <p class="seccion-titulo__intro">Ingeniería Mecánica · Rigor analítico, diseño computacional, manufactura avanzada y liderazgo industrial</p>
     </div>
 
     <div class="programa__rejilla">
@@ -75,7 +81,7 @@ function pintarPrograma(p) {
       <div class="seccion-titulo seccion-titulo--rutas">
         <p class="seccion-titulo__antetitulo">Campos de profundización y aplicación</p>
         <h3 class="rutas__titulo">Ejes Curriculares Estratégicos</h3>
-        <p class="seccion-titulo__intro">El plan curricular articula cinco grandes áreas tecnológicas que preparan al ingeniero electricista para liderar el sector energético global:</p>
+        <p class="seccion-titulo__intro">El plan curricular articula cinco grandes áreas tecnológicas que preparan al ingeniero mecánico para liderar la industria global:</p>
       </div>
 
       <div class="rutas__grid">
@@ -149,219 +155,85 @@ function pintarPerfil(perfil) {
 }
 
 
-/* ---------- 3. Capítulos Estudiantiles con Diseño Bombilla Bacano ---------- */
+/* ---------- 3. Grupos Estudiantiles y Capítulos Técnicos ---------- */
 
 function pintarGrupos(grupos) {
-  const grupo = grupos[0] || {};
-  const destinoIg = grupo.enlace ? `href="${esc(grupo.enlace)}" target="_blank" rel="noopener noreferrer"` : '';
+  if (!grupos || !grupos.length) return;
 
-  const liderazgoHtml = (grupo.liderazgo || []).map((l) => `
-    <div class="ampere-persona">
-      <span class="ampere-persona__rol">${esc(l.rol)}</span>
-      <strong class="ampere-persona__nombre">${esc(l.nombre)}</strong>
-      <span class="ampere-persona__estamento">${esc(l.estamento)} · Facultad de Minas</span>
-      <a class="ampere-persona__correo" href="mailto:${esc(l.correo)}" title="Contactar a ${esc(l.nombre)}">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-        <span>${esc(l.correo)}</span>
+  const cardsHtml = grupos.map((grupo) => {
+    const destinoIg = grupo.enlace ? `href="${esc(grupo.enlace)}" target="_blank" rel="noopener noreferrer"` : '';
+
+    const liderazgoHtml = (grupo.liderazgo || []).map((l) => `
+      <div class="grupo-card__lider-bloque">
+        <span class="grupo-card__lider-rol">${esc(l.rol)}</span>
+        <strong class="grupo-card__lider-nombre">${esc(l.nombre)}</strong>
+        <span class="grupo-card__lider-estamento">${esc(l.estamento)} · Minas</span>
+        <a class="grupo-card__lider-correo" href="mailto:${esc(l.correo)}" title="Contactar a ${esc(l.nombre)}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="13" height="13" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          <span>${esc(l.correo)}</span>
+        </a>
+      </div>
+    `).join('');
+
+    const redesHtml = (grupo.redes || []).map((r) => `
+      <a class="grupo-card__btn-ig" href="${esc(r.enlace)}" target="_blank" rel="noopener noreferrer" title="${esc(r.plataforma)}: ${esc(r.usuario)}">
+        ${ICONOS_REDES[r.icono] || ''}
+        <span>${esc(r.usuario || r.plataforma)}</span>
       </a>
-    </div>
-  `).join('');
+    `).join('');
 
-  const ICONOS_REDES = {
-    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>',
-    fb: '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',
-    yt: '<svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>',
-    web: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
-  };
-
-  const redesHtml = (grupo.redes || []).map((r) => `
-    <a class="ampere-red__btn ampere-red__btn--${esc(r.icono)}" href="${esc(r.enlace)}" target="_blank" rel="noopener noreferrer" title="${esc(r.plataforma)}: ${esc(r.usuario)}">
-      ${ICONOS_REDES[r.icono] || ''}
-      <span>${esc(r.plataforma)}</span>
-    </a>
-  `).join('');
-
-  const cardHtml = `
-    <li class="tarjeta-bombilla tarjeta-bombilla--ampere" style="--color-capitulo: ${esc(grupo.color || '#FFBB02')}; --color-capitulo-acento: ${esc(grupo.colorAcento || '#27AFC9')};">
-      <div class="bombilla-socket-wrap">
-        <div class="bombilla-lampara">
-          <!-- Halo de resplandor electromagnético -->
-          <div class="bombilla-glow" aria-hidden="true"></div>
-          
-          <!-- Filamento de incandescencia interior -->
-          <div class="bombilla-filamento" aria-hidden="true">
-            <svg viewBox="0 0 100 100" class="bombilla-filamento-svg">
-              <path d="M38 72 L38 46 Q38 32 46 32 Q50 32 50 28 Q50 32 54 32 Q62 32 62 46 L62 72" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/>
-              <circle cx="50" cy="28" r="3" fill="currentColor"/>
-            </svg>
-          </div>
-
-          <!-- Globo de cristal con emblema oficial de Grupo Ampère -->
-          <a class="bombilla-globo" ${destinoIg} aria-label="Visitar redes oficiales de ${esc(grupo.nombre)}" title="Clic para conectar con ${esc(grupo.nombre)}">
-            <div class="bombilla-emblema">
-              <img src="${esc(grupo.logo)}" alt="Logo oficial de ${esc(grupo.nombre)}" class="bombilla-emblema-img" loading="lazy">
-            </div>
-            <div class="bombilla-reflejo" aria-hidden="true"></div>
-            <div class="bombilla-badge-ig">
-              <span>${esc(grupo.usuarioIg || '@ampere_unalmed')}</span>
-            </div>
+    return `
+      <li class="tarjeta-grupo">
+        <div class="grupo-card__emblema-wrap">
+          <a class="grupo-card__emblema" ${destinoIg} aria-label="Visitar redes oficiales de ${esc(grupo.nombre)}" title="Clic para conectar con ${esc(grupo.nombre)}">
+            <img src="${esc(grupo.logo)}" alt="Logo oficial de ${esc(grupo.nombre)}" class="grupo-card__logo" loading="lazy">
           </a>
-
-          <!-- Rosca metálica Edison (E27) -->
-          <div class="bombilla-rosca" aria-hidden="true">
-            <span class="rosca-aro"></span>
-            <span class="rosca-aro"></span>
-            <span class="rosca-aro"></span>
-            <span class="rosca-pie"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="tarjeta-bombilla__info">
-        <span class="tarjeta-bombilla__tipo">${esc(grupo.tipo)}</span>
-        <h3 class="tarjeta-bombilla__nombre">${esc(grupo.nombre)}</h3>
-        ${grupo.subtitulo ? `<p class="tarjeta-bombilla__subtitulo">${esc(grupo.subtitulo)}</p>` : ''}
-        <p class="tarjeta-bombilla__desc">${esc(grupo.descripcion)}</p>
-
-        <!-- Coordinación y Liderazgo -->
-        <div class="ampere-liderazgo">
-          ${liderazgoHtml}
         </div>
 
-        <!-- Canales y Redes Oficiales -->
-        <div class="ampere-redes">
-          ${redesHtml}
+        <div class="grupo-card__info">
+          <span class="grupo-card__tipo">${esc(grupo.tipo)}</span>
+          <h3 class="grupo-card__nombre">${esc(grupo.nombre)}</h3>
+          ${grupo.subtitulo ? `<p class="grupo-card__subtitulo">${esc(grupo.subtitulo)}</p>` : ''}
+          <p class="grupo-card__desc">${esc(grupo.descripcion)}</p>
+
+          ${liderazgoHtml ? `<div class="grupo-card__liderazgo">${liderazgoHtml}</div>` : ''}
+          <div class="grupo-card__acciones">${redesHtml}</div>
         </div>
-      </div>
-    </li>`;
+      </li>`;
+  }).join('');
 
   $('#grupos-contenido').innerHTML = `
     <div class="seccion-titulo">
       <p class="seccion-titulo__antetitulo">Comunidad & Liderazgo Tecnológico</p>
-      <h2 id="grupos-titulo">Grupo Estudiantil · Grupo Ampère</h2>
-      <p class="seccion-titulo__intro">El Grupo Ampère es el esfuerzo institucional y colectivo estudiantil insignia de Ingeniería Eléctrica en la Facultad de Minas de la Universidad Nacional de Colombia. Un espacio extracurricular donde los estudiantes consolidan valores, liderazgo y competencias técnicas por medio de la autogestión y participación en proyectos reales de ingeniería.</p>
+      <h2 id="grupos-titulo">Grupos Estudiantiles & Capítulos Técnicos</h2>
+      <p class="seccion-titulo__intro">Espacios de alto rendimiento extracurricular en la Facultad de Minas de la Universidad Nacional de Colombia donde los estudiantes de Ingeniería Mecánica consolidan liderazgo, innovación y competencias técnicas aplicadas a proyectos de impacto internacional.</p>
     </div>
-    <ul class="grupos__grid-bombillas">${cardHtml}</ul>`;
+    <ul class="grupos__grid">${cardsHtml}</ul>`;
 }
 
-/* ---------- 4. Simulador Interactivo de Flujo de Potencia & Redes Inteligentes ---------- */
+/* ---------- 4. Animación Compacta de Especialidades de Mecánica ---------- */
+function iniciarRotadorAnimado() {
+  const rotador = $('#rotador-mecanica');
+  const puntos = $('#ticker-puntos .ticker-punto');
+  if (!rotador) return;
 
-const DATOS_MODOS_SIMULADOR = {
-  'generacion': {
-    badge: 'RÉGIMEN OPERATIVO 01 · DESPACHO ECONÓMICO',
-    titulo: 'Generación y Despacho Energético',
-    desc: 'Las centrales hidroeléctricas, térmicas y los parques solares y eólicos entregan potencia activa y reactiva al Sistema Interconectado Nacional. El control automático de generación (AGC) y los gobernadores de velocidad mantienen la frecuencia exactamente en 60.00 Hz.',
-    tension: '13.8 kV a 230 kV',
-    frec: '60.00 Hz',
-    potencia: '1,280 MW',
-    tiempo: '< 40 ms (Inercia)',
-    claseVisual: 'modo-generacion',
-    materias: [
-      'Sistemas de Generación de Energía',
-      'Máquinas Eléctricas I y II',
-      'Termodinámica General'
-    ]
-  },
-  'transmision': {
-    badge: 'RÉGIMEN OPERATIVO 02 · EXTRA ALTA TENSIÓN (500 kV)',
-    titulo: 'Transmisión Troncal & Líneas 500 kV',
-    desc: 'Transporte masivo de energía eléctrica a largas distancias mediante líneas de extra alta tensión (EAT) de 230 kV y 500 kV. Se aplican modelos de parámetros distribuidos (modelo Π), compensación reactiva serie/paralelo y análisis de estabilidad angular para evitar el colapso de voltaje.',
-    tension: '500.0 kV',
-    frec: '60.01 Hz',
-    potencia: '3,450 MVA',
-    tiempo: 'Criterio N-1 Seguro',
-    claseVisual: 'modo-transmision',
-    materias: [
-      'Modelado de Líneas de Transmisión',
-      'Análisis de Sistemas de Potencia',
-      'Diseño de Redes de Transmisión y Distribución'
-    ]
-  },
-  'smartgrid': {
-    badge: 'RÉGIMEN OPERATIVO 03 · REDES INTELIGENTES & FNCER',
-    titulo: 'Smart Grids & Generación Distribuida',
-    desc: 'Integración bidireccional de parques fotovoltaicos, generación eólica, sistemas de baterías BESS y medidores inteligentes (AMI). La red se autorrecupera (self-healing), gestiona la demanda dinámica y abastece microrredes aisladas e interconectadas.',
-    tension: '13.2 kV / 220V',
-    frec: '60.00 Hz',
-    potencia: '450 MW Renovable',
-    tiempo: 'Respuesta Inmediata',
-    claseVisual: 'modo-smartgrid',
-    materias: [
-      'Instalaciones Eléctricas Industriales',
-      'Automatización de Sistemas Eléctricos',
-      'Modelado de Sistemas Fotovoltaicos'
-    ]
-  },
-  'protecciones': {
-    badge: 'RÉGIMEN OPERATIVO 04 · PROTECCIONES & SUBESTACIÓN DIGITAL',
-    titulo: 'Protecciones Eléctricas & Subestación Digital',
-    desc: 'Supervisión en tiempo real con relés numéricos multifunción (distancia ANSI 21, diferencial ANSI 87, sobrecorriente ANSI 50/51) bajo la norma IEC 61850 (mensajería GOOSE). Detecta y despeja fallas trifásicas en menos de 35 milisegundos salvaguardando equipos y líneas.',
-    tension: '230 kV / 115 kV',
-    frec: '60.00 Hz',
-    potencia: 'Selectividad 100%',
-    tiempo: 'Despeje en 32 ms',
-    claseVisual: 'modo-protecciones',
-    materias: [
-      'Sistemas de Protecciones Eléctricas',
-      'Automatización de Sistemas Eléctricos',
-      'Alta Tensión'
-    ]
-  }
-};
+  const especialidades = [
+    'Diseño Mecánico & Elementos Finitos (CAD/CAE)',
+    'Termofluidos & Ciclos de Potencia Térmica',
+    'Manufactura Avanzada CAM, CNC & Materiales',
+    'Automatización Industrial, Robótica & Mecatrónica'
+  ];
 
-function configurarSimuladorPotencia() {
-  const tabs = $$('.simulador-tab');
-  const visualBox = $('#simulador-visual');
-  if (!tabs.length || !visualBox) return;
-
-  tabs.forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const modo = tab.dataset.modo;
-      if (!modo || !DATOS_MODOS_SIMULADOR[modo]) return;
-
-      tabs.forEach((t) => {
-        t.classList.remove('is-activa');
-        t.setAttribute('aria-selected', 'false');
-      });
-      tab.classList.add('is-activa');
-      tab.setAttribute('aria-selected', 'true');
-
-      actualizarSimulador(modo);
-    });
-  });
-}
-
-function actualizarSimulador(modo) {
-  const datos = DATOS_MODOS_SIMULADOR[modo];
-  if (!datos) return;
-
-  const visualBox = $('#simulador-visual');
-  if (visualBox) {
-    visualBox.className = `simulador-visual ${datos.claseVisual}`;
-  }
-
-  const badge = $('#sim-badge');
-  const titulo = $('#sim-titulo');
-  const desc = $('#sim-desc');
-  const tension = $('#sim-tension');
-  const frec = $('#sim-frec');
-  const potencia = $('#sim-potencia');
-  const tiempo = $('#sim-tiempo');
-  const materias = $('#sim-materias');
-
-  if (badge) badge.textContent = datos.badge;
-  if (titulo) titulo.textContent = datos.titulo;
-  if (desc) desc.textContent = datos.desc;
-  if (tension) tension.textContent = datos.tension;
-  if (frec) frec.textContent = datos.frec;
-  if (potencia) potencia.textContent = datos.potencia;
-  if (tiempo) tiempo.textContent = datos.tiempo;
-
-  if (materias) {
-    materias.innerHTML = datos.materias
-      .map((m) => `<a href="malla.html" class="materia-chip">${esc(m)}</a>`)
-      .join('');
-  }
+  let idx = 0;
+  setInterval(() => {
+    idx = (idx + 1) % especialidades.length;
+    rotador.classList.add('is-changing');
+    setTimeout(() => {
+      rotador.textContent = especialidades[idx];
+      rotador.classList.remove('is-changing');
+      puntos.forEach((p, i) => p.classList.toggle('is-activo', i === idx));
+    }, 220);
+  }, 3000);
 }
 
 
@@ -384,8 +256,8 @@ cargarDatos('programa')
   .then(pintarPrograma)
   .catch((error) => mostrarErrorDeCarga($('#programa-contenido'), error));
 
-configurarSimuladorPotencia();
-iniciarLogoTesla();
+iniciarRotadorAnimado();
+iniciarLogoMecanica();
 
 const porCargar = $$('[data-carga]');
 if ('IntersectionObserver' in window) {
@@ -402,16 +274,16 @@ if ('IntersectionObserver' in window) {
 
 
 /* =========================================================
-   6. LOGO TESLA RESONANTE — EFECTO BOBINA & RAYOS INTERACTIVOS
-   - El logo oficial actúa como una bobina de Tesla / esfera de plasma
-   - Emite un halo continuo de arcos voltaicos y micro-descargas
-   - Atrae los rayos directamente hacia el cursor o dedo al interactuar
+   6. CINEMÁTICA INTERACTIVA · ENGRANAJES & TURBINA (MECÁNICA)
+   - Engranaje maestro rotatorio con dientes involutos alrededor del logo
+   - Satélites planetarios y vectores de torque cinemáticos
+   - Reacción fluida a cursor / toque con inercia y chispa cinemática
    ========================================================= */
 
-function iniciarLogoTesla() {
+function iniciarLogoMecanica() {
   const canvas = $('#canvas-logo-tesla');
   const escenario = $('#logo-escenario-tesla');
-  const logo = $('#logo-electrica-emisor');
+  const logo = $('#logo-mecanica-emisor');
   const heroSection = $('#hero-tesla');
   if (!canvas || !escenario || !logo) return;
 
@@ -444,6 +316,8 @@ function iniciarLogoTesla() {
   let mouseY = -1000;
   let mouseActivo = false;
   let pulsoImpacto = 0;
+  let anguloGiro = 0;
+  let velocidadAngular = 0.008;
 
   function actualizarCursor(clientX, clientY) {
     const rect = canvas.getBoundingClientRect();
@@ -458,19 +332,17 @@ function iniciarLogoTesla() {
     mouseY = -1000;
   }
 
-  // Interacción en el escenario del logo
   escenario.addEventListener('mousemove', (e) => actualizarCursor(e.clientX, e.clientY));
   escenario.addEventListener('mouseleave', desactivarCursor);
   escenario.addEventListener('click', (e) => {
     actualizarCursor(e.clientX, e.clientY);
-    pulsoImpacto = 18;
+    pulsoImpacto = 25;
   });
 
-  // Eventos táctiles para móviles y tablets (dedo del usuario)
   escenario.addEventListener('touchstart', (e) => {
     if (e.touches && e.touches[0]) {
       actualizarCursor(e.touches[0].clientX, e.touches[0].clientY);
-      pulsoImpacto = 18;
+      pulsoImpacto = 25;
     }
   }, { passive: true });
 
@@ -482,7 +354,6 @@ function iniciarLogoTesla() {
 
   escenario.addEventListener('touchend', desactivarCursor);
 
-  // También responder si el cursor está en el Hero cerca del logo
   if (heroSection) {
     heroSection.addEventListener('mousemove', (e) => {
       const rect = canvas.getBoundingClientRect();
@@ -497,179 +368,231 @@ function iniciarLogoTesla() {
     });
   }
 
-  // Algoritmo fractal de descarga de plasma
-  function generarRayo(x0, y0, x1, y1, pasos, rugosidad, probRama) {
-    const ramas = [];
-    const puntos = [{ x: x0, y: y0 }];
+  // Dibuja una corona de engranaje paramétrica
+  function dibujarEngranaje(x, y, rPaso, numDientes, ang, altoDiente, colorLinea, colorRelleno, grosor) {
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(ang);
 
-    const dx = x1 - x0;
-    const dy = y1 - y0;
-    const distTotal = Math.hypot(dx, dy);
+    ctx.beginPath();
+    const pasoAng = (Math.PI * 2) / numDientes;
+    const rBase = rPaso - altoDiente * 0.5;
+    const rCresta = rPaso + altoDiente * 0.5;
 
-    for (let i = 1; i < pasos; i++) {
-      const fraccion = i / pasos;
-      const baseX = x0 + dx * fraccion;
-      const baseY = y0 + dy * fraccion;
+    for (let i = 0; i < numDientes; i++) {
+      const a0 = i * pasoAng;
+      const a1 = a0 + pasoAng * 0.28;
+      const a2 = a0 + pasoAng * 0.50;
+      const a3 = a0 + pasoAng * 0.78;
 
-      const perpX = -dy / distTotal;
-      const perpY = dx / distTotal;
-      const jitter = (Math.random() - 0.5) * rugosidad * (1 - fraccion * 0.35);
-
-      const px = baseX + perpX * jitter;
-      const py = baseY + perpY * jitter;
-      puntos.push({ x: px, y: py });
-
-      if (probRama > 0 && Math.random() < probRama && i < pasos - 2) {
-        const anguloBase = Math.atan2(dy, dx);
-        const anguloRama = anguloBase + (Math.random() > 0.5 ? 1 : -1) * (0.35 + Math.random() * 0.5);
-        const longRama = (distTotal * (1 - fraccion)) * (0.3 + Math.random() * 0.45);
-        const subX1 = px + Math.cos(anguloRama) * longRama;
-        const subY1 = py + Math.sin(anguloRama) * longRama;
-
-        ramas.push(...generarRayo(px, py, subX1, subY1, Math.max(3, Math.floor(pasos * 0.5)), rugosidad * 0.6, 0));
+      if (i === 0) {
+        ctx.moveTo(Math.cos(a0) * rBase, Math.sin(a0) * rBase);
+      } else {
+        ctx.lineTo(Math.cos(a0) * rBase, Math.sin(a0) * rBase);
       }
+      ctx.lineTo(Math.cos(a1) * rCresta, Math.sin(a1) * rCresta);
+      ctx.lineTo(Math.cos(a2) * rCresta, Math.sin(a2) * rCresta);
+      ctx.lineTo(Math.cos(a3) * rBase, Math.sin(a3) * rBase);
     }
+    ctx.closePath();
 
-    puntos.push({ x: x1, y: y1 });
-    return [{ puntos }, ...ramas];
+    if (colorRelleno) {
+      ctx.fillStyle = colorRelleno;
+      ctx.fill();
+    }
+    if (colorLinea) {
+      ctx.strokeStyle = colorLinea;
+      ctx.lineWidth = grosor || 1.5;
+      ctx.stroke();
+    }
+    ctx.restore();
   }
 
-  let frameTick = 0;
+  // Chispas cinemáticas
+  const particulas = [];
+  function agregarChispas(x, y, cantidad, color) {
+    for (let i = 0; i < cantidad; i++) {
+      const ang = Math.random() * Math.PI * 2;
+      const vel = 1.2 + Math.random() * 3.5;
+      particulas.push({
+        x,
+        y,
+        vx: Math.cos(ang) * vel,
+        vy: Math.sin(ang) * vel,
+        vida: 1,
+        color: color || '#f8af3c',
+        tam: 1.5 + Math.random() * 2
+      });
+    }
+  }
+
+  let tick = 0;
 
   function render() {
     ctx.clearRect(0, 0, W, H);
-    frameTick++;
+    tick++;
 
     if (pulsoImpacto > 0) pulsoImpacto--;
 
-    // 1. Halo electromagnético continuo alrededor del logo
-    const haloMin = R_logo + 4;
-    const haloMax = R_logo + 46 + Math.sin(frameTick * 0.1) * 8 + (pulsoImpacto > 0 ? 22 : 0);
-    const gradCorona = ctx.createRadialGradient(cx, cy, haloMin, cx, cy, haloMax);
-    gradCorona.addColorStop(0, 'rgba(0, 229, 255, 0.45)');
-    gradCorona.addColorStop(0.35, 'rgba(255, 208, 0, 0.22)');
-    gradCorona.addColorStop(0.7, 'rgba(39, 175, 201, 0.1)');
-    gradCorona.addColorStop(1, 'transparent');
+    // 1. Detección y respuesta al cursor
+    const distMouse = Math.hypot(mouseX - cx, mouseY - cy);
+    const cerca = mouseActivo && distMouse < (W * 0.65);
 
-    ctx.fillStyle = gradCorona;
+    let objetivoVel = 0.008;
+    if (cerca) {
+      objetivoVel = 0.024 + (pulsoImpacto > 0 ? 0.04 : 0);
+    }
+    velocidadAngular += (objetivoVel - velocidadAngular) * 0.05;
+    anguloGiro += velocidadAngular;
+
+    // 2. Halo térmico / de potencia mecánico en degradado
+    const rHaloMin = R_logo + 4;
+    const rHaloMax = R_logo + 42 + Math.sin(tick * 0.08) * 6 + (pulsoImpacto > 0 ? 20 : 0);
+    const gradHalo = ctx.createRadialGradient(cx, cy, rHaloMin, cx, cy, rHaloMax);
+    gradHalo.addColorStop(0, 'rgba(248, 175, 60, 0.42)');
+    gradHalo.addColorStop(0.35, 'rgba(10, 31, 62, 0.35)');
+    gradHalo.addColorStop(0.7, 'rgba(2, 132, 199, 0.12)');
+    gradHalo.addColorStop(1, 'transparent');
+
+    ctx.fillStyle = gradHalo;
     ctx.beginPath();
-    ctx.arc(cx, cy, haloMax, 0, Math.PI * 2);
+    ctx.arc(cx, cy, rHaloMax, 0, Math.PI * 2);
     ctx.fill();
 
-    // 2. Anillo ionizado perimetral en el contorno del logo
-    ctx.strokeStyle = (frameTick % 6 < 3) ? 'rgba(0, 229, 255, 0.7)' : 'rgba(255, 208, 0, 0.7)';
-    ctx.lineWidth = 1.6;
-    ctx.shadowColor = '#00E5FF';
-    ctx.shadowBlur = 10;
+    // 3. Corona principal de engranaje (Sun Gear)
+    const rSunGear = R_logo + 16;
+    dibujarEngranaje(
+      cx, cy,
+      rSunGear,
+      18,
+      anguloGiro,
+      14,
+      '#f8af3c',
+      'rgba(10, 31, 62, 0.25)',
+      2
+    );
+
+    // Círculo de paso primitivo punteado
+    ctx.strokeStyle = 'rgba(248, 175, 60, 0.55)';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([3, 4]);
     ctx.beginPath();
-    ctx.arc(cx, cy, R_logo + 2, 0, Math.PI * 2);
+    ctx.arc(cx, cy, rSunGear, 0, Math.PI * 2);
     ctx.stroke();
-    ctx.shadowBlur = 0;
+    ctx.setLineDash([]);
 
-    const todosLosRayos = [];
+    // 4. Anillo exterior de escala angular / nonio de precisión
+    const rNonio = rSunGear + 24;
+    ctx.strokeStyle = 'rgba(254, 255, 253, 0.28)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.arc(cx, cy, rNonio, 0, Math.PI * 2);
+    ctx.stroke();
 
-    // 3. Rayos de plasma en halo que irradian en 360 grados
-    const numRayosHalo = 7 + (pulsoImpacto > 0 ? 5 : 0);
-    for (let r = 0; r < numRayosHalo; r++) {
-      const baseAngle = (r / numRayosHalo) * Math.PI * 2 + (frameTick * 0.015);
-      const jitterAngle = baseAngle + (Math.random() - 0.5) * 0.35;
-      const x0 = cx + Math.cos(jitterAngle) * (R_logo + 2);
-      const y0 = cy + Math.sin(jitterAngle) * (R_logo + 2);
+    // Marcas de escala y vectores de torque en 360°
+    const marcas = 36;
+    for (let m = 0; m < marcas; m++) {
+      const a = (m / marcas) * Math.PI * 2 + (anguloGiro * 0.4);
+      const esMayor = m % 6 === 0;
+      const len = esMayor ? 8 : 4;
+      const x0 = cx + Math.cos(a) * rNonio;
+      const y0 = cy + Math.sin(a) * rNonio;
+      const x1 = cx + Math.cos(a) * (rNonio + len);
+      const y1 = cy + Math.sin(a) * (rNonio + len);
 
-      const lenRay = 22 + Math.random() * 32 + (pulsoImpacto > 0 ? 25 : 0);
-      const x1 = cx + Math.cos(jitterAngle) * (R_logo + lenRay);
-      const y1 = cy + Math.sin(jitterAngle) * (R_logo + lenRay);
-
-      const colorHalo = (r % 2 === 0) ? 'rgba(0, 229, 255, 0.65)' : 'rgba(255, 208, 0, 0.6)';
-      const colorCuerpo = (r % 2 === 0) ? '#00E5FF' : '#FFD000';
-
-      todosLosRayos.push({
-        ramas: generarRayo(x0, y0, x1, y1, 5, 14, 0.25),
-        colorHalo,
-        colorCuerpo,
-        colorCore: '#FFFFFF'
-      });
+      ctx.strokeStyle = esMayor ? '#f8af3c' : 'rgba(254, 255, 253, 0.4)';
+      ctx.lineWidth = esMayor ? 1.6 : 0.9;
+      ctx.beginPath();
+      ctx.moveTo(x0, y0);
+      ctx.lineTo(x1, y1);
+      ctx.stroke();
     }
 
-    // 4. Rayo concentrado hacia el cursor / dedo del usuario
-    const distMouse = Math.hypot(mouseX - cx, mouseY - cy);
-    const cursorCerca = mouseActivo && distMouse > (R_logo + 5) && distMouse < (W * 0.68);
+    // 5. Engranajes planetarios satélites (3 satélites a 120°)
+    const numSatelites = 3;
+    const rOrbita = rSunGear + 20;
+    const rPlaneta = 14;
+    for (let s = 0; s < numSatelites; s++) {
+      const aOrbita = (s / numSatelites) * Math.PI * 2 + (anguloGiro * 0.6);
+      const px = cx + Math.cos(aOrbita) * rOrbita;
+      const py = cy + Math.sin(aOrbita) * rOrbita;
 
-    if (cursorCerca) {
-      // Origen del rayo: en el punto del contorno del logo más cercano al dedo/cursor
-      const anguloCursor = Math.atan2(mouseY - cy, mouseX - cx);
-      const origenX = cx + Math.cos(anguloCursor) * (R_logo + 2);
-      const origenY = cy + Math.sin(anguloCursor) * (R_logo + 2);
+      dibujarEngranaje(
+        px, py,
+        rPlaneta,
+        8,
+        -anguloGiro * 1.8,
+        6,
+        'rgba(248, 175, 60, 0.85)',
+        'rgba(10, 31, 62, 0.5)',
+        1.4
+      );
 
-      const pasosRay = Math.max(6, Math.min(22, Math.floor(distMouse / 14)));
-      const rugRay = Math.min(34, distMouse * 0.18);
+      // Eje pivote del satélite
+      ctx.fillStyle = '#fefffd';
+      ctx.beginPath();
+      ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+      ctx.fill();
+    }
 
-      // Rayo principal de alta tensión hacia el dedo
-      todosLosRayos.push({
-        ramas: generarRayo(origenX, origenY, mouseX, mouseY, pasosRay, rugRay, 0.5),
-        colorHalo: 'rgba(0, 229, 255, 0.85)',
-        colorCuerpo: '#00E5FF',
-        colorCore: '#FFFFFF'
-      });
+    // 6. Interacción cinemática con el cursor / dedo
+    if (cerca && distMouse > R_logo) {
+      const aCursor = Math.atan2(mouseY - cy, mouseX - cx);
+      const origX = cx + Math.cos(aCursor) * rSunGear;
+      const origY = cy + Math.sin(aCursor) * rSunGear;
 
-      // Rayo armónico secundario en amarillo volt
-      if (Math.random() > 0.3) {
-        const anguloDesfase = anguloCursor + (Math.random() - 0.5) * 0.2;
-        const subOx = cx + Math.cos(anguloDesfase) * (R_logo + 2);
-        const subOy = cy + Math.sin(anguloDesfase) * (R_logo + 2);
-        todosLosRayos.push({
-          ramas: generarRayo(subOx, subOy, mouseX, mouseY, Math.max(4, pasosRay - 2), rugRay * 0.8, 0.3),
-          colorHalo: 'rgba(255, 208, 0, 0.75)',
-          colorCuerpo: '#FFD000',
-          colorCore: '#FFFFFF'
-        });
+      // Brazo de acople / biela cinemática
+      const gradBrazo = ctx.createLinearGradient(origX, origY, mouseX, mouseY);
+      gradBrazo.addColorStop(0, '#f8af3c');
+      gradBrazo.addColorStop(1, '#fefffd');
+
+      ctx.strokeStyle = gradBrazo;
+      ctx.lineWidth = 2.4;
+      ctx.beginPath();
+      ctx.moveTo(origX, origY);
+      ctx.lineTo(mouseX, mouseY);
+      ctx.stroke();
+
+      // Puntos de articulación
+      ctx.fillStyle = '#f8af3c';
+      ctx.beginPath();
+      ctx.arc(origX, origY, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = '#fefffd';
+      ctx.shadowColor = '#f8af3c';
+      ctx.shadowBlur = 12;
+      ctx.beginPath();
+      ctx.arc(mouseX, mouseY, 4.5, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.shadowBlur = 0;
+
+      // Generar chispas cinemáticas en el cursor y origen
+      if (Math.random() < 0.45 || pulsoImpacto > 0) {
+        agregarChispas(mouseX, mouseY, 2, '#f8af3c');
+        agregarChispas(origX, origY, 1, '#fefffd');
+      }
+    }
+
+    // 7. Actualizar y dibujar partículas/chispas
+    for (let i = particulas.length - 1; i >= 0; i--) {
+      const p = particulas[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      p.vida -= 0.035;
+
+      if (p.vida <= 0) {
+        particulas.splice(i, 1);
+        continue;
       }
 
-      // Chispa terminal en tu dedo / cursor
-      ctx.fillStyle = '#FFFFFF';
-      ctx.shadowColor = '#00E5FF';
-      ctx.shadowBlur = 18;
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.vida;
       ctx.beginPath();
-      ctx.arc(mouseX, mouseY, 4 + Math.random() * 2.5, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, p.tam * p.vida, 0, Math.PI * 2);
       ctx.fill();
-      ctx.shadowBlur = 0;
-
-      // Chispa en el punto de emisión del logo
-      ctx.fillStyle = '#FFFFFF';
-      ctx.shadowColor = '#FFD000';
-      ctx.shadowBlur = 14;
-      ctx.beginPath();
-      ctx.arc(origenX, origenY, 3 + Math.random() * 2, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.shadowBlur = 0;
     }
-
-    // 5. Dibujar todos los rayos (Pase 1: Halo de plasma, Pase 2: Trazador cromático, Pase 3: Core blanco)
-    todosLosRayos.forEach(({ ramas, colorHalo, colorCuerpo, colorCore }) => {
-      ramas.forEach(({ puntos }) => {
-        if (puntos.length < 2) return;
-
-        // Pase 1: Halo de plasma
-        ctx.strokeStyle = colorHalo;
-        ctx.lineWidth = 5.2;
-        ctx.lineCap = 'round';
-        ctx.lineJoin = 'round';
-        ctx.beginPath();
-        ctx.moveTo(puntos[0].x, puntos[0].y);
-        for (let p = 1; p < puntos.length; p++) ctx.lineTo(puntos[p].x, puntos[p].y);
-        ctx.stroke();
-
-        // Pase 2: Trazador iónico cromático
-        ctx.strokeStyle = colorCuerpo;
-        ctx.lineWidth = 2.4;
-        ctx.stroke();
-
-        // Pase 3: Filamento blanco de arco
-        ctx.strokeStyle = colorCore;
-        ctx.lineWidth = 1.1;
-        ctx.stroke();
-      });
-    });
+    ctx.globalAlpha = 1;
 
     requestAnimationFrame(render);
   }

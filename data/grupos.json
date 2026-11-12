@@ -1,55 +1,89 @@
 [
   {
-    "id": "ampere",
-    "nombre": "Grupo Ampère",
-    "sigla": "Ampère",
-    "subtitulo": "Grupo Estudiantil Oficial · Ingeniería Eléctrica · UNAL Medellín",
-    "tipo": "Grupo Estudiantil de Ingeniería Eléctrica",
-    "logo": "img/grupo-ampere.svg",
-    "color": "#FFBB02",
-    "colorAcento": "#27AFC9",
-    "descripcion": "El Grupo Ampère es un esfuerzo institucional, complementario al currículo formal, que se dedica a promover y facilitar el desarrollo y consolidación de competencias y valores de los estudiantes de Ingeniería por medio de la autogestión, liderazgo y participación en proyectos y actividades extracurriculares de ingeniería.",
+    "id": "hydrometra",
+    "nombre": "Hydrómetra UNAL",
+    "sigla": "Hydrómetra",
+    "subtitulo": "Semillero de Movilidad Sostenible y Eficiencia Energética · UNAL Medellín",
+    "tipo": "Semillero de Investigación & Competencia Internacional",
+    "logo": "img/grupo-hydrometra.svg",
+    "color": "#f8af3c",
+    "colorAcento": "#0a1f3e",
+    "descripcion": "Semillero insignia de la Facultad de Minas fundado en 2014, enfocado en el diseño, simulación y construcción de prototipos náuticos y terrestres de máxima eficiencia energética. Campeones mundiales del HydroContest en Francia con catamaranes solares y vehículos eléctricos de tracción sustentable.",
     "liderazgo": [
       {
-        "nombre": "Efraín Antonio Pérez Rojas",
-        "estamento": "Docente",
-        "rol": "Coordinador Docente",
-        "correo": "eaperez@unal.edu.co"
-      },
-      {
-        "nombre": "Bryan Alejandro Cely Gomez",
-        "estamento": "Estudiante",
-        "rol": "Líder Estudiantil",
-        "correo": "ampere_med@unal.edu.co"
+        "nombre": "Equipo Interdisciplinario Hydrómetra",
+        "estamento": "Estudiantes & Docentes",
+        "rol": "Investigación, Diseño Mecánico & Telemetría",
+        "correo": "hydrometra_med@unal.edu.co"
       }
     ],
     "redes": [
       {
         "plataforma": "Instagram",
-        "usuario": "@ampere_unalmed",
-        "enlace": "https://www.instagram.com/ampere_unalmed/",
+        "usuario": "@hydrometra",
+        "enlace": "https://www.instagram.com/hydrometra/",
         "icono": "ig"
-      },
-      {
-        "plataforma": "Facebook",
-        "usuario": "Grupo Ampère UNAL",
-        "enlace": "https://es-la.facebook.com/grupoampere/",
-        "icono": "fb"
-      },
-      {
-        "plataforma": "YouTube",
-        "usuario": "Ampère UNALMED",
-        "enlace": "https://www.youtube.com/channel/UCxQqKLjdtk5UE_4UJTaTDpQ/?sub_confirmation=1",
-        "icono": "yt"
-      },
-      {
-        "plataforma": "Web Oficial",
-        "usuario": "Facultad de Minas",
-        "enlace": "https://old-minas.medellin.unal.edu.co/gruposdeinvestigacion/ampere/",
-        "icono": "web"
       }
     ],
-    "enlace": "https://www.instagram.com/ampere_unalmed/",
-    "usuarioIg": "@ampere_unalmed"
+    "enlace": "https://www.instagram.com/hydrometra/",
+    "usuarioIg": "@hydrometra"
+  },
+  {
+    "id": "asme",
+    "nombre": "ASME UN Medellín",
+    "sigla": "ASME",
+    "subtitulo": "American Society of Mechanical Engineers · Sección Estudiantil Facultad de Minas",
+    "tipo": "Capítulo Estudiantil Internacional · Ingeniería Mecánica",
+    "logo": "img/grupo-asme.svg",
+    "color": "#0a1f3e",
+    "colorAcento": "#f8af3c",
+    "descripcion": "Sección estudiantil oficial adscrita al programa de Ingeniería Mecánica y a la red global de ASME. Impulsa la excelencia técnica, normatividad y códigos de ingeniería mecánica, conferencias con la industria, visitas técnicas, mentorías y el programa social de divulgación 'Ingeniería para la Vida'.",
+    "liderazgo": [
+      {
+        "nombre": "Junta Directiva ASME UN Medellín",
+        "estamento": "Estudiantes",
+        "rol": "Liderazgo & Desarrollo Profesional",
+        "correo": "asme_med@unal.edu.co"
+      }
+    ],
+    "redes": [
+      {
+        "plataforma": "Instagram",
+        "usuario": "@asmeun_med",
+        "enlace": "https://www.instagram.com/asmeun_med/",
+        "icono": "ig"
+      }
+    ],
+    "enlace": "https://www.instagram.com/asmeun_med/",
+    "usuarioIg": "@asmeun_med"
+  },
+  {
+    "id": "untoylab",
+    "nombre": "UN ToyLab",
+    "sigla": "UN ToyLab",
+    "subtitulo": "Laboratorio & Semillero de Ingeniería Lúdica, Dinámica y Prototipado",
+    "tipo": "Semillero de Diseño Mecánico & Divulgación Científica",
+    "logo": "img/grupo-untoylab.svg",
+    "color": "#f8af3c",
+    "colorAcento": "#0a1f3e",
+    "descripcion": "Semillero estudiantil que fusiona la ciencia de la ingeniería mecánica, la cinemática y la dinámica con el diseño de juguetes tecnológicos, prototipos aerodeslizadores y dispositivos mecánicos interactivos, utilizándolos como vehículos de innovación temprana y divulgación científica en comunidades y escuelas.",
+    "liderazgo": [
+      {
+        "nombre": "Equipo de Innovación UN ToyLab",
+        "estamento": "Estudiantes",
+        "rol": "Prototipado, Mecánica Aplicada & Divulgación",
+        "correo": "untoylab_med@unal.edu.co"
+      }
+    ],
+    "redes": [
+      {
+        "plataforma": "Instagram",
+        "usuario": "@untoylab",
+        "enlace": "https://www.instagram.com/untoylab?xtok=OW5pb3pmdjR0dmU2",
+        "icono": "ig"
+      }
+    ],
+    "enlace": "https://www.instagram.com/untoylab?xtok=OW5pb3pmdjR0dmU2",
+    "usuarioIg": "@untoylab"
   }
 ]

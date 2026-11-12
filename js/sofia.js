@@ -1,10 +1,9 @@
 /* ==============================================================================
-   PORTAL WEB OFICIAL · INGENIERÍA ELÉCTRICA · UNAL SEDE MEDELLÍN
+   PORTAL WEB OFICIAL · INGENIERÍA MECÁNICA · UNAL SEDE MEDELLÍN
    Arquitectura de software, maquetación y desarrollo integral por:
    Santiago Escobar Arias · Representante Estudiantil de Ingeniería de Sistemas e Informática
-   Canales Oficiales e Información de Ingeniería Eléctrica:
-   Luis Fernando Carrillo Méndez · Representante Estudiantil
-   Kevin David Aristizabal Giraldo · Colaborador de Carrera
+   Delegados de la Representación de Ingeniería Mecánica:
+   Sebastian Leonel Ruiz · Santiago Espinosa López
    Facultad de Minas — Universidad Nacional de Colombia, Sede Medellín
    ============================================================================== */
 
@@ -12,22 +11,22 @@
   'use strict';
 
   // ==========================================================================
-  // 1. CONFIGURACIÓN Y CONSTANTES OFICIALES DE INGENIERÍA ELÉCTRICA
+  // 1. CONFIGURACIÓN Y CONSTANTES OFICIALES DE INGENIERÍA MECÁNICA
   // ==========================================================================
 
   const SOFIA_CFG = {
     nombre: 'sofIA',
-    programa: 'Ingeniería Eléctrica',
+    programa: 'Ingeniería Mecánica',
     facultad: 'Facultad de Minas',
     sede: 'Sede Medellín',
     campus: 'Campus Robledo',
-    creditosTotales: 170,
+    creditosTotales: 180,
     duracionSemestres: 10,
-    planAcuerdo: 'Acuerdo del Consejo Académico · Plan Vigente 3535',
-    codigoSIA: '3535',
-    codigoSNIES: '120',
+    planAcuerdo: 'Acuerdo del Consejo Académico · Plan Vigente 3538',
+    codigoSIA: '3538',
+    codigoSNIES: '122',
     lema: 'Trabajo y Rectitud',
-    añoCreacion: '1967 (Más de 5 décadas formando líderes en potencia y energía)',
+    añoCreacion: '1967 (Cerca de 6 décadas formando líderes en diseño, termofluidos y manufactura)',
 
     // Creador y Desarrollador Web
     creadorNombre: 'Santiago Escobar Arias',
@@ -38,59 +37,69 @@
     creadorInstagram: 'https://www.instagram.com/s_escobar__/',
     creadorInstagramUsuario: '@s_escobar__',
 
-    // Representación Estudiantil Oficial de Ingeniería Eléctrica
-    repreNombre: 'Luis Fernando Carrillo Méndez',
-    repreCargo: 'Representante Estudiantil de Ingeniería Eléctrica',
-    repreWhatsApp: 'https://wa.me/573118467650',
-    repreTelefono: '(+57) 311 846 7650',
-    repreCorreo: 'Lcarrillom@unal.edu.co',
-    repreInstagramPersonal: 'https://www.instagram.com/carrilo_3003/',
-    repreInstagramUsuario: '@carrilo_3003',
+    // Representación Estudiantil Oficial y Delegados
+    repreEstado: 'Actualmente no se cuenta con representante estudiantil oficial electo.',
+    delegado1Nombre: 'Sebastian Leonel Ruiz',
+    delegado1Cargo: 'Delegado de la Representación · Ingeniería Mecánica',
+    delegado1WhatsApp: 'https://wa.me/573194408265',
+    delegado1Telefono: '(+57) 319 440 8265',
+    delegado1Correo: 'sleonel@unal.edu.co',
+    delegado1Instagram: 'https://www.instagram.com/ler.sebas?mdxt=NXRkajJwc3hjYzk5',
+    delegado1InstagramUsuario: '@ler.sebas',
 
-    colaboradorNombre: 'Kevin David Aristizabal Giraldo',
-    colaboradorCargo: 'Colaborador de Carrera · Ingeniería Eléctrica',
-    colaboradorWhatsApp: 'https://wa.me/573114174322',
-    colaboradorTelefono: '(+57) 311 417 4322',
-    colaboradorCorreo: 'Karistizabalg@unal.edu.co',
-    colaboradorTikTok: 'https://www.tiktok.com/@swamp9951?_r=1&_t=ZS-9BFHHyyIFHy',
+    delegado2Nombre: 'Santiago Espinosa López',
+    delegado2Cargo: 'Delegado de la Representación · Ingeniería Mecánica',
+    delegado2WhatsApp: 'https://wa.me/573102567299',
+    delegado2Telefono: '(+57) 310 256 7299',
+    delegado2Correo: 'sespinosal@unal.edu.co',
 
-    repreInstagramOficial: 'https://www.instagram.com/ingelectrica_med',
-    usuarioInstagramOficial: '@ingelectrica_med',
-    grupoOficialWhatsApp: 'https://chat.whatsapp.com/KLyM40QAcm9Gbp0Lu8xwYI?s=cl&p=i&mlu=4&ilr=4&iam=2',
+    // Canales Oficiales del Programa
+    canalWhatsAppOficial: 'https://whatsapp.com/channel/0029VbECGFGAe5VwEJ95hh1E',
+    linkOficialPrograma: 'https://old-minas.medellin.unal.edu.co/formacion/pregrado/ingenieriamecanica',
+    driveRecursos: 'https://drive.google.com/drive/folders/1MDopcD_bGUXzR4HQGhAO4YvQEBN9okQR?usp=drive_link',
 
-    // Recursos Oficiales y Trámites
-    driveRecursos: 'https://drive.google.com/drive/u/4/folders/1N2g1Db6bL1YUdycsTLm0p7Zhqoiruc4s',
+    // Trámites y Asesoría en Facultad de Minas
     tramitesMinasUrl: 'https://minas.medellin.unal.edu.co/estudiantes/gestion-de-asuntos-estudiantiles/gae-solicitudes-estudiantiles',
     asesoriaMinasCorreo: 'asesorestu_med@unal.edu.co',
     asesoriaMinasTelefono: '(+57 604) 430 9653',
     asesoriaMinasUbicacion: 'Campus Robledo, Bloque M4, Medellín',
   };
 
-  // Avatar SVG holográfico de sofIA con estética eléctrica / arco / circuitos
+  // Avatar SVG cinemático de sofIA con estética de engranaje, turbina y colores oficiales (#0a1f3e y #f8af3c)
   const SOFIA_SVG_AVATAR = `
     <svg viewBox="0 0 44 44" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <radialGradient id="sofiaGradGlowE" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFBB02" stop-opacity="0.9" />
-          <stop offset="50%" stop-color="#E58E00" stop-opacity="0.5" />
-          <stop offset="100%" stop-color="#1A1514" stop-opacity="0" />
+        <radialGradient id="sofiaGradGlowMec" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#f8af3c" stop-opacity="0.9" />
+          <stop offset="50%" stop-color="#0a1f3e" stop-opacity="0.4" />
+          <stop offset="100%" stop-color="#0a1f3e" stop-opacity="0" />
         </radialGradient>
-        <linearGradient id="sofiaRayoE" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#40C7E0" />
-          <stop offset="50%" stop-color="#FFBB02" />
-          <stop offset="100%" stop-color="#E58E00" />
+        <linearGradient id="sofiaGradEngranaje" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#f8af3c" />
+          <stop offset="100%" stop-color="#d97706" />
         </linearGradient>
       </defs>
-      <!-- Resplandor exterior -->
-      <circle cx="22" cy="22" r="20" fill="url(#sofiaGradGlowE)" />
-      <!-- Círculo nodal de circuito -->
-      <circle cx="22" cy="22" r="14" stroke="#27AFC9" stroke-width="1.6" stroke-dasharray="2 3" opacity="0.8" />
-      <!-- Rayo eléctrico dinámico -->
-      <path d="M23 9L15 23H22L19 35L29 19H22L25 9H23Z" fill="url(#sofiaRayoE)" stroke="#FFBB02" stroke-width="1.2" stroke-linejoin="round"/>
-      <!-- Nodos de plasma -->
-      <circle cx="15" cy="23" r="1.6" fill="#40C7E0" />
-      <circle cx="29" cy="19" r="1.6" fill="#FFBB02" />
-      <circle cx="22" cy="22" r="1.8" fill="#FFFFFF" />
+      <!-- Resplandor exterior cinemático -->
+      <circle cx="22" cy="22" r="20" fill="url(#sofiaGradGlowMec)" />
+      <!-- Corona circular del engranaje en azul medianoche -->
+      <circle cx="22" cy="22" r="14.5" fill="#0a1f3e" stroke="#f8af3c" stroke-width="1.6" />
+      <!-- Dientes del engranaje maestro -->
+      <g stroke="#f8af3c" stroke-width="2.2" stroke-linecap="round">
+        <line x1="22" y1="4.5" x2="22" y2="7.5" />
+        <line x1="22" y1="36.5" x2="22" y2="39.5" />
+        <line x1="4.5" y1="22" x2="7.5" y2="22" />
+        <line x1="36.5" y1="22" x2="39.5" y2="22" />
+        <line x1="9.6" y1="9.6" x2="11.8" y2="11.8" />
+        <line x1="32.2" y1="32.2" x2="34.4" y2="34.4" />
+        <line x1="9.6" y1="34.4" x2="11.8" y2="32.2" />
+        <line x1="32.2" y1="11.8" x2="34.4" y2="9.6" />
+      </g>
+      <!-- Centro en bombilla / turbina tri-pala amarilla -->
+      <circle cx="22" cy="22" r="8.5" fill="url(#sofiaGradEngranaje)" stroke="#fefffd" stroke-width="1.2" />
+      <!-- Álabes de la turbina central -->
+      <path d="M22 22 L22 14.5 M22 22 L15.5 25.8 M22 22 L28.5 25.8" stroke="#0a1f3e" stroke-width="1.8" stroke-linecap="round" />
+      <!-- Eje central -->
+      <circle cx="22" cy="22" r="2.2" fill="#fefffd" stroke="#0a1f3e" stroke-width="1" />
     </svg>
   `;
 
@@ -153,7 +162,7 @@
 
       construirIndices();
     } catch (e) {
-      console.warn('sofIA: Advertencia al cargar datos de Ingeniería Eléctrica:', e);
+      console.warn('sofIA: Advertencia al cargar datos de Ingeniería Mecánica:', e);
     }
   }
 
@@ -182,7 +191,7 @@
       }
     });
 
-    // Alias y jerga estudiantil de Ingeniería Eléctrica UNAL Medellín
+    // Alias y jerga estudiantil de Ingeniería Mecánica UNAL Medellín
     const ALIAS_MATERIAS = [
       [['calculo diferencial', 'diferencial', 'calculo 1', 'calc 1'], 'Cálculo Diferencial'],
       [['calculo integral', 'integral', 'calculo 2', 'calc 2'], 'Cálculo Integral'],
@@ -191,47 +200,44 @@
       [['geometria vectorial y analitica', 'geometria vectorial', 'vectorial', 'geo vec'], 'Geometría Vectorial y Analítica'],
       [['ecuaciones diferenciales', 'diferenciales', 'ed'], 'Ecuaciones Diferenciales'],
       [['metodos numericos', 'numericos'], 'Métodos Numéricos'],
-      [['estadistica 1', 'estadistica i', 'probabilidad y estadistica', 'probabilidad'], 'Estadística I'],
-      [['matematicas especiales', 'mate especiales', 'especiales'], 'Matemáticas Especiales'],
-      [['matematicas discretas', 'discretas'], 'Matemáticas Discretas'],
+      [['probabilidad y estadistica', 'estadistica', 'probabilidad'], 'Probabilidad y Estadística'],
 
-      [['fisica mecanica', 'mecanica', 'fisica 1'], 'Física Mecánica'],
+      [['fisica mecanica', 'mecanica newtoniana', 'fisica 1'], 'Física Mecánica'],
       [['fisica de electricidad y magnetismo', 'electricidad y magnetismo', 'fisica 2', 'electromagnetismo', 'electri'], 'Física de Electricidad y Magnetismo'],
-      [['fisica de oscilaciones ondas y optica', 'oscilaciones ondas y optica', 'ondas y optica', 'optica', 'fisica 3'], 'Física de Oscilaciones, Ondas y Óptica'],
-      [['quimica general', 'quimica'], 'Química General'],
+      [['fundamentos de quimica', 'quimica general', 'quimica'], 'Fundamentos de Química'],
       [['fundamentos de programacion', 'programacion', 'python', 'intro a la programacion'], 'Fundamentos de Programación'],
-      [['termodinamica general', 'termodinamica', 'termo'], 'Termodinámica General'],
 
-      [['introduccion a la ingenieria electrica', 'intro a electrica', 'intro electrica', 'iie'], 'Introducción a la Ingeniería Eléctrica'],
-      [['analisis de circuitos electricos 1', 'circuitos 1', 'circuito 1', 'circuitos i'], 'Análisis de Circuitos Eléctricos I'],
-      [['analisis de circuitos electricos 2', 'circuitos 2', 'circuito 2', 'circuitos ii'], 'Análisis de Circuitos Eléctricos II'],
-      [['laboratorio de circuitos', 'lab circuitos', 'lab de circuitos'], 'Laboratorio de Circuitos'],
+      [['introduccion a la ingenieria mecanica', 'intro a mecanica', 'intro mecanica', 'iim'], 'Introducción a la Ingeniería Mecánica'],
+      [['dibujo basico', 'dibujo 1'], 'Dibujo Básico'],
+      [['dibujo de maquinas', 'dibujo mecanico', 'cad', 'solidworks', 'inventor'], 'Dibujo de Máquinas'],
 
-      [['senales y sistemas lineales', 'senales y sistemas', 'senales'], 'Señales y Sistemas Lineales'],
-      [['teoria electromagnetica', 'electromagnetica', 'campos'], 'Teoría Electromagnética'],
-      [['electronica analoga 1', 'analoga 1', 'electronica 1', 'analoga i'], 'Electrónica Análoga I'],
-      [['electronica analoga 2', 'analoga 2', 'electronica 2', 'analoga ii'], 'Electrónica Análoga II'],
-      [['electronica digital', 'digital', 'electronica digital 1'], 'Electrónica Digital'],
+      [['estatica', 'estatica aplicada'], 'Estática'],
+      [['dinamica', 'cinematica y dinamica'], 'Dinámica'],
+      [['mecanica de solidos', 'solidos', 'resistencia de materiales', 'resistencia'], 'Mecánica de Sólidos'],
+      [['mecanica estructural', 'estructural', 'estructuras'], 'Mecánica Estructural'],
+      [['mecanismos', 'analisis de mecanismos'], 'Mecanismos'],
+      [['diseno mecanico', 'diseno de maquinas', 'diseno 1'], 'Diseño Mecánico'],
+      [['elementos de maquinas', 'elementos', 'edm'], 'Elementos de Máquinas'],
+      [['taller de diseno mecanico', 'taller de diseno'], 'Taller de Diseño Mecánico'],
 
-      [['modelado de lineas de transmision', 'lineas de transmision', 'lineas'], 'Modelado de Líneas de Transmisión'],
-      [['control entrada salida', 'control 1', 'sistemas de control'], 'Control: Entrada - Salida'],
-      [['maquinas electricas 1', 'maquinas 1', 'transformadores'], 'Máquinas Eléctricas I'],
-      [['maquinas electricas 2', 'maquinas 2', 'generadores'], 'Máquinas Eléctricas II'],
-      [['laboratorio de maquinas electricas', 'lab de maquinas', 'lab maquinas'], 'Laboratorio de Máquinas Eléctricas'],
+      [['termodinamica', 'termodinamica general', 'termo'], 'Termodinámica'],
+      [['mecanica de fluidos', 'fluidos'], 'Mecánica de Fluidos'],
+      [['transferencia de calor', 'transfe', 'calor'], 'Transferencia de Calor'],
+      [['maquinas termicas e hidraulicas', 'maquinas termicas', 'turbomaquinas', 'turbinas y bombas'], 'Máquinas Térmicas e Hidráulicas'],
 
-      [['instalaciones electricas industriales y residenciales', 'instalaciones electricas', 'instalaciones', 'retie'], 'Instalaciones Eléctricas Industriales y Residenciales'],
-      [['telecomunicaciones', 'telecom'], 'Telecomunicaciones'],
-      [['sistemas de generacion de energia electrica', 'sistemas de generacion', 'generacion de energia', 'generacion'], 'Sistemas de Generación de Energía Eléctrica'],
-      [['analisis de sistemas de potencia', 'sistemas de potencia', 'potencia 1', 'flujo de carga'], 'Análisis de Sistemas de Potencia'],
-      [['automatizacion de sistemas electricos', 'automatizacion', 'scada'], 'Automatización de Sistemas Eléctricos'],
+      [['materiales de ingenieria', 'ciencia de materiales', 'materiales'], 'Materiales de Ingeniería'],
+      [['procesos de manufactura', 'manufactura 1', 'manufactura'], 'Procesos de Manufactura'],
+      [['metodos de conformado', 'conformado', 'manufactura 2', 'deformacion plastica'], 'Métodos de Conformado'],
 
-      [['diseno de redes de transmision y distribucion', 'redes de distribucion', 'distribucion', 'redes de transmision'], 'Diseño de Redes de Transmisión y Distribución'],
-      [['sistemas de protecciones electricas', 'protecciones electricas', 'protecciones', 'reles'], 'Sistemas de Protecciones Eléctricas'],
-      [['alta tension', 'laboratorio de alta tension'], 'Alta Tensión'],
+      [['circuitos y maquinas electricas', 'circuitos electricos', 'maquinas electricas', 'cme'], 'Circuitos y Máquinas Eléctricas'],
+      [['automatizacion y control', 'control', 'sistemas de control'], 'Automatización y Control'],
+      [['mecatronica', 'diseno mecatronico'], 'Mecatrónica'],
+      [['dinamica de sistemas y control', 'dinamica de sistemas', 'control avanzado'], 'Dinámica de Sistemas y Control'],
+      [['gestion de activos', 'mantenimiento', 'confiabilidad', 'gestion del mantenimiento'], 'Gestión de Activos'],
 
       [['fundamentos de proyectos en ingenieria', 'fundamentos de proyectos', 'fpi'], 'Fundamentos de Proyectos en Ingeniería'],
-      [['estructuracion y evaluacion de proyectos de ingenieria', 'formulacion y evaluacion de proyectos', 'evaluacion de proyectos'], 'Estructuración y Evaluación de Proyectos de Ingeniería'],
-      [['proyecto integrado de ingenieria', 'proyecto integrado', 'pii'], 'Proyecto Integrado de Ingeniería'],
+      [['formulacion y evaluacion de proyectos', 'formulacion de proyectos', 'fep'], 'Formulación y Evaluación de Proyectos'],
+      [['proyecto de ingenieria mecanica', 'proyecto integrado', 'proyecto de diseno', 'pim'], 'Proyecto de Ingeniería Mecánica'],
 
       [['trabajo de grado', 'tesis', 'grado', 'tg'], 'Trabajo de Grado'],
       [['practica de extension', 'pasantia', 'practica profesional', 'practica empresarial'], 'Práctica de Extensión'],
@@ -276,8 +282,8 @@
 
     if (!preguntaNorm) {
       return {
-        texto: 'Por favor escribe tu consulta sobre el programa de Ingeniería Eléctrica, la malla curricular, materias, prerrequisitos, el Grupo Ampère, capítulos IEEE, trámites ante la Facultad de Minas o recursos de estudio.',
-        chips: ['¿Qué es la malla curricular?', '¿Qué tipo de materias hay?', '¿Por qué estudiar Eléctrica?'],
+        texto: 'Por favor escribe tu consulta sobre el programa de Ingeniería Mecánica, la malla curricular (180 créditos), materias, prerrequisitos, grupos estudiantiles (Hydrómetra, ASME, UN ToyLab), trámites ante la Facultad de Minas o recursos de estudio en Drive.',
+        chips: ['¿Qué es la malla curricular?', '¿Qué tipo de materias hay?', '¿Por qué estudiar Mecánica?'],
       };
     }
 
@@ -289,32 +295,32 @@
         texto: `¡Hola! Soy **${SOFIA_CFG.nombre}**, tu asistente inteligente del programa de **${SOFIA_CFG.programa}** de la **${SOFIA_CFG.facultad}** (UNAL Medellín).
 
 Pregúntame con total confianza sobre:
-- **Malla Curricular y prerrequisitos** de las 83 asignaturas del plan.
-- **Tipos de materias** y componentes (Fundamentación, Disciplinar, Libre Elección).
-- **¿Por qué estudiar Ingeniería Eléctrica?** y su rol en la transición energética.
+- **Malla Curricular y prerrequisitos** de las asignaturas del plan (180 créditos).
+- **Tipos de materias** y componentes (Fundamentación 45 cr, Disciplinar 99 cr, Libre Elección 36 cr).
+- **¿Por qué estudiar Ingeniería Mecánica?** (CAD/CAE, Termofluidos, Manufactura CNC, Mecatrónica, Gestión de Activos).
 - **¿Quién es el creador de la web?** (Santiago Escobar Arias).
-- **¿Quién es el representante estudiantil?** (Luis Fernando Carrillo Méndez y Kevin Aristizabal).
-- **Grupos y Capítulos Técnicos:** Grupo Ampère y capítulos IEEE (PES, IAS, RAS).
+- **Representación y Delegados de Carrera:** (Sebastian Leonel Ruiz y Santiago Espinosa López).
+- **Grupos Estudiantiles:** Hydrómetra UNAL, ASME UN Medellín y UN ToyLab.
 - **¿Cómo hacer cambio de carrera / traslados?** ante la Facultad de Minas.
-- **Alianzas estratégicas** (ICETEX, Sapiencia, Metro Cívica, software técnico: DigSILENT, MATLAB, ETAP).
-- **Banco de Recursos / Drive oficial** con parciales, laboratorios y talleres.
+- **Alianzas estratégicas** (SolidWorks, ANSYS, AutoCAD, ICETEX, Sapiencia, Metro Cívica).
+- **Banco de Recursos / Drive oficial** con talleres, parciales y guías de laboratorio.
 
 ¿Sobre qué tema te gustaría consultar hoy?`,
         chips: [
           '¿Qué es la malla curricular?',
           '¿Qué tipo de materias hay?',
-          '¿Por qué estudiar Eléctrica?',
-          '¿Quién es el creador de la web?',
-          'Contacto del Representante',
-          'Grupo Ampère e IEEE',
+          '¿Por qué estudiar Mecánica?',
+          'Contacto de los Delegados',
+          'Grupos Estudiantiles',
+          'Banco de Recursos en Drive',
         ],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 2. ¿Quién es el Creador de la Web? (Requisito clave)
+    // 2. ¿Quién es el Creador de la Web?
     // ------------------------------------------------------------------------
-    if (/creador|quien creo|quien hizo|quien desarrollo|desarrollador|autor|santiago escobar|santiago|quien construyo esta web|quien programo/.test(preguntaNorm)) {
+    if (/creador|quien creo|quien hizo|quien desarrollo|desarrollador|autor|santiago escobar|quien construyo esta web|quien programo/.test(preguntaNorm)) {
       return {
         texto: `### Creador y Arquitecto de Software de la Plataforma 💻
 
@@ -329,35 +335,38 @@ Este portal web oficial, sus simuladores de avance, la malla curricular interact
   - Instagram: [@s_escobar__](${SOFIA_CFG.creadorInstagram})
 
 El proyecto cuenta con propiedad intelectual y derechos de autor conforme a la Ley 23 de 1982 y normativas de software de la UNAL Medellín.`,
-        chips: ['Contacto del Representante', '¿Qué es la malla curricular?', 'Banco de Recursos en Drive'],
+        chips: ['Contacto de los Delegados', '¿Qué es la malla curricular?', 'Banco de Recursos en Drive'],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 3. ¿Quién es el Representante Estudiantil?
+    // 3. Representación Estudiantil y Delegados de Ingeniería Mecánica
     // ------------------------------------------------------------------------
-    if (/repre|representante|representacion|luis fernando|carrillo|carrilo|kevin|aristizabal|contacto repre|quien es el representante/.test(preguntaNorm)) {
+    if (/repre|representante|representacion|delegado|delegados|sebastian leonel|ruiz|santiago espinosa|contacto repre|quien es el representante/.test(preguntaNorm)) {
       return {
-        texto: `### Representación Estudiantil · Ingeniería Eléctrica ⚡
+        texto: `### Representación Estudiantil · Ingeniería Mecánica ⚙️
 
-Nuestra carrera cuenta con representación activa ante el Comité Asesor y la Facultad de Minas:
+ℹ️ **Estado de la Representación:**
+**${SOFIA_CFG.repreEstado}**
 
-👤 **${SOFIA_CFG.repreNombre}** (Representante Estudiantil)
-- **WhatsApp de contacto:** [Chat con Luis Fernando](${SOFIA_CFG.repreWhatsApp}) \`${SOFIA_CFG.repreTelefono}\`
-- **Correo institucional:** \`${SOFIA_CFG.repreCorreo}\`
-- **Instagram personal:** [Instagram @carrilo_3003](${SOFIA_CFG.repreInstagramPersonal})
+Para garantizar el acompañamiento y canalizar las inquietudes de los estudiantes ante el Comité Asesor y la Facultad de Minas, el programa cuenta con dos **Delegados de la Representación**:
 
-👤 **${SOFIA_CFG.colaboradorNombre}** (Colaborador de Carrera)
-- **WhatsApp de contacto:** [Chat con Kevin Aristizabal](${SOFIA_CFG.colaboradorWhatsApp}) \`${SOFIA_CFG.colaboradorTelefono}\`
-- **Correo institucional:** \`${SOFIA_CFG.colaboradorCorreo}\`
-- **TikTok:** [TikTok @swamp9951](${SOFIA_CFG.colaboradorTikTok})
+👤 **${SOFIA_CFG.delegado1Nombre}** (Delegado de la Representación)
+- **WhatsApp:** [Chat con Sebastian Leonel](${SOFIA_CFG.delegado1WhatsApp}) \`${SOFIA_CFG.delegado1Telefono}\`
+- **Correo institucional:** \`${SOFIA_CFG.delegado1Correo}\`
+- **Instagram:** [@ler.sebas](${SOFIA_CFG.delegado1Instagram})
 
-📲 **Canales oficiales de la carrera:**
-- **Instagram oficial:** [${SOFIA_CFG.usuarioInstagramOficial}](${SOFIA_CFG.repreInstagramOficial})
-- **Comunidad oficial en WhatsApp:** [Grupo Oficial de WhatsApp](${SOFIA_CFG.grupoOficialWhatsApp})
+👤 **${SOFIA_CFG.delegado2Nombre}** (Delegado de la Representación)
+- **WhatsApp:** [Chat con Santiago Espinosa](${SOFIA_CFG.delegado2WhatsApp}) \`${SOFIA_CFG.delegado2Telefono}\`
+- **Correo institucional:** \`${SOFIA_CFG.delegado2Correo}\`
 
-Escríbeles para dudas curriculares, solicitudes ante el Área Curricular IEIC o acompañamiento académico.`,
-        chips: ['Grupo Oficial de WhatsApp', 'Banco de Recursos en Drive', 'Portal Solicitudes SGS'],
+📲 **Canales oficiales del programa:**
+- **Canal Oficial de WhatsApp:** [Canal de Ingeniería Mecánica](${SOFIA_CFG.canalWhatsAppOficial})
+- **Página oficial de la carrera:** [old-minas.medellin.unal.edu.co](${SOFIA_CFG.linkOficialPrograma})
+- **Carpeta Oficial de Recursos en Drive:** [Recursos en Google Drive](${SOFIA_CFG.driveRecursos})
+
+Escríbeles para dudas curriculares, solicitudes ante el Área Curricular de Ingeniería Mecánica e Ingeniería de Materiales (IMIM) o acompañamiento académico.`,
+        chips: ['Canal Oficial de WhatsApp', 'Banco de Recursos en Drive', 'Malla Curricular'],
       };
     }
 
@@ -366,13 +375,13 @@ Escríbeles para dudas curriculares, solicitudes ante el Área Curricular IEIC o
     // ------------------------------------------------------------------------
     if (/que es la malla|malla curricular|explicar la malla|como funciona la malla|ver la malla|entender la malla/.test(preguntaNorm)) {
       return {
-        texto: `La **Malla Curricular de Ingeniería Eléctrica** (${SOFIA_CFG.planAcuerdo}, Código SIA **${SOFIA_CFG.codigoSIA}**, SNIES **${SOFIA_CFG.codigoSNIES}**) es la ruta formativa de **10 semestres** y **170 créditos**:
+        texto: `La **Malla Curricular de Ingeniería Mecánica** (${SOFIA_CFG.planAcuerdo}, Código SIA **${SOFIA_CFG.codigoSIA}**, SNIES **${SOFIA_CFG.codigoSNIES}**) es la ruta formativa de **10 semestres** y **180 créditos**:
 
-- **Semáforo interactivo:** Al hacer clic en cualquier asignatura en la [Malla Curricular](malla.html), se iluminan en **cian plasma** sus prerrequisitos y en **ámbar eléctrico** las materias que te desbloquea a futuro.
-- **Colores por componente:** Ámbar de potencia (\`#E58E00\`) para formación disciplinar, cian de plasma (\`#27AFC9\`) para fundamentación y volt dorado (\`#FFBB02\`) para libre elección.
-- **Sombreado de materias aprobadas:** Al cargar tu historia académica en la sección [Mi Avance](avance.html), puedes activar el interruptor *"Sombreado de materias aprobadas"* para ver tu avance reflejado en tiempo real sobre la malla.
-- **Banco de materiales:** En la pestaña de Malla tienes acceso directo a la [Carpeta Oficial de Recursos en Google Drive](${SOFIA_CFG.driveRecursos}) con parciales, laboratorios de máquinas y simulaciones.`,
-        chips: ['¿Qué tipo de materias hay?', 'Prerrequisitos de Sistemas de Potencia', 'Ver Banco en Drive'],
+- **Semáforo interactivo:** Al hacer clic en cualquier asignatura en la [Malla Curricular](malla.html), se iluminan en **azul disciplinar** sus prerrequisitos y en **amarillo/dorado** las materias que te desbloquea a futuro.
+- **Colores por componente:** Azul disciplinar (\`#0284c7\`) para formación disciplinar, violeta (\`#7c3aed\`) para fundamentación y dorado (\`#f8af3c\`) para libre elección.
+- **Sombreado de materias aprobadas:** Al cargar tu historia académica en la sección [Mi Avance](avance.html), puedes activar el interruptor *"Sombrear aprobadas"* para ver tu avance reflejado en tiempo real sobre la malla.
+- **Banco de materiales:** En la pestaña de Malla tienes acceso directo a la [Carpeta Oficial de Recursos en Google Drive](${SOFIA_CFG.driveRecursos}) con parciales, laboratorios y talleres.`,
+        chips: ['¿Qué tipo de materias hay?', 'Prerrequisitos de Diseño Mecánico', 'Ver Banco en Drive'],
       };
     }
 
@@ -381,56 +390,58 @@ Escríbeles para dudas curriculares, solicitudes ante el Área Curricular IEIC o
     // ------------------------------------------------------------------------
     if (/que tipo de materias|tipos de materias|componentes|agrupaciones|tipologia|creditos del plan|cuantos creditos son|como se dividen las materias/.test(preguntaNorm)) {
       return {
-        texto: `En el plan curricular de **Ingeniería Eléctrica** existen **3 grandes componentes de formación** que totalizan **170 créditos**:
+        texto: `En el plan curricular de **Ingeniería Mecánica** existen **3 grandes componentes de formación** que totalizan **180 créditos**:
 
-1. **Componente de Fundamentación (49 créditos):**
-   - **Matemáticas, Probabilidad y Estadística (31 cr):** Cálculo Diferencial, Integral, Varias Variables, Álgebra Lineal, Geometría Vectorial, Ecuaciones Diferenciales, Matemáticas Especiales y Estadística I.
+1. **Componente de Fundamentación (45 créditos = 25%):**
+   - **Matemáticas, Probabilidad y Estadística (27 cr):** Cálculo Diferencial, Integral, Varias Variables, Álgebra Lineal, Geometría Vectorial, Ecuaciones Diferenciales, Métodos Numéricos y Probabilidad y Estadística.
    - **Física (8 cr):** Física Mecánica y Física de Electricidad y Magnetismo.
-   - **Herramientas Informáticas y Métodos Numéricos (7 cr):** Fundamentos de Programación (Python) y Métodos Numéricos.
-   - **Optativas de Fundamentación (3 cr):** Química, Termodinámica o Física de Ondas.
+   - **Química (3 cr):** Fundamentos de Química.
+   - **Informática (3 cr):** Fundamentos de Programación (Python).
+   - **Optativa de Fundamentación (4 cr):** Biología general, geología o asignaturas científicas afines.
 
-2. **Componente de Formación Disciplinar o Profesional (87 créditos):**
-   - **Básicas Disciplinares (5 cr):** Introducción a la Ingeniería Eléctrica y Termodinámica General.
-   - **Sistemas de Energía Eléctrica (36 cr):** Circuitos I y II, Laboratorio de Circuitos, Teoría Electromagnética, Líneas de Transmisión, Máquinas Eléctricas I y II, Sistemas de Potencia, Instalaciones Eléctricas, Sistemas de Generación y Protecciones Eléctricas.
-   - **Electrónica y Comunicaciones (12 cr):** Electrónica Análoga I y II, Electrónica Digital y Telecomunicaciones.
-   - **Automatización, Control e Instrumentación (9 cr):** Señales y Sistemas Lineales, Control: Entrada-Salida y Automatización de Sistemas Eléctricos.
-   - **Proyectos en Ingeniería (10 cr):** FPI, Estructuración de Proyectos y Proyecto Integrado.
-   - **Optativas Disciplinares (9 cr):** Alta Tensión, Redes de Transmisión/Distribución, Mercado Eléctrico, Energías Renovables.
-   - **Trabajo de Grado (6 cr):** Pasantía empresarial, investigación o materias de posgrado.
+2. **Componente de Formación Disciplinar o Profesional (99 créditos = 55%):**
+   - **Introducción a la disciplina (2 cr):** Introducción a la Ingeniería Mecánica.
+   - **Mecatrónica (13 cr):** Circuitos y Máquinas Eléctricas, Automatización y Control, Mecatrónica.
+   - **Máquinas y Termofluidos (14 cr):** Termodinámica, Mecánica de Fluidos, Transferencia de Calor, Máquinas Térmicas e Hidráulicas.
+   - **Mecánica y Diseño (30 cr):** Dibujo Básico, Dibujo de Máquinas, Estática, Dinámica, Mecánica de Sólidos, Mecánica Estructural, Mecanismos, Diseño Mecánico, Elementos de Máquinas, Taller de Diseño Mecánico.
+   - **Materiales y Manufactura (15 cr):** Materiales de Ingeniería, Procesos de Manufactura, Métodos de Conformado.
+   - **Proyectos (10 cr):** Fundamentos de Proyectos en Ingeniería (FPI), Formulación y Evaluación de Proyectos (FEP), Proyecto de Ingeniería Mecánica (PIM).
+   - **Optativas Disciplinares (9 cr):** CAD/CAM/CAE, Elementos Finitos (FEA), Soldadura, Energías Renovables, Tribología, etc.
+   - **Trabajo de Grado (6 cr):** Pasantía de extensión empresarial, proyecto de investigación o materias de posgrado.
 
-3. **Componente de Libre Elección (34 créditos = 20% del plan):**
-   - Para complementar tu perfil en Smart Grids, electromovilidad, machine learning o finanzas de energía.`,
-        chips: ['¿Por qué estudiar Eléctrica?', 'Prerrequisitos de Máquinas Eléctricas', 'Ir a Mi Avance'],
+3. **Componente de Libre Elección (36 créditos = 20% del plan):**
+   - Para complementar tu perfil en robótica, ciencia de datos, inteligencia artificial, finanzas o cualquier área de la universidad.`,
+        chips: ['¿Por qué estudiar Mecánica?', 'Prerrequisitos de Termodinámica', 'Ir a Mi Avance'],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 6. ¿Por qué estudiar Ingeniería Eléctrica? / Fortalezas únicas
+    // 6. ¿Por qué estudiar Ingeniería Mecánica? / Fortalezas únicas
     // ------------------------------------------------------------------------
-    if (/por que estudiar electrica|por que estudiar ingenieria electrica|fortalezas|ventajas|campos de accion|perfil del egresado|a que se dedica|por que electrica/.test(preguntaNorm)) {
+    if (/por que estudiar mecanica|por que estudiar ingenieria mecanica|fortalezas|ventajas|campos de accion|perfil del egresado|a que se dedica|por que mecanica/.test(preguntaNorm)) {
       return {
-        texto: `**¿Por qué estudiar Ingeniería Eléctrica en la UNAL Medellín?**
+        texto: `**¿Por qué estudiar Ingeniería Mecánica en la UNAL Medellín?**
 
-Nuestro programa en la **Facultad de Minas** cuenta con más de **55 años de excelencia** (fundado en 1967) y Acreditación de Alta Calidad del MEN:
+Nuestro programa en la **Facultad de Minas** cuenta con cerca de **60 años de tradición y liderazgo** (fundado en 1967) y Acreditación de Alta Calidad del MEN:
 
-1. **Eje Central de la Transición Energética:**
-   Los ingenieros electricistas son los artífices de la descarbonización mundial: integran parques solares fotovoltaicos, parques eólicos, sistemas de almacenamiento con baterías (**BESS**) e hidrógeno verde a la matriz eléctrica.
+1. **Diseño Mecánico y Simulación Avanzada (CAD/CAE):**
+   Dominio de modelado paramétrico 3D, cinemática y análisis por elementos finitos (**FEA/CAE**) para predecir esfuerzos, fatiga y vibraciones en componentes críticos.
 
-2. **Sistemas Eléctricos de Potencia & Smart Grids:**
-   Lideran la operación, estabilidad, despacho económico y confiabilidad del Sistema Interconectado Nacional (SIN) y el diseño de redes eléctricas inteligentes y microrredes.
+2. **Termofluidos, Ciencias Térmicas y Energía:**
+   Modelación de ciclos de potencia, turbinas de gas/vapor, calderas, bombas hidráulicas y sistemas de climatización y refrigeración industrial, claves en la transición energética.
 
-3. **Subestaciones Digitales y Alta Tensión:**
-   Manejo de equipos de patio, transformadores de potencia, relés numéricos de protección bajo norma **IEC 61850** y coordinación de aislamiento.
+3. **Manufactura Avanzada y Materiales (CAM/CNC):**
+   Formación directa en los talleres de Campus Robledo en centros de mecanizado CNC de 5 ejes, torneado, conformado plástico, fundición y procesos de soldadura especializada.
 
-4. **Laboratorios de Potencia y Máquinas en Campus Robledo:**
-   Infraestructura especializada en máquinas rotativas, transformadores, electrónica de potencia y laboratorios de alta tensión.
+4. **Mecatrónica, Automatización y Robótica:**
+   Integración de actuadores electrohidráulicos y electroneumáticos, sensórica industrial, servomotores y lazo de control cerrado PID para robótica industrial.
 
-5. **Software Técnico Especializado:**
-   Dominio de herramientas de simulación de nivel industrial: **DigSILENT PowerFactory, MATLAB/Simulink, ETAP, AutoCAD Electrical y ATP/EMTP**.
+5. **Confiabilidad y Gestión de Activos:**
+   Optimización de la disponibilidad de maquinaria, mantenimiento predictivo basado en vibraciones y tribología industrial.
 
-6. **Ecosistema de Grupos y Capítulos:**
-   El histórico **Grupo Ampère** y los capítulos profesionales **IEEE** (PES - Power & Energy Society, IAS - Industry Applications Society, RAS - Robotics).`,
-        chips: ['Grupo Ampère e IEEE', 'Ver Malla Curricular', '¿Quién es el creador de la web?'],
+6. **Ecosistema de Grupos y Competencia:**
+   Presencia en **Hydrómetra UNAL** (campeones mundiales de catamaranes solares), **ASME UN Medellín** (red global de ingenieros mecánicos) y **UN ToyLab** (innovación y diseño dinámico).`,
+        chips: ['Grupos Estudiantiles', 'Ver Malla Curricular', 'Contacto de los Delegados'],
       };
     }
 
@@ -439,14 +450,14 @@ Nuestro programa en la **Facultad de Minas** cuenta con más de **55 años de ex
     // ------------------------------------------------------------------------
     if (/cambio de carrera|traslado|cambiarme de carrera|cambiarme de programa|traslado de programa|pasarme a|homologacion/.test(preguntaNorm)) {
       return {
-        texto: `**¿Cómo solicitar Traslado de Programa Curricular (Cambio de carrera)?**
+        texto: `**¿Cómo solicitar Traslado de Programa Curricular (Cambio de carrera a Mecánica)?**
 
-El trámite oficial de traslado se realiza ante el Consejo de la **Facultad de Minas** conforme al Estatuto Estudiantil (**Acuerdo 008 de 2008** del CSU):
+El trámite oficial se realiza ante el Consejo de la **Facultad de Minas** conforme al Estatuto Estudiantil (**Acuerdo 008 de 2008** del CSU):
 
 1. **Requisitos Normativos Básicos:**
    - Tener la condición de estudiante activo en la UNAL.
-   - Contar con un **P.A.P.A. competitivo** (cada comité de carrera evalúa el corte según cupos disponibles).
-   - Tener suficiente **cupo de créditos disponibles** en el SIA para culminar el nuevo plan de estudios.
+   - Contar con un **P.A.P.A. competitivo** (el Comité Asesor de Ingeniería Mecánica evalúa el corte según cupos disponibles).
+   - Tener suficiente **cupo de créditos disponibles** en el SIA para culminar el plan de 180 créditos.
    - Haber cursado al menos el número de créditos exigido en tu programa de origen.
 
 2. **Procedimiento de Radicación:**
@@ -474,8 +485,8 @@ El trámite oficial de traslado se realiza ante el Consejo de la **Facultad de M
    - **Metro de Medellín (Cívica Estudiante):** Tarifa preferencial con descuento superior al 50% en Metro, Tranvía, Metrocable y Metroplús.
    - **Auxilios de Bienestar UNAL:** Apoyo alimentario, bono de transporte y residencias estudiantiles (gestión en Bloque M4 Robledo / Bloque 11A Volador).
 
-2. **Convenios de Software Técnico y Simulación Eléctrica:**
-   - **Software de Potencia en Salas de Minas:** Licencias institucionales de **DigSILENT PowerFactory, MATLAB / Simulink, ETAP, AutoCAD Electrical y ATP/EMTP**.
+2. **Convenios de Software Técnico y Simulación:**
+   - **Software CAD/CAE en Salas de Minas:** Licencias institucionales de **SolidWorks, Autodesk Inventor, AutoCAD Mechanical, ANSYS (FEA/CFD), MATLAB/Simulink y Mastercam**.
    - **GitHub Student Developer Pack:** Cuentas Pro, GitHub Copilot gratuito y créditos en la nube (AWS, Azure, DigitalOcean).
    - **Autodesk Educación:** Licencias completas gratuitas con correo institucional \`@unal.edu.co\`.
    - **Microsoft 365 & JetBrains:** Herramientas completas para estudiantes.
@@ -490,19 +501,19 @@ Consulta todos los convenios detallados en la sección [Convenios](convenios.htm
     // ------------------------------------------------------------------------
     if (/drive|unidad compartida|banco de recursos|material de estudio|parciales pasados|parciales viejos|talleres|apuntes|libros/.test(preguntaNorm)) {
       return {
-        texto: `### Carpeta Oficial de Recursos · Ingeniería Eléctrica 📚
+        texto: `### Carpeta Oficial de Recursos · Ingeniería Mecánica 📚
 
-Los talleres de circuitos, parciales anteriores de potencia, guías de laboratorio de máquinas eléctricas y libros guía están centralizados en el **Google Drive Oficial**:
+Los talleres de estática y dinámica, parciales anteriores de termofluidos y diseño, guías de laboratorio de manufactura y libros guía están centralizados en el **Google Drive Oficial**:
 
-🔗 **[Abrir Carpeta de Recursos de Eléctrica en Google Drive](${SOFIA_CFG.driveRecursos})**
+🔗 **[Abrir Carpeta de Recursos de Mecánica en Google Drive](${SOFIA_CFG.driveRecursos})**
 
 💡 *Recomendación:* Inicia sesión con tu correo institucional (\`@unal.edu.co\`) para tener acceso inmediato a todas las carpetas organizadas por semestre y materia.`,
-        chips: ['Ver Malla Curricular', 'Grupo Oficial de WhatsApp', 'Prerrequisitos de materias'],
+        chips: ['Ver Malla Curricular', 'Canal Oficial de WhatsApp', 'Prerrequisitos de materias'],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 10. Prerrequisitos de materias específicas (Evaluación de alta prioridad)
+    // 10. Prerrequisitos de materias específicas
     // ------------------------------------------------------------------------
     const esConsultaPrereq = /prerrequisit|prerequisit|requisito|que pide|que necesito para ver|para matricular|correquisit|abrir|correr/.test(preguntaNorm);
     const materiaEncontrada = buscarAsignaturaPorTexto(preguntaNorm);
@@ -554,63 +565,67 @@ Puedes consultar esta asignatura de forma interactiva en la [Malla Curricular](m
     }
 
     // ------------------------------------------------------------------------
-    // 11. Grupos Estudiantiles y Capítulos Técnicos (Grupo Ampère e IEEE)
+    // 11. Grupos Estudiantiles (Hydrómetra, ASME, UN ToyLab)
     // ------------------------------------------------------------------------
-    if (/ampere|grupo ampere|\bieee\b|\bpes\b|\bias\b|\bras\b|capitulo estudiante|capitulo tecnico|grupos estudiantiles|semillero|semilleros/.test(preguntaNorm)) {
+    if (/hydrometra|asme|untoylab|toy lab|semillero|semilleros|grupos estudiantiles|capitulo estudiante|capitulo tecnico/.test(preguntaNorm)) {
       return {
-        texto: `### Grupos Estudiantiles y Capítulos Técnicos en Eléctrica ⚡
+        texto: `### Grupos Estudiantiles y Capítulos Técnicos · Ingeniería Mecánica 🛠️
 
-En Ingeniería Eléctrica la vida estudiantil y extracurricular es pionera en la Facultad de Minas:
+En Ingeniería Mecánica la vida extracurricular e investigativa cuenta con tres grupos destacados:
 
-1. **Grupo Ampère (Grupo Estudiantil Oficial):**
-   - Espacio institucional fundado para impulsar el liderazgo, proyectos extracurriculares de ingeniería, visitas técnicas y eventos académicos.
-   - **Coordinador Docente:** Efraín Antonio Pérez Rojas (\`eaperez@unal.edu.co\`).
-   - **Líder Estudiantil:** Bryan Alejandro Cely Gómez (\`ampere_med@unal.edu.co\`).
-   - **Redes:**
-     - Instagram: [@ampere_unalmed](https://www.instagram.com/ampere_unalmed/)
-     - Facebook: [Grupo Ampère UNAL](https://es-la.facebook.com/grupoampere/)
-     - YouTube: [Canal Ampère UNALMED](https://www.youtube.com/channel/UCxQqKLjdtk5UE_4UJTaTDpQ/)
+1. **Hydrómetra UNAL (Semillero de Movilidad Sostenible y Eficiencia Energética):**
+   - Fundado en 2014, diseña y construye prototipos náuticos y terrestres de máxima eficiencia energética.
+   - **Logro insignia:** Campeones mundiales del concurso internacional *HydroContest* en Francia.
+   - **Instagram:** [@hydrometra](https://www.instagram.com/hydrometra/)
 
-2. **Rama Estudiantil IEEE UNAL Medellín:**
-   - **IEEE PES (Power & Energy Society):** Redes de potencia, energías renovables y mercados eléctricos.
-   - **IEEE IAS (Industry Applications Society):** Accionamientos industriales y sistemas eléctricos comerciales.
-   - **IEEE RAS (Robotics and Automation Society):** Robótica, sensores y automatización.`,
-        chips: ['Instagram Grupo Ampère', 'Grupo Oficial de WhatsApp', 'Banco de Recursos en Drive'],
+2. **ASME UN Medellín (American Society of Mechanical Engineers):**
+   - Sección estudiantil de la red global más prestigiosa de ingeniería mecánica.
+   - Enfocado en conferencias técnicas con la industria, visitas empresariales, códigos de diseño y el programa social *Ingeniería para la Vida*.
+   - **Instagram:** [@asmeun_med](https://www.instagram.com/asmeun_med/)
+
+3. **UN ToyLab (Laboratorio y Semillero de Ingeniería Lúdica):**
+   - Fusiona la cinemática, la dinámica de mecanismos y el diseño con el prototipado de juguetes tecnológicos y aerodeslizadores para divulgación científica.
+   - **Instagram:** [@untoylab](https://www.instagram.com/untoylab?xtok=OW5pb3pmdjR0dmU2)
+
+¡Síguelos en sus redes para unirte en sus convocatorias de nuevos integrantes!`,
+        chips: ['Instagram Hydrómetra', 'Instagram ASME', 'Instagram UN ToyLab'],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 12. Grupos de WhatsApp de estudio / de materias
+    // 12. Canal de WhatsApp y Redes del Programa
     // ------------------------------------------------------------------------
-    if (/grupo de whatsapp|grupos de whatsapp|wpp de materias|grupo de estudio|comunidad de wpp/.test(preguntaNorm)) {
+    if (/canal de whatsapp|grupo de whatsapp|wpp de materias|grupo de estudio|comunidad de wpp|whatsapp/.test(preguntaNorm)) {
       return {
-        texto: `### Grupos de WhatsApp y Redes de Estudio 💬
+        texto: `### Canales Oficiales de Comunicación en WhatsApp 💬
 
-- Contamos con el **[Grupo Oficial de WhatsApp de Ingeniería Eléctrica](${SOFIA_CFG.grupoOficialWhatsApp})**, donde se comparten alertas de matrículas, monitorías, ofertas laborales y eventos académicos.
-- Si administras el grupo de WhatsApp de alguna materia de Eléctrica y deseas que lo vinculemos en la [Malla Curricular](malla.html), escribe al representante o al creador del portal para sumarlo directamente a la ficha del curso.`,
-        chips: ['Grupo Oficial de WhatsApp', 'Contacto del Representante', 'Banco en Drive'],
+- **Canal Oficial del Programa:** Únete al [Canal Oficial de WhatsApp de Ingeniería Mecánica](${SOFIA_CFG.canalWhatsAppOficial}) para recibir información sobre convocatorias, monitorías, becas y eventos académicos.
+- **Contacto con los Delegados:**
+  - Sebastian Leonel Ruiz: [Chat de WhatsApp](${SOFIA_CFG.delegado1WhatsApp}) \`${SOFIA_CFG.delegado1Telefono}\`
+  - Santiago Espinosa López: [Chat de WhatsApp](${SOFIA_CFG.delegado2WhatsApp}) \`${SOFIA_CFG.delegado2Telefono}\``,
+        chips: ['Canal Oficial de WhatsApp', 'Contacto de los Delegados', 'Banco en Drive'],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 13. Materias de último semestre / Décimo semestre en Eléctrica
+    // 13. Materias de último semestre / Décimo semestre en Mecánica
     // ------------------------------------------------------------------------
     if (/ultimo semestre|ultimos semestres|decimo semestre|semestre 10|10 semestre|materias para graduarme|terminar la carrera/.test(preguntaNorm)) {
       return {
-        texto: `En el **10° y último semestre** de Ingeniería Eléctrica el plan está diseñado para culminar tu formación profesional:
+        texto: `En el **10° y último semestre** de Ingeniería Mecánica el plan está diseñado para culminar tu formación profesional:
 
 1. **Trabajo de Grado (\`3007424\` - 6 créditos):**
    Modalidades oficiales en la Facultad de Minas:
-   - **Práctica de Extensión:** Pasantía empresarial en empresas del sector energético (ISA, XM, EPM, Celsia, Enel, Siemens, ABB, Schneider Electric).
-   - **Proyecto de Investigación:** En laboratorios de máquinas, potencia, control o alta tensión en Campus Robledo.
-   - **Asignaturas de Posgrado:** Cursar materias de la Maestría en Ingeniería Eléctrica en la Facultad de Minas.
+   - **Práctica de Extensión:** Pasantía empresarial en industrias de manufactura, energía, automotriz, aeroespacial o consultoría técnica.
+   - **Proyecto de Investigación:** En laboratorios de manufactura CNC, termofluidos, metrología o materiales en Campus Robledo.
+   - **Asignaturas de Posgrado:** Cursar materias de la Maestría en Ingeniería Mecánica o Materiales en la Facultad de Minas.
 
 2. **Créditos Disciplinares y de Libre Elección:**
-   Completar los **34 créditos** de libre elección exigidos.
+   Completar los **36 créditos** de libre elección exigidos.
 
 3. **Requisitos de Grado:**
    - Cumplir la suficiencia en idioma extranjero (Inglés B1/B2 según tu cohorte).
-   - Tener aprobados los **170 créditos** del plan.
+   - Tener aprobados los **180 créditos** del plan de estudios.
 
 Monitorea tu progreso en tiempo real en [Mi Avance](avance.html).`,
         chips: ['Prerrequisitos de Trabajo de Grado', 'Ir a Mi Avance', 'Ver Malla Curricular'],
@@ -733,7 +748,7 @@ Consulta la tabla completa de fechas discriminada por semanas en la sección de 
   - *Grupos 2, 3 y 4:* Orden sucesivo de cita para inscripción de asignaturas.
 
 - **Bolsa de Créditos:**
-  Recibes un cupo inicial para tu plan (170 créditos en Ingeniería Eléctrica). Si mantienes un P.A.P.A. sobresaliente, puedes solicitar créditos adicionales a la Vicedecanatura Académica vía SGS.
+  Recibes un cupo inicial para tu plan (180 créditos exigidos + 90 créditos de bolsa adicional en Ingeniería Mecánica). Si mantienes un P.A.P.A. sobresaliente, puedes solicitar créditos adicionales a la Vicedecanatura Académica vía SGS.
 
 Calcula tu proyección en [Mi Avance](avance.html) o lee la guía completa en [Información General](info.html).`,
         chips: ['Ir a Mi Avance', '¿Cómo hacer cambio de carrera?', 'Ver Malla Curricular'],
@@ -749,25 +764,26 @@ Calcula tu proyección en [Mi Avance](avance.html) o lee la guía completa en [I
 
 Si eres beneficiario de apoyos socioeconómicos de Bienestar Universitario (Gestión Alimentaria, Residencias o Bonos de Transporte):
 - Debes cumplir entre **20 y 40 horas** por semestre de actividades solidarias en dependencias de la universidad.
-- En la Facultad de Minas puedes cumplirlas apoyando laboratorios de máquinas, circuitos, salas de cómputo, biblioteca de Robledo o eventos de la facultad.
+- En la Facultad de Minas puedes cumplirlas apoyando laboratorios de manufactura, fundición, salas de diseño CAD, biblioteca de Robledo o eventos académicos.
 - El registro y legalización se realiza en el sistema de Bienestar Universitario.`,
         chips: ['Auxilios de Bienestar', 'Información General', 'Contacto Asesoría Minas'],
       };
     }
 
     // ------------------------------------------------------------------------
-    // 19. Laboratorios y Alta Tensión en Eléctrica
+    // 19. Laboratorios de Ingeniería Mecánica
     // ------------------------------------------------------------------------
-    if (/laboratorio|laboratorios|alta tension|maquinas|sala de computo/.test(preguntaNorm)) {
+    if (/laboratorio|laboratorios|maquinas herramientas|cnc|fundicion|soldadura|ciencias termicas|metrologia/.test(preguntaNorm)) {
       return {
-        texto: `**Laboratorios e Infraestructura de Ingeniería Eléctrica:**
+        texto: `**Laboratorios e Infraestructura de Ingeniería Mecánica:**
 
-En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
-- **Laboratorio de Máquinas Eléctricas:** Bancos de transformadores, motores de inducción, generadores sincrónicos y dinamómetros.
-- **Laboratorio de Circuitos y Electrónica:** Osciloscopios digitales, fuentes reguladas y generadores de señales.
-- **Laboratorio de Alta Tensión:** Generadores de impulsos tipo rayo, ensayos de aislamiento dieléctrico y pruebas a descargadores de sobretensión.
-- **Salas de Cómputo de Minas:** Simulaciones en DigSILENT PowerFactory, MATLAB/Simulink y ETAP.`,
-        chips: ['Prerrequisitos de Máquinas Eléctricas I', 'Grupo Ampère e IEEE', 'Ver Malla Curricular'],
+En el **Campus Robledo**, el programa cuenta con espacios de manufactura e investigación de vanguardia:
+- **Laboratorio de Máquinas Herramientas & CNC (Bloque M8):** Tornos paralelos, fresadoras universales y centros de mecanizado por control numérico (CNC).
+- **Laboratorio de Fundición y Metalurgia:** Hornos de inducción y crisol para colada de aleaciones ferrosas y no ferrosas.
+- **Laboratorio de Soldadura y Ensayos Mecánicos:** Equipos SMAW, GMAW, GTAW, ensayos de tracción, dureza, impacto Charpy y microscopía óptica.
+- **Laboratorio de Ciencias Térmicas e Hidráulica:** Bancos de intercambio térmico, túnel de viento, turbinas Pelton/Francis y bombas centrífugas.
+- **Laboratorio de Metrología Dimensional:** Máquinas de medición por coordenadas (CMM), rugosímetros y comparadores ópticos.`,
+        chips: ['Prerrequisitos de Procesos de Manufactura', 'Grupos Estudiantiles', 'Ver Malla Curricular'],
       };
     }
 
@@ -775,22 +791,22 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
     // 20. Fallback Inteligente (Sugerencias Guiadas)
     // ------------------------------------------------------------------------
     return {
-      texto: `No encontré una coincidencia exacta para tu consulta, pero estoy lista para orientarte en cualquiera de estos temas clave de **Ingeniería Eléctrica**:
+      texto: `No encontré una coincidencia exacta para tu consulta, pero estoy lista para orientarte en cualquiera de estos temas clave de **Ingeniería Mecánica**:
 
-- Consulta sobre prerrequisitos de cualquier materia (ej. *Circuitos I y II*, *Sistemas de Potencia*, *Máquinas Eléctricas*, *Protecciones Eléctricas*).
-- Cómo solicitar cambio de carrera o convalidaciones ante la Facultad de Minas.
-- Quién es el creador de la plataforma o los representantes de carrera.
-- Actividades del **Grupo Ampère** y los capítulos profesionales de la **IEEE** (PES, IAS, RAS).
-- Acceso al Google Drive oficial con parciales y memorias de cálculo.
+- Consulta sobre prerrequisitos de cualquier materia (ej. *Estática*, *Dinámica*, *Mecánica de Sólidos*, *Diseño Mecánico*, *Termodinámica*, *Procesos de Manufactura*).
+- Cómo solicitar cambio de carrera o traslados ante la Facultad de Minas.
+- Quién es el creador de la plataforma o los delegados de la carrera.
+- Actividades de los grupos estudiantiles: **Hydrómetra UNAL**, **ASME UN Medellín** y **UN ToyLab**.
+- Acceso al Google Drive oficial con parciales, talleres y guías de laboratorio.
 
 ¿Qué te gustaría consultar?`,
       chips: [
         '¿Qué es la malla curricular?',
         '¿Qué tipo de materias hay?',
-        '¿Por qué estudiar Eléctrica?',
-        '¿Quién es el creador de la web?',
-        'Contacto del Representante',
-        'Grupo Ampère e IEEE',
+        '¿Por qué estudiar Mecánica?',
+        'Contacto de los Delegados',
+        'Grupos Estudiantiles',
+        'Banco de Recursos en Drive',
       ],
     };
   }
@@ -860,7 +876,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
     boton.className = 'sofia-boton';
     boton.id = 'sofia-btn-toggle';
     boton.type = 'button';
-    boton.setAttribute('aria-label', 'Abrir asistente virtual sofIA de Ingeniería Eléctrica');
+    boton.setAttribute('aria-label', 'Abrir asistente virtual sofIA de Ingeniería Mecánica');
     boton.setAttribute('aria-expanded', 'false');
     boton.innerHTML = `
       <span class="sofia-boton__halo" aria-hidden="true"></span>
@@ -887,7 +903,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
             </div>
             <span class="sofia-cabecera__estado">
               <span class="sofia-cabecera__punto" aria-hidden="true"></span>
-              En línea · Asistente de Eléctrica
+              En línea · Asistente de Mecánica
             </span>
           </div>
         </div>
@@ -922,7 +938,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
             type="text"
             class="sofia-input"
             id="sofia-input"
-            placeholder="Pregúntale a sofIA sobre la malla, materias, alianzas..."
+            placeholder="Pregúntale a sofIA sobre la malla, materias, grupos..."
             autocomplete="off"
             aria-label="Escribe tu consulta para sofIA"
           />
@@ -932,7 +948,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
             </svg>
           </button>
         </form>
-        <span class="sofia-subtexto">sofIA consulta la base oficial del portal de Ingeniería Eléctrica UNAL.</span>
+        <span class="sofia-subtexto">sofIA consulta la base oficial del portal de Ingeniería Mecánica UNAL.</span>
       </footer>
     `;
 
@@ -965,7 +981,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
     if (boton) boton.setAttribute('aria-expanded', 'true');
     if (globo) globo.style.display = 'none';
 
-    sessionStorage.setItem('electrica.sofia.globo_oculto', '1');
+    sessionStorage.setItem('mecanica.sofia.globo_oculto', '1');
 
     // Mensaje de bienvenida inicial si está vacío
     const contenedorMensajes = document.getElementById('sofia-mensajes');
@@ -977,10 +993,10 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
         [
           '¿Qué es la malla curricular?',
           '¿Qué tipo de materias hay?',
-          '¿Por qué estudiar Eléctrica?',
-          '¿Quién es el creador de la web?',
-          'Contacto del Representante',
-          'Grupo Ampère e IEEE',
+          '¿Por qué estudiar Mecánica?',
+          'Contacto de los Delegados',
+          'Grupos Estudiantiles',
+          'Banco de Recursos en Drive',
         ]
       );
     }
@@ -1037,10 +1053,10 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
       [
         '¿Qué es la malla curricular?',
         '¿Qué tipo de materias hay?',
-        '¿Por qué estudiar Eléctrica?',
-        '¿Quién es el creador de la web?',
-        'Contacto del Representante',
-        'Grupo Ampère e IEEE',
+        '¿Por qué estudiar Mecánica?',
+        'Contacto de los Delegados',
+        'Grupos Estudiantiles',
+        'Banco de Recursos en Drive',
       ]
     );
   }
@@ -1066,8 +1082,8 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
       .replace(/>/g, '&gt;');
 
     // Encabezados markdown
-    html = html.replace(/^### (.*$)/gim, '<h4 style="margin:6px 0 4px 0; color:#FFBB02; font-size:14px; font-weight:700;">$1</h4>');
-    html = html.replace(/^## (.*$)/gim, '<h3 style="margin:8px 0 4px 0; color:#FFBB02; font-size:15px; font-weight:700;">$1</h3>');
+    html = html.replace(/^### (.*$)/gim, '<h4 style="margin:6px 0 4px 0; color:#f8af3c; font-size:14px; font-weight:700;">$1</h4>');
+    html = html.replace(/^## (.*$)/gim, '<h3 style="margin:8px 0 4px 0; color:#f8af3c; font-size:15px; font-weight:700;">$1</h3>');
 
     // Negrita e itálica
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
@@ -1217,7 +1233,6 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
 
     mostrarIndicadorEscritura();
 
-    // Pequeño retardo orgánico simulando procesamiento inteligente
     setTimeout(() => {
       const respuesta = responderPregunta(texto);
       enviarRespuestaSofia(respuesta.texto, respuesta.chips, respuesta.enlaces);
@@ -1255,7 +1270,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
       globoCerrar.addEventListener('click', (e) => {
         e.stopPropagation();
         if (globo) globo.style.display = 'none';
-        sessionStorage.setItem('electrica.sofia.globo_oculto', '1');
+        sessionStorage.setItem('mecanica.sofia.globo_oculto', '1');
       });
     }
 
@@ -1276,7 +1291,7 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
     });
 
     // Ocultar globo si ya fue cerrado en la sesión
-    if (sessionStorage.getItem('electrica.sofia.globo_oculto') === '1' && globo) {
+    if (sessionStorage.getItem('mecanica.sofia.globo_oculto') === '1' && globo) {
       globo.style.display = 'none';
     }
   }
@@ -1297,7 +1312,6 @@ En el **Campus Robledo**, el programa cuenta con espacios de vanguardia:
 
   moduloSofia();
 
-  // Exposición controlada en window para integración con otros módulos
   window.sofIA = {
     abrir: abrirSofia,
     cerrar: cerrarSofia,

@@ -1,6 +1,7 @@
 /**
- * PLATAFORMA DIGITAL · INGENIERÍA DE PETRÓLEOS (UNAL MEDELLÍN)
+ * PLATAFORMA DIGITAL · INGENIERÍA MECÁNICA (UNAL MEDELLÍN)
  * Diseño y Estilos por: Santiago Escobar Arias · Representante de Sistemas
+ * Delegados de la Representación: Sebastian Leonel Ruiz y Santiago Espinosa López
  * © 2026 Santiago Escobar Arias. Todos los derechos reservados.
  * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
  */
@@ -21,11 +22,11 @@
 .malla-drive {
   max-width: 980px;
   margin: 0 auto 48px;
-  background: linear-gradient(135deg, #261F1E 0%, #1D1817 50%, #14100F 100%);
+  background: linear-gradient(135deg, #0a1f3e 0%, #0d274e 50%, #061325 100%);
   border-radius: 24px;
-  border: 1.5px solid var(--volt-amarillo);
-  border-left: 8px solid var(--volt-amarillo);
-  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.65), 0 0 24px rgba(255, 187, 2, 0.16);
+  border: 1.5px solid var(--amarillo-mecanica);
+  border-left: 8px solid var(--amarillo-mecanica);
+  box-shadow: 0 18px 40px -12px rgba(0, 0, 0, 0.65), 0 0 24px rgba(248, 175, 60, 0.22);
   padding: 26px 30px;
   position: relative;
   overflow: hidden;
@@ -38,7 +39,7 @@
   right: 0;
   width: 180px;
   height: 180px;
-  background: radial-gradient(circle at top right, rgba(255, 187, 2, 0.22), transparent 70%);
+  background: radial-gradient(circle at top right, rgba(248, 175, 60, 0.22), transparent 70%);
   pointer-events: none;
 }
 
@@ -86,8 +87,8 @@
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--dorado-ambar);
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.45);
+  background: rgba(248, 175, 60, 0.15);
+  border: 1px solid rgba(248, 175, 60, 0.45);
   padding: 4px 12px;
   border-radius: 999px;
   font-weight: 700;
@@ -119,29 +120,32 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
+  padding: 12px 26px;
   border-radius: 999px;
-  background: var(--dorado-ambar);
-  color: var(--negro-crudo) !important;
+  background: #f8af3c !important;
+  color: #0a1f3e !important;
+  border: 2px solid #f8af3c;
   font-family: var(--letra-universidad);
-  font-size: 13px;
-  letter-spacing: .08em;
+  font-size: 13.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
   text-transform: uppercase;
   text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 4px 18px rgba(212, 175, 55, .45);
+  box-shadow: 0 4px 18px rgba(248, 175, 60, .55);
   transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
 }
 
 .malla-drive__btn-principal:hover {
-  background: #f7e8a4;
+  background: #fefffd !important;
+  color: #0a1f3e !important;
+  border-color: #fefffd;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(212, 175, 55, .6);
+  box-shadow: 0 8px 26px rgba(248, 175, 60, .75);
 }
 
 .malla-drive__btn-principal svg {
   flex-shrink: 0;
-  color: var(--negro-crudo);
+  color: #0a1f3e !important;
 }
 
 .malla-drive__nota {
@@ -641,10 +645,10 @@ body.con-detalle { padding-bottom: 44vh; }
   font-weight: 500;
   color: var(--tinta-suave);
 }
-.pildora:hover { border-color: var(--azul-petroleo, #1E1918); color: var(--azul-petroleo, #1E1918); }
+.pildora:hover { border-color: #0a1f3e; color: #0a1f3e; }
 .pildora[aria-pressed="true"] {
   border-color: var(--dorado-ambar, #D4AF37) !important;
-  background: var(--azul-petroleo, #1E1918) !important;
+  background: #0a1f3e !important;
   color: #ffffff !important;
   font-weight: 700;
   box-shadow: 0 4px 12px rgba(30, 25, 24, 0.35);
@@ -660,20 +664,20 @@ body.con-detalle { padding-bottom: 44vh; }
   font-size: 15px;
   color: var(--tinta-suave);
 }
-.resumen strong { color: var(--azul-petroleo, #1E1918); }
+.resumen strong { color: #0a1f3e; }
 .resumen__oblig { color: #b4232c; }
 .resumen__optat { color: #00897b; }
-.filtro { display: inline-flex; border: 2px solid var(--azul-petroleo, #1E1918); border-radius: 999px; overflow: hidden; background: #fff; }
+.filtro { display: inline-flex; border: 2px solid #0a1f3e; border-radius: 999px; overflow: hidden; background: #fff; }
 .filtro button {
   padding: 5px 14px;
   border: 0;
   background: transparent;
   font-size: 13px;
   font-weight: 600;
-  color: var(--azul-petroleo, #1E1918);
+  color: #0a1f3e;
 }
 .filtro button[aria-pressed="true"] {
-  background: var(--azul-petroleo, #1E1918) !important;
+  background: #0a1f3e !important;
   color: #ffffff !important;
   font-weight: 700;
 }
@@ -844,8 +848,8 @@ body.con-detalle { padding-bottom: 44vh; }
   height: 42px;
   border-radius: 12px;
   background: var(--dorado-suave, #FBF4D8);
-  border: 1.5px solid rgba(212, 175, 55, 0.35);
-  color: var(--azul-petroleo, #1E1918);
+  border: 1.5px solid rgba(248, 175, 60, 0.35);
+  color: #0a1f3e;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -874,7 +878,7 @@ body.con-detalle { padding-bottom: 44vh; }
   font-size: 11px;
   letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--dorado-ambar, #B8860B);
+  color: #f8af3c;
   font-weight: 700;
 }
 
@@ -882,7 +886,7 @@ body.con-detalle { padding-bottom: 44vh; }
   font-family: var(--letra-titulo);
   font-size: 14px;
   font-weight: 700;
-  color: var(--azul-petroleo, #1E1918);
+  color: #0a1f3e;
 }
 
 .malla-sesion__resumen-texto {
@@ -909,7 +913,7 @@ body.con-detalle { padding-bottom: 44vh; }
   font-family: var(--letra-titulo);
   font-size: 12.5px;
   font-weight: 600;
-  color: var(--azul-petroleo, #1E1918);
+  color: #0a1f3e;
   cursor: pointer;
   transition: all .2s ease;
 }
@@ -954,7 +958,7 @@ body.con-detalle { padding-bottom: 44vh; }
   gap: 6px;
   padding: 8px 16px;
   border-radius: 999px;
-  background: var(--azul-petroleo, #1E1918);
+  background: #0a1f3e;
   color: #ffffff;
   font-family: var(--letra-titulo);
   font-size: 12.5px;
@@ -988,8 +992,8 @@ body.con-detalle { padding-bottom: 44vh; }
   width: 36px;
   height: 36px;
   border-radius: 10px;
-  background: rgba(212, 175, 55, 0.15);
-  color: var(--dorado-ambar, #B8860B);
+  background: rgba(248, 175, 60, 0.15);
+  color: #f8af3c;
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -1008,7 +1012,7 @@ body.con-detalle { padding-bottom: 44vh; }
 .malla-invitado__texto {
   margin: 0;
   font-size: 13px;
-  color: var(--azul-petroleo, #1E1918);
+  color: #0a1f3e;
   line-height: 1.45;
 }
 
@@ -1017,7 +1021,7 @@ body.con-detalle { padding-bottom: 44vh; }
   align-items: center;
   padding: 8px 18px;
   border-radius: 999px;
-  background: var(--azul-petroleo, #1E1918);
+  background: #0a1f3e;
   color: #fff;
   font-family: var(--letra-titulo);
   font-size: 12.5px;
@@ -1125,4 +1129,98 @@ body.con-detalle { padding-bottom: 44vh; }
     text-align: center;
     width: 100%;
   }
+}
+
+
+
+/* =========================================================
+   CABECERA Y TEXTO INICIAL DE LA MALLA CURRICULAR
+   ========================================================= */
+
+.seccion.malla .seccion-titulo {
+  background: #ffffff;
+  border: 1.5px solid rgba(10, 31, 62, 0.12);
+  border-top: 4px solid var(--amarillo-mecanica, #f8af3c);
+  border-radius: 22px;
+  padding: 34px 28px 28px;
+  box-shadow: 0 12px 32px -10px rgba(10, 31, 62, 0.08);
+  max-width: 880px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.seccion.malla .seccion-titulo__antetitulo {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--letra-universidad);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #0a1f3e;
+  background: rgba(248, 175, 60, 0.18);
+  border: 1px solid rgba(248, 175, 60, 0.5);
+  padding: 4px 14px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.seccion.malla .seccion-titulo h2 {
+  font-family: var(--letra-titulo);
+  font-size: clamp(28px, 4vw, 38px);
+  font-weight: 800;
+  color: #0a1f3e;
+  margin: 8px 0;
+  letter-spacing: -.02em;
+}
+
+.seccion.malla .seccion-titulo__intro {
+  font-size: 15px;
+  color: #475569;
+  max-width: 620px;
+  margin: 0 auto 14px;
+  line-height: 1.5;
+}
+
+.malla__aviso-sugerida {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px auto 0;
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1.5px solid rgba(248, 175, 60, 0.35);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  font-family: var(--letra-texto, sans-serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: #0a1f3e;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.malla__aviso-sugerida svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  color: #d97706;
+}
+
+.leyenda {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 14px 22px;
+  margin: 0 auto 36px;
+  max-width: 1080px;
+  background: #ffffff;
+  border-radius: 999px;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: 0 6px 18px rgba(10, 31, 62, 0.05);
 }

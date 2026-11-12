@@ -1,7 +1,7 @@
 /**
- * PLATAFORMA DIGITAL · INGENIERÍA ELÉCTRICA (UNAL MEDELLÍN)
+ * PLATAFORMA DIGITAL · INGENIERÍA MECÁNICA (UNAL MEDELLÍN)
  * Desarrollado por: Santiago Escobar Arias · Representante de Sistemas
- * Colaborador: Kevin David Aristizabal Giraldo · Karistizabalg@unal.edu.co
+ * Delegados de la Representación: Sebastian Leonel Ruiz y Santiago Espinosa López
  * © 2026 Santiago Escobar Arias. Todos los derechos reservados.
  * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
  */
@@ -787,10 +787,12 @@ function pintarAsesoria() {
     <p>${esc(a.texto)}</p>
     <a class="info-asesoria__correo" href="mailto:${esc(a.correo)}">${esc(a.correo)}</a>
     <ul class="info-asesoria__datos">
-      <li>Representante Estudiantil: <strong>Luis Fernando Carrillo Méndez</strong> (<a href="mailto:Lcarrillom@unal.edu.co">Lcarrillom@unal.edu.co</a> · <a href="https://wa.me/573118467650" target="_blank" rel="noopener noreferrer"><strong>WhatsApp (+57) 311 846 7650</strong></a> · <a href="https://www.instagram.com/carrilo_3003/" target="_blank" rel="noopener noreferrer"><strong>@carrilo_3003</strong></a>)</li>
-      <li>Colaborador de Carrera: Kevin David Aristizabal Giraldo (<a href="mailto:Karistizabalg@unal.edu.co">Karistizabalg@unal.edu.co</a> · <a href="https://wa.me/573114174322" target="_blank" rel="noopener noreferrer"><strong>WhatsApp (+57) 311 417 4322</strong></a> · <a href="https://www.tiktok.com/@swamp9951?_r=1&_t=ZS-9BFHHyyIFHy" target="_blank" rel="noopener noreferrer">TikTok @swamp9951</a>)</li>
-      <li>Comunidad Oficial WhatsApp Carrera: <a href="https://chat.whatsapp.com/KLyM40QAcm9Gbp0Lu8xwYI?s=cl&p=i&mlu=4&ilr=4&iam=2" target="_blank" rel="noopener noreferrer"><strong>Unirme al Grupo Oficial de Eléctrica</strong></a></li>
-      <li>Instagram Oficial de la Carrera: <a href="https://www.instagram.com/ingelectrica_med" target="_blank" rel="noopener noreferrer"><strong>@ingelectrica_med</strong></a></li>
+      <li>Representación Estudiantil: <strong>Actualmente no se cuenta con representante estudiantil oficial electo.</strong></li>
+      <li>Delegado de la Representación: <strong>Sebastian Leonel Ruiz</strong> (<a href="mailto:sleonel@unal.edu.co">sleonel@unal.edu.co</a> · <a href="https://wa.me/573194408265" target="_blank" rel="noopener noreferrer"><strong>WhatsApp (+57) 319 440 8265</strong></a> · <a href="https://www.instagram.com/ler.sebas?mdxt=NXRkajJwc3hjYzk5" target="_blank" rel="noopener noreferrer"><strong>@ler.sebas</strong></a>)</li>
+      <li>Delegado de la Representación: <strong>Santiago Espinosa López</strong> (<a href="mailto:sespinosal@unal.edu.co">sespinosal@unal.edu.co</a> · <a href="https://wa.me/573102567299" target="_blank" rel="noopener noreferrer"><strong>WhatsApp (+57) 310 256 7299</strong></a>)</li>
+      <li>Canal Oficial WhatsApp del Programa: <a href="https://whatsapp.com/channel/0029VbECGFGAe5VwEJ95hh1E" target="_blank" rel="noopener noreferrer"><strong>Canal Oficial de WhatsApp · Mecánica</strong></a></li>
+      <li>Link Oficial del Programa Curricular: <a href="https://old-minas.medellin.unal.edu.co/formacion/pregrado/ingenieriamecanica" target="_blank" rel="noopener noreferrer"><strong>old-minas.medellin.unal.edu.co · Ingeniería Mecánica</strong></a></li>
+      <li>Banco Oficial de Recursos en Drive: <a href="https://drive.google.com/drive/folders/1MDopcD_bGUXzR4HQGhAO4YvQEBN9okQR?usp=drive_link" target="_blank" rel="noopener noreferrer"><strong>Carpeta de Recursos de Ingeniería Mecánica</strong></a></li>
       <li>Portal web desarrollado por Santiago Escobar Arias (<a href="mailto:saescobara@unal.edu.co">saescobara@unal.edu.co</a> · <a href="https://www.instagram.com/s_escobar__/" target="_blank" rel="noopener noreferrer">@s_escobar__</a>)</li>
       <li>Teléfono Facultad de Minas: ${esc(a.telefono)}</li>
       <li>${esc(a.direccion)}</li>

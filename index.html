@@ -1,6 +1,6 @@
 <!--
   ==========================================================================
-  PORTAL DIGITAL OFICIAL · INGENIERÍA ELÉCTRICA
+  PORTAL DIGITAL OFICIAL · INGENIERÍA MECÁNICA
   UNIVERSIDAD NACIONAL DE COLOMBIA · FACULTAD DE MINAS (SEDE MEDELLÍN)
 
   Diseño, arquitectura de software y desarrollo realizado por:
@@ -8,8 +8,9 @@
   Representante Estudiantil de Ingeniería de Sistemas
   Contacto: saescobara@unal.edu.co | Instagram: @s_escobar__
 
-  Colaborador del programa:
-  Kevin David Aristizabal Giraldo · Karistizabalg@unal.edu.co
+  Delegados de la Representación de Ingeniería Mecánica:
+  Sebastian Leonel Ruiz · sleonel@unal.edu.co
+  Santiago Espinosa López · sespinosal@unal.edu.co
 
   © 2026 Santiago Escobar Arias. Todos los derechos reservados.
   Obra protegida por la Ley 23 de 1982 (Colombia) y la Decisión 351 (CAN).
@@ -25,12 +26,12 @@
   <meta name="publisher" content="Santiago Escobar Arias · Facultad de Minas, UNAL Medellín">
   <meta name="copyright" content="© 2026 Santiago Escobar Arias. Todos los derechos reservados.">
   <meta property="article:author" content="Santiago Escobar Arias">
-  <meta property="og:site_name" content="Ingeniería Eléctrica · UNAL Medellín">
+  <meta property="og:site_name" content="Ingeniería Mecánica · UNAL Medellín">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Portal Ingeniería Eléctrica - UNAL Medellín",
+    "name": "Portal Ingeniería Mecánica - UNAL Medellín",
     "author": {
       "@type": "Person",
       "name": "Santiago Escobar Arias",
@@ -51,14 +52,14 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ingeniería Eléctrica · UNAL Medellín</title>
-  <meta name="description" content="Portal oficial de Ingeniería Eléctrica de la Facultad de Minas, Universidad Nacional de Colombia Sede Medellín: información del programa, malla curricular interactiva (170 créditos), capítulos estudiantiles (IEEE PES, IAS, RAS), telemetría de sistemas de potencia, recursos de estudio y guía estudiantil.">
+  <title>Ingeniería Mecánica · UNAL Medellín</title>
+  <meta name="description" content="Portal oficial de Ingeniería Mecánica de la Facultad de Minas, Universidad Nacional de Colombia Sede Medellín: información del programa, malla curricular interactiva (180 créditos), grupos estudiantiles (Hydrómetra, ASME UN Medellín, UN ToyLab), simulación de sistemas mecánicos, recursos de estudio y guía estudiantil.">
   <link rel="icon" type="image/png" href="img/favicon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <meta name="theme-color" content="#1E1918">
+  <meta name="theme-color" content="#0a1f3e">
   <link rel="apple-touch-icon" href="img/app/apple-touch-icon.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-title" content="Eléctrica UNAL">
+  <meta name="apple-mobile-web-app-title" content="Mecánica UNAL">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Graduate&family=Alfa+Slab+One&family=Space+Grotesk:wght@500;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -71,57 +72,57 @@
 
   <div id="barra"></div>
 
-  <!-- PORTADA / HERO LANDING: LABORATORIO DE ALTA TENSIÓN & BOBINA DE TESLA -->
+  <!-- PORTADA / HERO LANDING: CINEMÁTICA Y DINÁMICA MECÁNICA -->
   <section class="hero-tesla" id="hero-tesla">
     <div class="contenedor hero-tesla__layout">
-      <!-- 1. LOGO OFICIAL CON HALO DE RAYOS Y EFECTO BOBINA DE TESLA INTERACTIVA -->
+      <!-- 1. LOGO OFICIAL CON ENGRANAJES Y TURBINA INTERACTIVA -->
       <div class="hero-tesla__logo-escenario" id="logo-escenario-tesla">
-        <canvas id="canvas-logo-tesla" width="380" height="380" aria-label="Simulación física interactiva de halo de plasma y rayos de bobina de Tesla en el logo oficial"></canvas>
+        <canvas id="canvas-logo-tesla" width="380" height="380" aria-label="Simulación física interactiva de engranajes cinemáticos, turbina y vectores de torque alrededor del logo oficial"></canvas>
         <div class="hero-tesla__logo-wrap">
-          <img class="hero-tesla__logo" id="logo-electrica-emisor" src="img/logo-electrica.png" alt="Logo oficial de Ingeniería Eléctrica · Facultad de Minas" width="130" height="130">
+          <img class="hero-tesla__logo" id="logo-mecanica-emisor" src="img/logo-mecanica.png" alt="Logo oficial de SOMOS Ingeniería Mecánica · Facultad de Minas" width="130" height="130">
         </div>
       </div>
 
       <!-- PISTA DE INTERACCIÓN CON EL LOGO -->
       <p class="tesla-logo-pista">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        <span>Acerca tu cursor o desliza el dedo cerca del logo para atraer los rayos de plasma</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        <span>Interactúa con el cursor o desliza el dedo cerca del logo para activar el engranaje cinemático y flujo energético</span>
       </p>
 
       <!-- 2. RUTA MONOSPACE INSTITUCIONAL -->
       <p class="hero-tesla__origen">// FACULTAD DE MINAS · UNIVERSIDAD NACIONAL DE COLOMBIA · SEDE MEDELLÍN</p>
 
       <!-- 3. ANTETÍTULO DE CÓDIGO -->
-      <p class="hero-tesla__antetitulo">&lt; PREGRADO OFICIAL · ALTA TENSIÓN Y POTENCIA / &gt;</p>
+      <p class="hero-tesla__antetitulo">&lt; PREGRADO OFICIAL · DISEÑO, TERMOFLUIDOS &amp; MANUFACTURA / &gt;</p>
 
-      <!-- 4. TÍTULO MONUMENTAL ESTILO SISTEMAS (VARSITY COLLEGIATE 3D) -->
+      <!-- 4. TÍTULO MONUMENTAL (VARSITY COLLEGIATE 3D) -->
       <h1 class="hero-tesla__titulo">
         <span class="letras-varsity letras-varsity--azul" data-texto="INGENIERÍA">INGENIERÍA</span>
-        <span class="letras-varsity letras-varsity--amarillo letras-varsity--sub" data-texto="ELÉCTRICA">ELÉCTRICA</span>
+        <span class="letras-varsity letras-varsity--amarillo letras-varsity--sub" data-texto="MECÁNICA">MECÁNICA</span>
       </h1>
 
       <!-- 5. SUBTITULAR Y LEMA TÉCNICO -->
       <p class="hero-tesla__lema">
-        Sistemas de Potencia · Alta Tensión · Redes Inteligentes (Smart Grids) · Transición Energética Sostenible
+        Diseño Mecánico (CAD/CAE) · Termofluidos &amp; Energía · Manufactura Avanzada (CAM/CNC) · Mecatrónica
       </p>
 
       <!-- 6. PÍLDORAS TÉCNICAS RESPONSIVAS -->
       <div class="hero-tesla__pistas" aria-label="Especialidades del programa">
         <span class="pista-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          <span>Generación &amp; Despacho 500 kV</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          <span>Simulación CAD/CAE/FEA</span>
         </span>
         <span class="pista-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg>
-          <span>Máquinas &amp; Subestaciones</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          <span>Sistemas Térmicos &amp; Fluidos</span>
         </span>
         <span class="pista-tag">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M13 8l-3 4h4l-2 4"/></svg>
-          <span>Protecciones Digitales</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="13" height="13" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <span>Manufactura CNC &amp; Materiales</span>
         </span>
       </div>
 
-      <!-- 7. TERMINAL DE CIFRAS CLAVE DEL PROGRAMA (ESTILO TERMINAL SISTEMAS) -->
+      <!-- 7. TERMINAL DE CIFRAS CLAVE DEL PROGRAMA -->
       <div class="hero-tesla__cifras-terminal">
         <ul class="hero-tesla__conductor" id="portada-cifras" aria-label="Datos clave del programa"></ul>
       </div>
@@ -129,138 +130,100 @@
     </div>
   </section>
 
-  <!-- SECCIÓN INTERACTIVA: CENTRO DE CONTROL & FLUJO DE POTENCIA -->
-  <section class="seccion seccion--simulador" id="simulador-potencia" aria-labelledby="simulador-titulo">
+    <!-- SECCIÓN DINÁMICA: EJES FUNDAMENTALES DE LA INGENIERÍA MECÁNICA -->
+  <section class="seccion seccion--ejes" id="ejes-mecanica" aria-labelledby="ejes-titulo">
     <div class="contenedor">
       <div class="seccion-titulo">
-        <p class="seccion-titulo__antetitulo">Visualizador Interactivo de Ingeniería Eléctrica</p>
-        <h2 id="simulador-titulo">Dinámica del Flujo de Potencia & Redes Inteligentes</h2>
-        <p class="seccion-titulo__intro">Interactúa con los diferentes regímenes del sistema interconectado y descubre cómo la ingeniería eléctrica transporta, protege y transforma la energía desde las grandes centrales hasta el usuario final.</p>
+        <p class="seccion-titulo__antetitulo">Campos de Acción &amp; Disciplinas Estratégicas</p>
+        <h2 id="ejes-titulo">Ingeniería que Diseña, Transforma &amp; Mueve al Mundo</h2>
+        <p class="seccion-titulo__intro">Desde la termodinámica aplicada y la manufactura avanzada hasta la mecatrónica y la integridad estructural en la Cuarta Revolución Industrial.</p>
       </div>
 
-      <div class="simulador-caja">
-        <!-- Selector de modos -->
-        <div class="simulador-tabs" role="tablist" aria-label="Modos operativos del sistema eléctrico">
-          <button type="button" class="simulador-tab is-activa" data-modo="generacion" role="tab" aria-selected="true">
-            1. Generación &amp; Despacho
-          </button>
-          <button type="button" class="simulador-tab" data-modo="transmision" role="tab" aria-selected="false">
-            2. Transmisión &amp; Líneas 500 kV
-          </button>
-          <button type="button" class="simulador-tab" data-modo="smartgrid" role="tab" aria-selected="false">
-            3. Smart Grids &amp; Renovables
-          </button>
-          <button type="button" class="simulador-tab" data-modo="protecciones" role="tab" aria-selected="false">
-            4. Protecciones &amp; Subestación Digital
-          </button>
+      <!-- Ticker cinemático interactivo con animación compacta -->
+      <div class="ticker-cinematico" aria-label="Especialidades dinámicas del programa">
+        <div class="ticker-cinematico__icono-wrap" aria-hidden="true">
+          <svg class="ticker-pinion-animado" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" width="22" height="22">
+            <circle cx="12" cy="12" r="3"/>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+          </svg>
         </div>
-
-        <div class="simulador-grid">
-          <!-- Columna Izquierda: Diagrama Eléctrico Interactivo -->
-          <div class="simulador-visual" id="simulador-visual">
-            
-            <div class="red-nodo red-nodo--generacion">
-              <div class="red-nodo__icono-col">
-                <div class="red-nodo__emblema">
-                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2.2">
-                    <circle cx="12" cy="12" r="9"/>
-                    <path d="M12 3a9 9 0 0 0 0 18v-9h9"/>
-                  </svg>
-                  <span class="red-nodo__corriente" id="sim-corriente-gen"></span>
-                </div>
-              </div>
-              <div class="red-nodo__info-col">
-                <span class="red-nodo__etiqueta">Centrales de Generación (Hidro, Térmica, Solar y Eólica)</span>
-                <span class="red-nodo__cota">13.8 kV · GENERACIÓN PRIMARIA SINCRONIZADA</span>
-              </div>
-            </div>
-
-            <div class="red-nodo red-nodo--elevador">
-              <div class="red-nodo__icono-col">
-                <div class="red-nodo__trafo-linea">
-                  <span class="red-nodo__trafo-bobina"></span>
-                  <span class="red-nodo__trafo-bobina"></span>
-                </div>
-              </div>
-              <div class="red-nodo__info-col">
-                <span class="red-nodo__etiqueta">Subestación Elevadora de Potencia (Transformador GSU)</span>
-                <span class="red-nodo__cota">13.8 kV a 230 kV / 500 kV · ELEVACIÓN DE TENSIÓN</span>
-              </div>
-            </div>
-
-            <div class="red-nodo red-nodo--transmision">
-              <div class="red-nodo__icono-col">
-                <div class="red-nodo__torre-linea">
-                  <svg viewBox="0 0 40 50" width="30" height="38" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M20 2 L5 48 M20 2 L35 48 M10 16 L30 16 M6 30 L34 30 M15 16 L25 30 M25 16 L15 30"/>
-                  </svg>
-                </div>
-              </div>
-              <div class="red-nodo__info-col">
-                <span class="red-nodo__etiqueta">Líneas de Extra Alta Tensión (Corredor Interconectado)</span>
-                <span class="red-nodo__cota">500 kV / 230 kV · MODELADO Π Y FLUJO DE POTENCIA</span>
-              </div>
-            </div>
-
-            <div class="red-nodo red-nodo--subestacion">
-              <div class="red-nodo__icono-col">
-                <div class="red-nodo__breaker" id="sim-breaker-visual"></div>
-              </div>
-              <div class="red-nodo__info-col">
-                <span class="red-nodo__etiqueta">Subestación de Maniobra &amp; Transformador Reductor</span>
-                <span class="red-nodo__cota">230 kV a 13.2 kV · MANIOBRA &amp; INTERRUPTORES SF6</span>
-              </div>
-            </div>
-
-            <div class="red-nodo red-nodo--distribucion">
-              <div class="red-nodo__icono-col">
-                <div class="red-nodo__dist-indicador"></div>
-              </div>
-              <div class="red-nodo__info-col">
-                <span class="red-nodo__etiqueta">Redes de Distribución &amp; Carga Final (Industrial y Residencial)</span>
-                <span class="red-nodo__cota">13.2 kV a 220V/127V · CONSUMO EFICIENTE &amp; SMART GRIDS</span>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Columna Derecha: Panel de Telemetría y Explicación Técnica -->
-          <div class="simulador-panel">
-            <div class="simulador-panel__badge" id="sim-badge">RÉGIMEN OPERATIVO 01 · DESPACHO ECONÓMICO</div>
-            <h3 class="simulador-panel__titulo" id="sim-titulo">Generación y Despacho Energético</h3>
-            <p class="simulador-panel__desc" id="sim-desc">
-              Las centrales sincrónicas y las fuentes renovables no convencionales (FNCER) entregan potencia al Sistema Interconectado Nacional. El control automático de generación (AGC) mantiene la frecuencia constante en 60.00 Hz respondiendo a la curva de demanda en tiempo real.
-            </p>
-
-            <div class="simulador-telemetria">
-              <div class="telemetria-card">
-                <span class="telemetria-card__label">Tensión Operativa</span>
-                <span class="telemetria-card__valor" id="sim-tension">230.0 kV</span>
-              </div>
-              <div class="telemetria-card">
-                <span class="telemetria-card__label">Frecuencia Nominal</span>
-                <span class="telemetria-card__valor" id="sim-frec">60.00 Hz</span>
-              </div>
-              <div class="telemetria-card">
-                <span class="telemetria-card__label">Potencia Despachada</span>
-                <span class="telemetria-card__valor" id="sim-potencia">1,280 MW</span>
-              </div>
-              <div class="telemetria-card">
-                <span class="telemetria-card__label">Tiempo de Respuesta</span>
-                <span class="telemetria-card__valor" id="sim-tiempo">&lt; 40 ms</span>
-              </div>
-            </div>
-
-            <div class="simulador-panel__materias">
-              <span class="materias-label">Materias clave relacionadas en la carrera:</span>
-              <div class="materias-pildoras" id="sim-materias">
-                <a href="malla.html" class="materia-chip">Sistemas de Generación de Energía</a>
-                <a href="malla.html" class="materia-chip">Máquinas Eléctricas I y II</a>
-                <a href="malla.html" class="materia-chip">Termodinámica General</a>
-              </div>
-            </div>
-          </div>
+        <span class="ticker-cinematico__etiqueta">Área Clave en Foco:</span>
+        <div class="ticker-cinematico__marco">
+          <span class="ticker-cinematico__texto" id="rotador-mecanica">Diseño Mecánico &amp; Simulación Computacional (CAD/CAE)</span>
         </div>
+        <div class="ticker-cinematico__puntos" aria-hidden="true" id="ticker-puntos">
+          <span class="ticker-punto is-activo" data-idx="0"></span>
+          <span class="ticker-punto" data-idx="1"></span>
+          <span class="ticker-punto" data-idx="2"></span>
+          <span class="ticker-punto" data-idx="3"></span>
+        </div>
+      </div>
+
+      <!-- Cuadrícula de 4 tarjetas de pilares de ingeniería mecánica -->
+      <div class="ejes-grid">
+        <article class="eje-tarjeta" data-eje="0">
+          <div class="eje-tarjeta__encabezado">
+            <span class="eje-tarjeta__icono-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </span>
+            <span class="eje-tarjeta__badge">Pilar 01</span>
+          </div>
+          <h3 class="eje-tarjeta__titulo">Diseño &amp; Elementos Finitos (CAD/CAE)</h3>
+          <p class="eje-tarjeta__desc">Modelado 3D paramétrico, análisis estructural por elementos finitos (FEA), concentración de esfuerzos de Von Mises y fatiga de componentes mecánicos.</p>
+          <ul class="eje-tarjeta__tags">
+            <li>Diseño de Máquinas</li>
+            <li>Resistencia de Materiales</li>
+            <li>Mecanismos</li>
+          </ul>
+        </article>
+
+        <article class="eje-tarjeta" data-eje="1">
+          <div class="eje-tarjeta__encabezado">
+            <span class="eje-tarjeta__icono-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 0 0 18v-9h9"/></svg>
+            </span>
+            <span class="eje-tarjeta__badge">Pilar 02</span>
+          </div>
+          <h3 class="eje-tarjeta__titulo">Termofluidos &amp; Sistemas Térmicos</h3>
+          <p class="eje-tarjeta__desc">Ciclos termodinámicos de potencia (Rankine, Brayton, refrigeración), turbomaquinaria, mecánica de fluidos compresibles e incompresibles y transferencia de calor.</p>
+          <ul class="eje-tarjeta__tags">
+            <li>Termodinámica</li>
+            <li>Mecánica de Fluidos</li>
+            <li>Transferencia de Calor</li>
+          </ul>
+        </article>
+
+        <article class="eje-tarjeta" data-eje="2">
+          <div class="eje-tarjeta__encabezado">
+            <span class="eje-tarjeta__icono-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m14 12-8.5 8.5a2.12 2.12 0 1 1-3-3L11 9"/><path d="M16 16 8 8"/><path d="m18 10 2-2a2.83 2.83 0 0 0-4-4l-2 2"/><path d="m15 13 4 4"/></svg>
+            </span>
+            <span class="eje-tarjeta__badge">Pilar 03</span>
+          </div>
+          <h3 class="eje-tarjeta__titulo">Manufactura Avanzada &amp; Materiales</h3>
+          <p class="eje-tarjeta__desc">Centros de mecanizado CNC, fresado de 5 ejes, manufactura aditiva metálica y polimérica, tratamientos térmicos y metalografía aplicada.</p>
+          <ul class="eje-tarjeta__tags">
+            <li>Procesos de Manufactura</li>
+            <li>Ciencia de Materiales</li>
+            <li>Metrología</li>
+          </ul>
+        </article>
+
+        <article class="eje-tarjeta" data-eje="3">
+          <div class="eje-tarjeta__encabezado">
+            <span class="eje-tarjeta__icono-box">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="16" height="16" x="4" y="4" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M15 9h.01M9 15h.01M15 15h.01"/></svg>
+            </span>
+            <span class="eje-tarjeta__badge">Pilar 04</span>
+          </div>
+          <h3 class="eje-tarjeta__titulo">Automatización, Robótica &amp; Control</h3>
+          <p class="eje-tarjeta__desc">Integración mecatrónica de actuadores servo, neumática, electroneumática, sensores industriales y controladores en lazo cerrado PID para la industria 4.0.</p>
+          <ul class="eje-tarjeta__tags">
+            <li>Control Dinámico</li>
+            <li>Mecatrónica</li>
+            <li>Instrumentación</li>
+          </ul>
+        </article>
       </div>
     </div>
   </section>
@@ -281,10 +244,10 @@
       </div>
     </section>
 
-    <!-- GRUPOS ESTUDIANTILES Y CAPÍTULOS TÉCNICOS CON ESTILO BOMBILLA -->
+    <!-- GRUPOS ESTUDIANTILES CON ESTILO EMBLEMA -->
     <section class="grupos" id="grupos" aria-labelledby="grupos-titulo" data-carga="grupos">
       <div class="contenedor" id="grupos-contenido">
-        <p class="cargando">Cargando capítulos…</p>
+        <p class="cargando">Cargando grupos estudiantiles…</p>
       </div>
     </section>
 

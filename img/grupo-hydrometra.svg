@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="hydroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1f3e" />
+      <stop offset="50%" stop-color="#0284c7" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="sunGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8af3c" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+  <!-- Background circular badge -->
+  <circle cx="80" cy="80" r="76" fill="#0a1f3e" />
+  <circle cx="80" cy="80" r="70" fill="#0c2347" stroke="#f8af3c" stroke-width="2.5" />
+  
+  <!-- Hydro / Sun icon -->
+  <circle cx="80" cy="50" r="16" fill="url(#sunGrad)" />
+  
+  <!-- Hydrofoil / Catamaran hull shapes -->
+  <path d="M30 92 Q80 115 130 92 L124 99 Q80 125 36 99 Z" fill="#38bdf8" />
+  <path d="M42 82 C55 82, 65 72, 80 72 C95 72, 105 82, 118 82 L112 88 C102 88, 92 78, 80 78 C68 78, 58 88, 48 88 Z" fill="#ffffff" />
+  
+  <!-- Wave dynamic lines -->
+  <path d="M32 108 C50 116, 65 110, 80 114 C95 118, 110 112, 128 108" fill="none" stroke="#f8af3c" stroke-width="3" stroke-linecap="round" />
+  <path d="M44 120 C60 126, 72 122, 80 124 C88 126, 100 122, 116 120" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Propeller / Hydrofoil fin -->
+  <path d="M77 84 L83 84 L80 102 Z" fill="#ffffff" />
+
+  <!-- Text HYDROMETRA -->
+  <text x="80" y="142" font-family="'Space Grotesk', 'Outfit', sans-serif" font-size="11" font-weight="800" fill="#fefffd" text-anchor="middle" letter-spacing="2">HYDROMETRA</text>
+</svg>

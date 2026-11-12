@@ -1,7 +1,7 @@
 /* ==============================================================================
-   PORTAL WEB OFICIAL · INGENIERÍA ELÉCTRICA · UNAL SEDE MEDELLÍN
+   PORTAL WEB OFICIAL · INGENIERÍA MECÁNICA · UNAL SEDE MEDELLÍN
    MÓDULO MI AVANCE — Interfaz y Lógica de Progreso
-   Lee la historia académica guardada en localStorage (electrica.avance.v1),
+   Lee la historia académica guardada en localStorage (mecanica.avance.v1),
    dibuja la pantalla de avance del estudiante: nivel, proyección de graduación,
    mapa de semestres (Ruta), misiones por componente y bitácora académica.
    Todos los derechos reservados © 2026.
@@ -10,8 +10,8 @@
 (() => {
   'use strict';
 
-  const CLAVE_GUARDADO = 'electrica.avance.v1';
-  const CLAVE_LEGACY = 'petroleos.avance.v1';
+  const CLAVE_GUARDADO = 'mecanica.avance.v1';
+  const CLAVE_LEGACY = 'electrica.avance.v1';
 
   // Usar helpers globales o fallbacks locales seguros
   const $ = (sel, r = document) => (typeof window.$ === 'function' ? window.$(sel, r) : r.querySelector(sel));
@@ -66,20 +66,20 @@
   const formatear = (n, d = 0) =>
     Number(n).toLocaleString('es-CO', { minimumFractionDigits: d, maximumFractionDigits: d });
 
-  /* ---------- Rangos Temáticos de Ingeniería Eléctrica ---------- */
-  const RANGOS_ELECTRICA = [
-    [1, 'Iniciado en Circuitos y Leyes Eléctricas'],
-    [10, 'Analista de Redes y Magnetismo'],
-    [25, 'Técnico de Señales, Electrónica y Mediciones'],
-    [45, 'Ingeniero(a) en Formación · Máquinas y Modelado de Líneas'],
-    [65, 'Operador(a) de Subestaciones y Sistemas de Potencia'],
-    [85, 'Especialista en Protecciones, Smart Grids y Transición Energética'],
-    [100, 'Ingeniero(a) Electricista · Facultad de Minas UNAL'],
+  /* ---------- Rangos Temáticos de Ingeniería Mecánica ---------- */
+  const RANGOS_MECANICA = [
+    [1, 'Iniciado en Dibujo, Física y Cálculo'],
+    [10, 'Analista de Estática, Dinámica y Materiales'],
+    [25, 'Modelador(a) CAD, Termofluidos y Esfuerzos'],
+    [45, 'Ingeniero(a) en Formación · Máquinas y Manufactura CNC'],
+    [65, 'Diseñador(a) de Sistemas Térmicos y Mecatrónica'],
+    [85, 'Especialista en Diseño Mecánico Integrado y Proyectos'],
+    [100, 'Ingeniero(a) Mecánico(a) · Facultad de Minas UNAL'],
   ];
 
   function rangoNivel(nivel) {
-    let r = RANGOS_ELECTRICA[0][1];
-    RANGOS_ELECTRICA.forEach(([desde, nom]) => {
+    let r = RANGOS_MECANICA[0][1];
+    RANGOS_MECANICA.forEach(([desde, nom]) => {
       if (nivel >= desde) r = nom;
     });
     return r;
@@ -110,7 +110,7 @@
             <circle class="anillo__valor" cx="60" cy="60" r="54" pathLength="100" style="--pct: ${pasoXp}"></circle>
           </svg>
           <div class="jugador__escudo-wrap">
-            <img src="img/logo-electrica.png" alt="Escudo de Ingeniería Eléctrica" class="jugador__escudo" width="80" height="80">
+            <img src="img/logo-mecanica.png" alt="Escudo de Ingeniería Mecánica" class="jugador__escudo" width="80" height="80">
           </div>
           <span class="jugador__nivel${String(avance.nivel).length > 2 ? ' jugador__nivel--3' : ''}">
             <small>NIVEL</small><b data-cuenta="${avance.nivel}">${avance.nivel}</b>
@@ -129,7 +129,7 @@
           <p class="jugador__rango">
             <span class="jugador__rango-texto">${esc(rangoNivel(avance.nivel))}</span>
           </p>
-          <p class="jugador__programa">Ingeniería Eléctrica · Facultad de Minas · UNAL Medellín</p>
+          <p class="jugador__programa">Ingeniería Mecánica · Facultad de Minas · UNAL Medellín</p>
 
           <div class="xp" role="img" aria-label="${avance.aprobados} de ${avance.exigidos} créditos aprobados">
             <div class="xp__barra">
@@ -183,7 +183,7 @@
     const etiqueta = avance.graduacion ? etiquetaPeriodo(avance.graduacion) : '';
     const cuerpo = avance.completo
       ? `<p class="meta__valor meta__valor--listo">¡Créditos del plan 100% cumplidos!</p>
-         <p class="meta__texto">Ya cubriste los 170 créditos exigidos del plan. Revisa con la Dirección de Área Curricular de Ingeniería Eléctrica e Ingeniería de Control (IEIC) los trámites de grado.</p>`
+         <p class="meta__texto">Ya cubriste los 180 créditos exigidos del plan. Revisa con la Coordinación Curricular de Ingeniería Mecánica los trámites de grado.</p>`
       : `<p class="meta__valor">${esc(etiqueta)}</p>
          <p class="meta__texto">Según tu ritmo de <b id="ritmo-valor">${avance.ritmo}</b> créditos por semestre, te faltan aproximadamente <b>${avance.semestresFaltantes}</b> semestre${avance.semestresFaltantes === 1 ? '' : 's'}${avance.inscritos > 0 ? ' (contando el que tienes en curso)' : ''}.</p>
          <label class="meta__ritmo" for="ritmo">
@@ -199,7 +199,7 @@
           <p class="panel__titulo">Proyección · Graduación estimada</p>
         </div>
         ${cuerpo}
-        <p class="meta__aviso">Esta estimación se calcula según tu ritmo semestral promedio reciente. Depende de la oferta de cursos de potencia, máquinas, protecciones, prerrequisitos académicos y el Trabajo de Grado.</p>
+        <p class="meta__aviso">Esta estimación se calcula según tu ritmo semestral promedio reciente. Depende de la oferta de cursos de diseño, termofluidos, manufactura, prerrequisitos académicos y el Trabajo de Grado.</p>
       </section>`;
   }
 
@@ -246,7 +246,7 @@
 
     return `
       <section class="panel misiones" aria-label="Misiones por componente">
-        <p class="panel__titulo">Misiones · avance por componente de Ingeniería Eléctrica</p>
+        <p class="panel__titulo">Misiones · avance por componente de Ingeniería Mecánica</p>
         <ul class="misiones__lista">
           ${filas.map((f) => {
             const d = f.datos;
@@ -279,7 +279,7 @@
       <details class="panel historial" open>
         <summary class="panel__titulo panel__titulo--resumen">Bitácora · Primer semestre (en curso)</summary>
         <p class="historial__vacio">
-          Aún no tienes asignaturas finalizadas en el SIA. ¡Muchos éxitos en tu primer semestre de Ingeniería Eléctrica!
+          Aún no tienes asignaturas finalizadas en el SIA. ¡Muchos éxitos en tu primer semestre de Ingeniería Mecánica!
         </p>
       </details>`;
     }
@@ -377,20 +377,20 @@
 
   /* ---------- Modal / Tarjeta para Compartir ---------- */
   function compartirTarjeta() {
-    const nombre = estado.nombre || estado.historia?.nombre || 'Estudiante de Eléctrica';
+    const nombre = estado.nombre || estado.historia?.nombre || 'Estudiante de Mecánica';
     const nivel = estado.avance?.nivel || 1;
     const rango = rangoNivel(nivel);
     const papa = estado.historia?.papa ? formatear(estado.historia.papa, 1) : '—';
     const aprob = estado.avance?.aprobados || 0;
-    const total = estado.avance?.exigidos || 170;
+    const total = estado.avance?.exigidos || 180;
     const pct = estado.avance?.porcentaje || 0;
 
-    const texto = `Mi progreso en Ingeniería Eléctrica (UNAL Medellín):
+    const texto = `Mi progreso en Ingeniería Mecánica (UNAL Medellín):
 Estudiante: ${nombre}
 Nivel: ${nivel}/100 — ${rango}
 P.A.P.A: ${papa}
 Créditos: ${aprob}/${total} (${pct}%)
-Consulta tu avance en la web de Ingeniería Eléctrica`;
+Consulta tu avance en la web de Ingeniería Mecánica`;
 
     if (navigator.clipboard) {
       navigator.clipboard.writeText(texto).then(() => {
@@ -419,7 +419,7 @@ Consulta tu avance en la web de Ingeniería Eléctrica`;
     juego.hidden = false;
 
     juego.innerHTML = `
-      ${historia.esElectrica ? '' : '<p class="aviso-juego">Aviso: no detectamos «Ingeniería Eléctrica» en el texto pegado. Los cálculos se basan en el Plan 3535 de 170 créditos de Ingeniería Eléctrica.</p>'}
+      ${historia.esMecanica ? '' : '<p class="aviso-juego">Aviso: no detectamos «Ingeniería Mecánica» en el texto pegado. Los cálculos se basan en el Plan 3538 de 180 créditos de Ingeniería Mecánica.</p>'}
       ${pintarJugador(avance, historia)}
       ${pintarEstadisticas(avance, historia)}
       ${pintarGraduacion(avance)}

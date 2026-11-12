@@ -1,27 +1,27 @@
 {
-  "titulo": "Perfil del Ingeniero(a) Electricista Egresado",
-  "intro": "Un profesional forjado bajo el histórico lema de la Facultad de Minas: «Trabajo y Rectitud», con rigurosa fundamentación en ciencias exactas e ingeniería aplicada, visión prospectiva del sector energético, solvencia en tecnologías digitales y compromiso ético con el desarrollo sostenible del país.",
+  "titulo": "Perfil del Ingeniero(a) Mecánico(a) Egresado",
+  "intro": "Un profesional forjado bajo el histórico lema de la Facultad de Minas: «Trabajo y Rectitud», con rigurosa fundamentación en ciencias exactas y de la ingeniería, capacidad para innovar, diseñar y optimizar componentes mecánicos, máquinas, sistemas térmicos y procesos de manufactura con sostenibilidad ambiental, responsabilidad social y liderazgo ético.",
   "rasgos": [
     {
-      "icono": "potencia",
-      "titulo": "Planeación y Operación de Sistemas de Potencia",
-      "texto": "Analiza, proyecta y supervisa redes de transmisión y distribución eléctrica mediante simulación computacional de flujos de carga, cortocircuito y estabilidad, garantizando la calidad y continuidad del servicio de energía."
+      "icono": "diseno",
+      "titulo": "Diseño Mecánico y Simulación Computacional",
+      "texto": "Concibe, calcula y optimiza componentes, maquinaria y estructuras mecánicas mediante modelado paramétrico 3D (CAD) y análisis avanzado por elementos finitos (FEA/CAE), asegurando la integridad estructural y funcionalidad óptima."
     },
     {
-      "icono": "maquinas",
-      "titulo": "Máquinas Eléctricas y Electrónica de Potencia",
-      "texto": "Modela, opera y ensaya generadores síncronos, transformadores de potencia, motores de inducción y convertidores electrónicos, optimizando el rendimiento energético en la industria e infraestructura nacional."
+      "icono": "energia",
+      "titulo": "Sistemas Térmicos, Fluidos y Conversión Energética",
+      "texto": "Modela, evalúa y opera ciclos termodinámicos, intercambiadores de calor, calderas, sistemas de refrigeración, ventilación industrial y turbomaquinaria, promoviendo la eficiencia energética y la descarbonización industrial."
     },
     {
-      "icono": "protecciones",
-      "titulo": "Subestaciones Digitales y Protecciones Eléctricas",
-      "texto": "Diseña esquemas de protección por relés numéricos, coordinación de aislamiento y automatización de subestaciones (norma IEC 61850), respondiendo ante contingencias en fracciones de segundo."
+      "icono": "manufactura",
+      "titulo": "Materiales de Ingeniería y Manufactura Avanzada",
+      "texto": "Selecciona materiales óptimos según esfuerzos y condiciones ambientales, y supervisa procesos de fabricación avanzada: mecanizado por control numérico (CNC), fundición, soldadura, manufactura aditiva y aseguramiento metrológico."
     },
     {
-      "icono": "transicion",
-      "titulo": "Transición Energética y Redes Inteligentes (Smart Grids)",
-      "texto": "Lidera la integración a la red de fuentes no convencionales de energía renovable (FNCER solar y eólica), sistemas de baterías BESS, microrredes aisladas y esquemas de generación distribuida."
+      "icono": "mecatronica",
+      "titulo": "Mecatrónica, Automatización y Control",
+      "texto": "Integra mecánica de precisión con sensores, actuadores electrónicos, controladores lógicos y algoritmos de control automático para desarrollar sistemas inteligentes, robótica y líneas automatizadas de producción."
     }
   ],
-  "fuente": "Proyecto Educativo del Programa (PEP) de Ingeniería Eléctrica, Facultad de Minas, Universidad Nacional de Colombia Sede Medellín."
+  "fuente": "Proyecto Educativo del Programa (PEP) de Ingeniería Mecánica, Facultad de Minas, Universidad Nacional de Colombia Sede Medellín."
 }

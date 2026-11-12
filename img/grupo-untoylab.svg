@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="toylabGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1f3e" />
+      <stop offset="100%" stop-color="#1e3a6d" />
+    </linearGradient>
+    <linearGradient id="toyAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8af3c" />
+      <stop offset="100%" stop-color="#f97316" />
+    </linearGradient>
+  </defs>
+  <!-- Background badge -->
+  <circle cx="80" cy="80" r="76" fill="#0a1f3e" />
+  <circle cx="80" cy="80" r="70" fill="url(#toylabGrad)" stroke="#f8af3c" stroke-width="2.5" />
+
+  <!-- Playful gear + rocket / lab emblem -->
+  <g transform="translate(80, 64)">
+    <!-- Playful Gear -->
+    <circle cx="0" cy="0" r="32" fill="#0f2952" stroke="#f8af3c" stroke-width="3" stroke-dasharray="8 5" />
+    
+    <!-- Rocket / prototype toy -->
+    <path d="M0 -24 C8 -16, 12 0, 10 16 L-10 16 C-12 0, -8 -16, 0 -24 Z" fill="#fefffd" />
+    <!-- Fins -->
+    <path d="M-10 8 L-18 18 L-8 16 Z" fill="url(#toyAccent)" />
+    <path d="M10 8 L18 18 L8 16 Z" fill="url(#toyAccent)" />
+    <!-- Porothole window -->
+    <circle cx="0" cy="-4" r="5" fill="#0a1f3e" stroke="#f8af3c" stroke-width="1.8" />
+    <!-- Thrust flames -->
+    <path d="M-5 18 L0 27 L5 18 Z" fill="#f8af3c" />
+  </g>
+
+  <!-- Text UN TOYLAB -->
+  <text x="80" y="128" font-family="'Space Grotesk', 'Outfit', sans-serif" font-size="12" font-weight="900" fill="#f8af3c" text-anchor="middle" letter-spacing="2">UN TOYLAB</text>
+  <text x="80" y="142" font-family="'Space Grotesk', 'Outfit', sans-serif" font-size="8" font-weight="600" fill="#fefffd" text-anchor="middle" letter-spacing="1">INGENIERÍA LÚDICA &amp; I+D</text>
+</svg>

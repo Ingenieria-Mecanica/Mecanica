@@ -1,7 +1,7 @@
 /**
- * PLATAFORMA DIGITAL · INGENIERÍA ELÉCTRICA (UNAL MEDELLÍN)
+ * PLATAFORMA DIGITAL · INGENIERÍA MECÁNICA (UNAL MEDELLÍN)
  * Desarrollado por: Santiago Escobar Arias · Representante de Sistemas
- * Colaborador: Kevin David Aristizabal Giraldo · Karistizabalg@unal.edu.co
+ * Delegados de la Representación: Sebastian Leonel Ruiz y Santiago Espinosa López
  * © 2026 Santiago Escobar Arias. Todos los derechos reservados.
  * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
  */

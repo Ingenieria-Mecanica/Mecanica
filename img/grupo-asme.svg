@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="asmeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1f3e" />
+      <stop offset="100%" stop-color="#153366" />
+    </linearGradient>
+  </defs>
+  <!-- Background badge -->
+  <circle cx="80" cy="80" r="76" fill="#0a1f3e" />
+  <circle cx="80" cy="80" r="70" fill="url(#asmeGrad)" stroke="#f8af3c" stroke-width="2.5" />
+
+  <!-- ASME Emblem Gear / Clover / Globe -->
+  <g transform="translate(80, 68)">
+    <!-- Gear teeth around center -->
+    <path d="M-6 -38 L6 -38 L8 -30 L-8 -30 Z" fill="#f8af3c" />
+    <path d="M-6 38 L6 38 L8 30 L-8 30 Z" fill="#f8af3c" />
+    <path d="M-38 -6 L-38 6 L-30 8 L-30 -8 Z" fill="#f8af3c" />
+    <path d="M38 -6 L38 6 L30 8 L30 -8 Z" fill="#f8af3c" />
+    <path d="M-28 -28 L-20 -36 L-15 -30 L-23 -23 Z" fill="#f8af3c" />
+    <path d="M28 28 L20 36 L15 30 L23 23 Z" fill="#f8af3c" />
+    <path d="M-28 28 L-20 36 L-15 30 L-23 23 Z" fill="#f8af3c" transform="rotate(90)" />
+    <path d="M28 -28 L20 -36 L15 -30 L23 -23 Z" fill="#f8af3c" transform="rotate(90)" />
+    
+    <!-- Central Ring -->
+    <circle cx="0" cy="0" r="28" fill="#0a1f3e" stroke="#fefffd" stroke-width="2.5" />
+    <circle cx="0" cy="0" r="23" fill="#153366" />
+    
+    <!-- ASME Letters -->
+    <text x="0" y="7" font-family="'Space Grotesk', 'Outfit', Arial, sans-serif" font-size="16" font-weight="900" fill="#f8af3c" text-anchor="middle" letter-spacing="1.5">ASME</text>
+  </g>
+
+  <!-- Subtitle UN MEDELLÍN -->
+  <text x="80" y="128" font-family="'Space Grotesk', 'Outfit', sans-serif" font-size="10" font-weight="800" fill="#fefffd" text-anchor="middle" letter-spacing="2">UN MEDELLÍN</text>
+  <text x="80" y="142" font-family="'Space Grotesk', 'Outfit', sans-serif" font-size="8" font-weight="600" fill="#f8af3c" text-anchor="middle" letter-spacing="1.2">FACULTAD DE MINAS</text>
+</svg>

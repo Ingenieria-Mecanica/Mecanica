@@ -1,7 +1,7 @@
 /**
- * PLATAFORMA DIGITAL · INGENIERÍA ELÉCTRICA (UNAL MEDELLÍN)
+ * PLATAFORMA DIGITAL · INGENIERÍA MECÁNICA (UNAL MEDELLÍN)
  * Desarrollado por: Santiago Escobar Arias · Representante de Sistemas
- * Colaborador: Kevin David Aristizabal Giraldo · Karistizabalg@unal.edu.co
+ * Delegados de la Representación: Sebastian Leonel Ruiz y Santiago Espinosa López
  * © 2026 Santiago Escobar Arias. Todos los derechos reservados.
  * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
  */
@@ -54,11 +54,11 @@ function prepararDatos([componentes, plan, asignaturas]) {
   }));
 
   const totalCreditos = plan.reduce((suma, s) => suma + s.creditos, 0);
-  $('#malla-antetitulo').textContent = `${plan.length} semestres · ${totalCreditos} créditos`;
+  $('#malla-antetitulo').textContent = `${plan.length} Semestres · ${totalCreditos} Créditos · Plan 3538`;
 }
 
 /* ==============================================================================
-   ESTADO Y LÓGICA DE PROGRESO DEL ESTUDIANTE EN LA MALLA DE INGENIERÍA ELÉCTRICA
+   ESTADO Y LÓGICA DE PROGRESO DEL ESTUDIANTE EN LA MALLA DE INGENIERÍA MECÁNICA
    ============================================================================== */
 
 const estadoProgreso = {
@@ -192,7 +192,7 @@ function actualizarMetricasPlan() {
     aprobadasPlan: aprobadas,
     totalPlanAsignaturas: totalAsignaturas,
     creditosAprobadosPlan: creditosAprobados,
-    porcentajePlan: Math.min(100, (creditosAprobados / 170) * 100),
+    porcentajePlan: Math.min(100, (creditosAprobados / 180) * 100),
   });
 }
 
@@ -201,7 +201,7 @@ function cargarProgresoUsuario() {
   let nombreUsuario = '';
 
   try {
-    const guardado = JSON.parse(localStorage.getItem('electrica.avance.v1') || localStorage.getItem('petroleos.avance.v1') || '{}');
+    const guardado = JSON.parse(localStorage.getItem('mecanica.avance.v1') || localStorage.getItem('electrica.avance.v1') || '{}');
     if (guardado.texto) {
       textoHistoria = guardado.texto;
       nombreUsuario = guardado.nombre || '';
@@ -217,7 +217,7 @@ function cargarProgresoUsuario() {
         crearIndiceProgreso(historia);
       }
     } catch (e) {
-      console.warn('Error procesando historia en la malla de Ingeniería Eléctrica:', e);
+      console.warn('Error procesando historia en la malla de Ingeniería Mecánica:', e);
     }
   }
 

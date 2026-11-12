@@ -1,7 +1,7 @@
-/* Service worker del portal · Eléctrica UNAL Medellín
+/* Service worker del portal · Mecánica UNAL Medellín
    Estrategia: primero la red (siempre ves lo último que publicamos) y, si no hay internet,
    la última copia guardada. No toca nada de otros dominios (Supabase, fuentes, etc.). */
-const CACHE = 'electricaunal-v1';
+const CACHE = 'mecanicaunal-v1';
 
 self.addEventListener('install', () => self.skipWaiting());
 

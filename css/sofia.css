@@ -1,27 +1,26 @@
 /* ==============================================================================
-   PORTAL WEB OFICIAL · INGENIERÍA ELÉCTRICA · UNAL SEDE MEDELLÍN
+   PORTAL WEB OFICIAL · INGENIERÍA MECÁNICA · UNAL SEDE MEDELLÍN
    Arquitectura de software, maquetación y desarrollo integral por:
    Santiago Escobar Arias · Representante Estudiantil de Sistemas e Informática
-   Canales Oficiales e Información de Ingeniería Eléctrica:
-   Luis Fernando Carrillo Méndez · Representante Estudiantil
-   Kevin David Aristizabal Giraldo · Colaborador de Carrera
+   Canales Oficiales e Información de Ingeniería Mecánica:
+   Sebastian Leonel Ruiz & Santiago Espinosa López · Delegados de la Representación
    Facultad de Minas — Universidad Nacional de Colombia, Sede Medellín
    ============================================================================== */
 
 /* ---------- sofIA: Asistente Virtual Inteligente de Ingeniería Eléctrica UNAL ---------- */
 
 :root {
-  --sofia-ambar-electrico: #E58E00;
-  --sofia-volt-amarillo: #FFBB02;
-  --sofia-cian-plasma: #27AFC9;
-  --sofia-cian-brillante: #40C7E0;
+  --sofia-ambar-electrico: #f8af3c;
+  --sofia-volt-amarillo: #f8af3c;
+  --sofia-cian-plasma: #f8af3c;
+  --sofia-cian-brillante: #f8af3c;
   --sofia-verde-minas: #006633;
-  --sofia-grafito-base: #1A1514;
-  --sofia-grafito-medio: #261F1E;
-  --sofia-fondo-tarjeta: rgba(26, 21, 20, 0.96);
-  --sofia-fondo-chat: rgba(18, 14, 13, 0.94);
-  --sofia-borde: rgba(255, 187, 2, 0.35);
-  --sofia-brillo: rgba(255, 187, 2, 0.25);
+  --sofia-grafito-base: #0a1f3e;
+  --sofia-grafito-medio: #11284d;
+  --sofia-fondo-tarjeta: rgba(10, 31, 62, 0.98);
+  --sofia-fondo-chat: rgba(6, 20, 40, 0.95);
+  --sofia-borde: rgba(248, 175, 60, 0.35);
+  --sofia-brillo: rgba(248, 175, 60, 0.25);
   --sofia-texto: #FFFFFF;
   --sofia-texto-suave: #D5CCC8;
   --sofia-sombra: 0 20px 50px rgba(0, 0, 0, 0.85);
@@ -52,7 +51,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  background: rgba(38, 31, 30, 0.96);
+  background: rgba(17, 40, 77, 0.96);
   border: 1px solid var(--sofia-borde);
   backdrop-filter: blur(12px);
   padding: 8px 14px 8px 16px;
@@ -70,7 +69,7 @@
 
 .sofia-globo-bienvenida:hover {
   transform: translateY(-2px);
-  background: rgba(53, 43, 41, 0.98);
+  background: rgba(17, 40, 77, 0.98);
 }
 
 .sofia-globo-texto {
@@ -107,9 +106,9 @@
   width: 62px;
   height: 62px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1A1514 0%, #261F1E 45%, #E58E00 100%);
+  background: linear-gradient(135deg, #0a1f3e 0%, #11284d 45%, #f8af3c 100%);
   border: 2px solid var(--sofia-volt-amarillo);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 22px rgba(255, 187, 2, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 22px rgba(248, 175, 60, 0.4);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -122,7 +121,7 @@
 
 .sofia-boton:hover {
   transform: scale(1.08);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75), 0 0 32px rgba(255, 187, 2, 0.7);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.75), 0 0 32px rgba(248, 175, 60, 0.7);
 }
 
 .sofia-boton:active {
@@ -149,7 +148,7 @@
   height: 14px;
   border-radius: 50%;
   background: #10B981;
-  border: 2px solid #1A1514;
+  border: 2px solid #0a1f3e;
   box-shadow: 0 0 8px #10B981;
 }
 
@@ -170,7 +169,7 @@
   border: 1px solid var(--sofia-borde);
   border-radius: 20px;
   backdrop-filter: blur(20px);
-  box-shadow: var(--sofia-sombra), 0 0 35px rgba(255, 187, 2, 0.15);
+  box-shadow: var(--sofia-sombra), 0 0 35px rgba(248, 175, 60, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -206,7 +205,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 14px 18px;
-  background: linear-gradient(135deg, rgba(26, 21, 20, 0.98) 0%, rgba(38, 31, 30, 0.95) 50%, rgba(229, 142, 0, 0.35) 100%);
+  background: linear-gradient(135deg, rgba(10, 31, 62, 0.98) 0%, rgba(17, 40, 77, 0.96) 50%, rgba(248, 175, 60, 0.35) 100%);
   border-bottom: 1px solid var(--sofia-borde);
   user-select: none;
   flex-shrink: 0;
@@ -225,12 +224,12 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: radial-gradient(circle, #FFBB02 0%, #E58E00 65%, #1A1514 100%);
+  background: radial-gradient(circle, #f8af3c 0%, #f8af3c 65%, #0a1f3e 100%);
   border: 1.5px solid var(--sofia-volt-amarillo);
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 16px rgba(255, 187, 2, 0.45);
+  box-shadow: 0 0 16px rgba(248, 175, 60, 0.45);
   flex-shrink: 0;
 }
 
@@ -262,9 +261,9 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  background: rgba(255, 187, 2, 0.2);
+  background: rgba(248, 175, 60, 0.2);
   color: var(--sofia-volt-amarillo) !important;
-  border: 1px solid rgba(255, 187, 2, 0.55);
+  border: 1px solid rgba(248, 175, 60, 0.55);
   padding: 1px 6px;
   border-radius: 6px;
   flex-shrink: 0;
@@ -329,14 +328,14 @@
   flex-direction: column;
   gap: 14px;
   scrollbar-width: thin;
-  scrollbar-color: rgba(255, 187, 2, 0.4) transparent;
+  scrollbar-color: rgba(248, 175, 60, 0.4) transparent;
 }
 
 .sofia-cuerpo::-webkit-scrollbar {
   width: 6px;
 }
 .sofia-cuerpo::-webkit-scrollbar-thumb {
-  background: rgba(255, 187, 2, 0.4);
+  background: rgba(248, 175, 60, 0.4);
   border-radius: 4px;
 }
 
@@ -374,19 +373,19 @@
 }
 
 .sofia-mensaje--sofia .sofia-burbuja {
-  background: rgba(38, 31, 30, 0.92);
-  border: 1px solid rgba(255, 187, 2, 0.3);
+  background: rgba(17, 40, 77, 0.96);
+  border: 1px solid rgba(248, 175, 60, 0.3);
   color: #FFFFFF !important;
   border-bottom-left-radius: 4px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
 .sofia-mensaje--usuario .sofia-burbuja {
-  background: linear-gradient(135deg, #E58E00 0%, #9E5B00 100%);
-  border: 1px solid rgba(255, 187, 2, 0.7);
+  background: linear-gradient(135deg, #f8af3c 0%, #c7821e 100%);
+  border: 1px solid rgba(248, 175, 60, 0.7);
   color: #FFFFFF !important;
   border-bottom-right-radius: 4px;
-  box-shadow: 0 4px 14px rgba(229, 142, 0, 0.35);
+  box-shadow: 0 4px 14px rgba(248, 175, 60, 0.35);
 }
 
 .sofia-burbuja p {
@@ -425,7 +424,7 @@
 
 .sofia-burbuja code {
   background: rgba(0, 0, 0, 0.45);
-  color: #40C7E0;
+  color: #f8af3c;
   padding: 1px 5px;
   border-radius: 4px;
   font-size: 12px;
@@ -469,8 +468,8 @@
 }
 
 .sofia-chip {
-  background: rgba(48, 39, 37, 0.85);
-  border: 1px solid rgba(255, 187, 2, 0.35);
+  background: rgba(10, 31, 62, 0.85);
+  border: 1px solid rgba(248, 175, 60, 0.35);
   color: var(--sofia-texto) !important;
   padding: 6px 12px;
   border-radius: 999px;
@@ -483,11 +482,11 @@
 }
 
 .sofia-chip:hover {
-  background: rgba(229, 142, 0, 0.95);
+  background: rgba(248, 175, 60, 0.95);
   border-color: var(--sofia-volt-amarillo);
   color: #FFFFFF !important;
   transform: translateY(-1.5px);
-  box-shadow: 0 4px 12px rgba(255, 187, 2, 0.35);
+  box-shadow: 0 4px 12px rgba(248, 175, 60, 0.35);
 }
 
 /* 2.4 TARJETAS DE ENLACE RÁPIDO */
@@ -502,8 +501,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(48, 39, 37, 0.7);
-  border: 1px solid rgba(255, 187, 2, 0.25);
+  background: rgba(10, 31, 62, 0.85);
+  border: 1px solid rgba(248, 175, 60, 0.25);
   padding: 8px 12px;
   border-radius: 10px;
   text-decoration: none;
@@ -513,7 +512,7 @@
 }
 
 .sofia-enlace-card:hover {
-  background: rgba(229, 142, 0, 0.8);
+  background: rgba(248, 175, 60, 0.8);
   border-color: var(--sofia-volt-amarillo);
 }
 
@@ -526,7 +525,7 @@
 /* 2.5 PIE / BARRA DE ENTRADA */
 .sofia-pie {
   padding: 12px 16px 14px 16px;
-  background: rgba(22, 17, 16, 0.98);
+  background: rgba(6, 20, 40, 0.98);
   border-top: 1px solid var(--sofia-borde);
   display: flex;
   flex-direction: column;
@@ -538,8 +537,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(38, 31, 30, 0.95);
-  border: 1px solid rgba(255, 187, 2, 0.35);
+  background: rgba(17, 40, 77, 0.96);
+  border: 1px solid rgba(248, 175, 60, 0.35);
   border-radius: 14px;
   padding: 4px 6px 4px 14px;
   transition: border-color 0.2s, box-shadow 0.2s;
@@ -547,7 +546,7 @@
 
 .sofia-formulario:focus-within {
   border-color: var(--sofia-volt-amarillo);
-  box-shadow: 0 0 14px rgba(255, 187, 2, 0.35);
+  box-shadow: 0 0 14px rgba(248, 175, 60, 0.35);
 }
 
 .sofia-input {
@@ -569,9 +568,9 @@
   width: 38px;
   height: 38px;
   border-radius: 10px;
-  background: linear-gradient(135deg, #FFBB02 0%, #E58E00 100%);
-  border: 1px solid rgba(255, 187, 2, 0.8);
-  color: #1A1514;
+  background: linear-gradient(135deg, #f8af3c 0%, #f8af3c 100%);
+  border: 1px solid rgba(248, 175, 60, 0.8);
+  color: #0a1f3e;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -582,7 +581,7 @@
 
 .sofia-btn-enviar:hover:not(:disabled) {
   transform: scale(1.05);
-  box-shadow: 0 0 12px rgba(255, 187, 2, 0.6);
+  box-shadow: 0 0 12px rgba(248, 175, 60, 0.6);
 }
 
 .sofia-btn-enviar:disabled {

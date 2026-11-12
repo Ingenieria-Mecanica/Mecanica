@@ -9,7 +9,7 @@
       "texto": "P.A.P.A. mínimo de permanencia"
     },
     {
-      "valor": "170",
+      "valor": "180",
       "texto": "Créditos exigidos del plan"
     },
     {
@@ -46,7 +46,7 @@
       "id": "creditos",
       "nombre": "Créditos y Bolsa SIA",
       "icono": "bolsa",
-      "descripcion": "Qué es un crédito, bolsa de 170 créditos + bolsa adicional, semana sin pérdida y libre elección."
+      "descripcion": "Qué es un crédito, bolsa de 180 créditos + bolsa adicional, semana sin pérdida y libre elección."
     },
     {
       "id": "corresponsabilidad",
@@ -212,8 +212,8 @@
         },
         {
           "icono": "bolsa",
-          "titulo": "170 Exigidos + Bolsa Adicional",
-          "texto": "En Ingeniería Eléctrica tu plan exige 170 créditos y el SIA te entrega un cupo total de bolsa de ~255 créditos para cursarlos con margen de repetición."
+          "titulo": "180 Exigidos + Bolsa Adicional",
+          "texto": "En Ingeniería Mecánica tu plan exige 180 créditos y el SIA te entrega un cupo total de bolsa de ~270 créditos para cursarlos con margen de repetición."
         },
         {
           "icono": "alerta",
@@ -769,7 +769,7 @@
     },
     {
       "sigla": "Bolsa de Créditos",
-      "definicion": "Cupo total de créditos asignados para cursar la carrera (170 exigidos + cupo de bolsa adicional del SIA)."
+      "definicion": "Cupo total de créditos asignados para cursar la carrera (180 exigidos + cupo de bolsa adicional del SIA)."
     },
     {
       "sigla": "Corresponsabilidad",
@@ -800,26 +800,32 @@
   ],
   "asesoria": {
     "titulo": "¿Necesitas asesoría sobre un tema?",
-    "texto": "Escribe desde tu correo institucional al área de asesoría estudiantil de la Facultad de Minas o contacta a la representación estudiantil de Ingeniería Eléctrica.",
+    "texto": "Escribe desde tu correo institucional a la Dirección del Área Curricular o contacta a los delegados estudiantiles de Ingeniería Mecánica.",
     "correo": "asesorestu_med@unal.edu.co",
     "telefono": "(+57 604) 430 9653",
     "direccion": "Carrera 80 No 65-223, Campus Robledo, Medellín",
     "solicitudes": "https://minas.medellin.unal.edu.co/estudiantes/gestion-de-asuntos-estudiantiles/gae-solicitudes-estudiantiles",
     "representante": {
-      "nombre": "Luis Fernando Carrillo Méndez",
-      "telefono": "+57 311 846 7650",
-      "instagram": "https://www.instagram.com/carrilo_3003/",
-      "usuarioIg": "@carrilo_3003",
-      "correo": "Lcarrillom@unal.edu.co"
+      "estado": "Actualmente no se cuenta con representante estudiantil",
+      "delegados": [
+        {
+          "nombre": "Sebastian Leonel Ruiz",
+          "telefono": "+57 319 440 8265",
+          "whatsapp": "https://wa.me/573194408265",
+          "correo": "sleonel@unal.edu.co",
+          "instagram": "https://www.instagram.com/ler.sebas?mdxt=NXRkajJwc3hjYzk5",
+          "usuarioIg": "@ler.sebas"
+        },
+        {
+          "nombre": "Santiago Espinosa López",
+          "telefono": "+57 310 256 7299",
+          "whatsapp": "https://wa.me/573102567299",
+          "correo": "sespinosal@unal.edu.co"
+        }
+      ]
     },
-    "colaborador": {
-      "nombre": "Kevin David Aristizabal Giraldo",
-      "telefono": "+57 311 417 4322",
-      "correo": "Karistizabalg@unal.edu.co",
-      "tiktok": "https://www.tiktok.com/@swamp9951?_r=1&_t=ZS-9BFHHyyIFHy"
-    },
-    "instagramCarrera": "https://www.instagram.com/ingelectrica_med",
-    "whatsappGrupo": "https://chat.whatsapp.com/KLyM40QAcm9Gbp0Lu8xwYI?s=cl&p=i&mlu=4&ilr=4&iam=2",
-    "driveRecursos": "https://drive.google.com/drive/u/4/folders/1N2g1Db6bL1YUdycsTLm0p7Zhqoiruc4s"
+    "canalWhatsapp": "https://whatsapp.com/channel/0029VbECGFGAe5VwEJ95hh1E",
+    "driveRecursos": "https://drive.google.com/drive/folders/1MDopcD_bGUXzR4HQGhAO4YvQEBN9okQR?usp=drive_link",
+    "webOficial": "https://old-minas.medellin.unal.edu.co/formacion/pregrado/ingenieriamecanica"
   }
 }
