@@ -6,258 +6,475 @@
  * Obra protegida por la Ley 23 de 1982 y Decisión 351 (CAN).
  */
 /* =========================================================
-   MÓDULO INTERCAMPUS — ESTILOS
-   1. Selector de rutas y navegación de tabs
-   2. Panel de próxima salida en tiempo real
-   3. Grilla de horarios por franja
-   4. Diagrama explicativo "¿Cómo funciona?"
-   5. Galería de láminas oficiales y modal
+   MÓDULO INTERCAMPUS — ESTILOS "MISSION CONTROL"
+   Rediseño innovador: aurora de fondo, glassmorphism,
+   indicador deslizante en tabs, conectores animados,
+   tickets de embarque y panel de salida en tiempo real.
+
+   1. Tokens locales y lienzo con aurora animada
+   2. Selector de rutas (tabs flotantes con glow)
+   3. Panel de próxima salida (mission control)
+   4. Cabecera + filtros de franja
+   5. Grilla de franjas y tickets de hora
+   6. Diagrama "¿Cómo funciona?" con flujo animado
+   7. Galería de láminas y modal
+   8. Módulo Conexión Metro
+   9. Responsive + accesibilidad de movimiento
    ========================================================= */
 
+/* ---------- 1. Tokens locales y lienzo ---------- */
+
 .intercampus {
-  padding-bottom: 70px;
+  --ic-oro: var(--dorado-ambar, #f8af3c);
+  --ic-oro-suave: rgba(248, 175, 60, .16);
+  --ic-marino: var(--azul-mecanica, #0a1f3e);
+  --ic-panel: var(--azul-panel, #11284d);
+  --ic-cristal: rgba(255, 255, 255, .72);
+  --ic-borde-cristal: rgba(255, 255, 255, .55);
+  --ic-sombra: 0 24px 60px -28px rgba(10, 31, 62, .55);
+  --ic-radio: 24px;
+
+  position: relative;
+  padding-bottom: 80px;
+  isolation: isolate;
+  overflow: clip;
 }
 
-/* ---------- 1. Selector de rutas ---------- */
+/* Aurora de malla que respira detrás de todo el módulo */
+.intercampus::before {
+  content: "";
+  position: absolute;
+  inset: -10% -5% auto -5%;
+  height: 520px;
+  z-index: -1;
+  background:
+    radial-gradient(42% 55% at 12% 10%, rgba(248, 175, 60, .22) 0%, transparent 60%),
+    radial-gradient(48% 60% at 88% 0%, rgba(30, 58, 109, .35) 0%, transparent 62%),
+    radial-gradient(60% 70% at 50% 120%, rgba(10, 31, 62, .18) 0%, transparent 60%);
+  filter: blur(8px);
+  animation: ic-aurora 16s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes ic-aurora {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(2%, 1.5%, 0) scale(1.06); }
+  100% { transform: translate3d(-2%, -1%, 0) scale(1.03); }
+}
+
+/* ---------- 2. Selector de rutas (tabs flotantes) ---------- */
 
 .intercampus__tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
   justify-content: center;
-  margin: 0 0 32px;
-  padding: 0;
+  margin: 0 auto 36px;
+  padding: 10px;
   list-style: none;
+  width: fit-content;
+  max-width: 100%;
+  border-radius: 999px;
+  background: var(--ic-cristal);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  border: 1px solid var(--ic-borde-cristal);
+  box-shadow: var(--ic-sombra);
 }
 
 .intercampus__tab-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
   padding: 12px 22px;
   border-radius: 999px;
-  border: 2px solid #bcdbfb;
-  background: #fff;
+  border: 1px solid transparent;
+  background: transparent;
   font-family: var(--letra-universidad);
-  font-size: 13.5px;
-  letter-spacing: .1em;
+  font-size: 13px;
+  letter-spacing: .09em;
   text-transform: uppercase;
-  color: var(--azul-petroleo, #1E1918);
-  box-shadow: 0 4px 14px -6px rgba(30, 25, 24, .2);
-  transition: all .2s ease;
+  font-weight: 600;
+  color: var(--ic-marino);
+  cursor: pointer;
+  overflow: hidden;
+  transition: color .25s ease, transform .25s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+/* Relleno deslizante que aparece bajo el texto */
+.intercampus__tab-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--ic-marino) 0%, var(--ic-panel) 60%, #1e3a6d 100%);
+  opacity: 0;
+  transform: scale(.6);
+  transition: opacity .3s ease, transform .35s cubic-bezier(.34, 1.56, .64, 1);
 }
 
 .intercampus__tab-btn:hover {
-  background: #f0f6ff;
-  border-color: var(--azul-petroleo, #1E1918);
-  transform: translateY(-1px);
+  color: var(--ic-marino);
+  transform: translateY(-2px);
+}
+
+.intercampus__tab-btn:hover::before {
+  opacity: .08;
+  transform: scale(1);
 }
 
 .intercampus__tab-btn.activo {
-  background: var(--azul-petroleo, #1E1918) !important;
-  color: #ffffff !important;
-  border-color: var(--dorado-ambar, #D4AF37) !important;
-  box-shadow: 0 6px 18px -4px rgba(30, 25, 24, .6);
+  color: #fff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px -8px rgba(10, 31, 62, .65);
+}
+
+.intercampus__tab-btn.activo::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Línea de brillo dorado sobre la pestaña activa */
+.intercampus__tab-btn.activo::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--ic-oro), transparent);
+  animation: ic-shimmer 2.4s ease-in-out infinite;
+}
+
+@keyframes ic-shimmer {
+  0%, 100% { opacity: .5; }
+  50% { opacity: 1; }
 }
 
 .intercampus__tab-btn svg {
   width: 18px;
   height: 18px;
-  color: var(--azul-petroleo, #1E1918);
+  color: currentColor;
+  transition: color .25s ease;
 }
 
 .intercampus__tab-btn.activo svg {
-  color: var(--dorado-ambar, #D4AF37) !important;
+  color: var(--ic-oro);
 }
 
-/* ---------- 2. Panel de próxima salida ---------- */
+/* ---------- 3. Panel de próxima salida (mission control) ---------- */
 
 .proxima-salida {
+  position: relative;
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 24px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
   align-items: center;
-  padding: 26px 32px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #0a1f3e 0%, #11284d 55%, #183a6d 100%) !important;
-  color: #fff !important;
-  box-shadow: 0 16px 36px -16px rgba(10, 31, 62, .8), 0 0 24px rgba(248, 175, 60, .15);
-  margin-bottom: 36px;
-  border: 2px solid rgba(248, 175, 60, .6) !important;
+  padding: 30px 34px;
+  border-radius: var(--ic-radio);
+  background:
+    radial-gradient(130% 120% at 0% 0%, #163463 0%, transparent 55%),
+    linear-gradient(135deg, #0a1f3e 0%, #11284d 55%, #0a1f3e 100%);
+  color: #fff;
+  box-shadow: 0 30px 70px -30px rgba(10, 31, 62, .9), inset 0 1px 0 rgba(255, 255, 255, .08);
+  margin-bottom: 40px;
+  border: 1px solid rgba(248, 175, 60, .4);
+  overflow: hidden;
+  animation: ic-subir .5s ease-out both;
+}
+
+/* Rejilla técnica sutil de fondo */
+.proxima-salida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(80% 120% at 100% 0%, #000 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(80% 120% at 100% 0%, #000 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .proxima-salida__meta {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .proxima-salida__etiqueta {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
+  align-self: flex-start;
+  padding: 5px 14px 5px 10px;
+  border-radius: 999px;
+  background: var(--ic-oro-suave);
+  border: 1px solid rgba(248, 175, 60, .35);
   font-family: var(--letra-universidad);
-  font-size: 12px;
-  letter-spacing: .18em;
+  font-size: 11.5px;
+  letter-spacing: .16em;
   text-transform: uppercase;
-  color: #f8af3c;
+  color: var(--ic-oro);
   font-weight: 700;
 }
 
 .proxima-salida__pulso {
+  position: relative;
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: #f8af3c;
-  box-shadow: 0 0 0 0 rgba(248, 175, 60, 0.7);
+  background: var(--ic-oro);
+  box-shadow: 0 0 0 0 rgba(248, 175, 60, .7);
   animation: pulso 1.8s infinite;
 }
 
 @keyframes pulso {
-  0% { box-shadow: 0 0 0 0 rgba(248, 175, 60, 0.7); }
-  70% { box-shadow: 0 0 0 10px rgba(248, 175, 60, 0); }
+  0%   { box-shadow: 0 0 0 0 rgba(248, 175, 60, .7); }
+  70%  { box-shadow: 0 0 0 11px rgba(248, 175, 60, 0); }
   100% { box-shadow: 0 0 0 0 rgba(248, 175, 60, 0); }
 }
 
 .proxima-salida__titulo {
   font-family: var(--letra-titulo);
-  font-size: clamp(20px, 3vw, 28px);
-  line-height: 1.15;
-  color: #ffffff !important;
+  font-size: clamp(21px, 3vw, 29px);
+  line-height: 1.12;
+  color: #fff;
   font-weight: 700;
+  letter-spacing: -.01em;
 }
 
 .proxima-salida__subtitulo {
   font-size: 15px;
-  color: #E2E8F0 !important;
+  line-height: 1.5;
+  color: #cfdcf0;
 }
 
+/* Caja de hora como visor de reloj con anillo dorado */
 .proxima-salida__caja {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(6, 20, 40, 0.8) !important;
-  backdrop-filter: blur(8px);
-  border: 1.5px solid rgba(248, 175, 60, 0.45) !important;
-  border-radius: 18px;
-  padding: 18px 24px;
+  gap: 4px;
+  padding: 24px 28px;
+  border-radius: 20px;
+  background: rgba(5, 16, 34, .66);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(248, 175, 60, .35);
+  box-shadow: inset 0 0 40px rgba(248, 175, 60, .06), 0 10px 30px rgba(0, 0, 0, .4);
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+}
+
+/* Barrido de luz que recorre la caja de hora */
+.proxima-salida__caja::after {
+  content: "";
+  position: absolute;
+  top: -60%;
+  left: -40%;
+  width: 60%;
+  height: 220%;
+  background: linear-gradient(100deg, transparent, rgba(248, 175, 60, .16), transparent);
+  transform: rotate(18deg);
+  animation: ic-barrido 4.5s ease-in-out infinite;
+}
+
+@keyframes ic-barrido {
+  0%   { left: -50%; }
+  60%, 100% { left: 130%; }
 }
 
 .proxima-salida__hora {
+  position: relative;
   font-family: var(--letra-titulo);
-  font-size: clamp(34px, 5vw, 48px);
+  font-size: clamp(38px, 5.5vw, 54px);
   line-height: 1;
-  color: #ffffff !important;
-  letter-spacing: .04em;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+  color: #fff;
+  letter-spacing: .03em;
   font-weight: 800;
+  text-shadow: 0 2px 18px rgba(248, 175, 60, .35);
+  font-variant-numeric: tabular-nums;
 }
 
 .proxima-salida__tiempo {
-  margin-top: 6px;
+  position: relative;
+  margin-top: 4px;
   font-size: 13.5px;
   font-weight: 600;
-  color: #f8af3c !important;
+  color: var(--ic-oro);
+  letter-spacing: .02em;
 }
 
-/* ---------- 3. Filtros y Grilla de horarios ---------- */
+@keyframes ic-subir {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 4. Cabecera + filtros de franja ---------- */
 
 .intercampus__cabecera-ruta {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 24px;
-  padding-bottom: 16px;
-  border-bottom: 2px solid #e1e6ed;
+  gap: 18px;
+  margin-bottom: 26px;
+  padding-bottom: 18px;
+  position: relative;
+}
+
+.intercampus__cabecera-ruta::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--ic-oro) 0%, rgba(248, 175, 60, .15) 28%, #e1e6ed 28%, #e1e6ed 100%);
+  border-radius: 2px;
 }
 
 .intercampus__titulo-ruta {
   font-family: var(--letra-universidad);
   font-size: clamp(18px, 2.5vw, 24px);
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--azul-marino);
+  font-weight: 700;
 }
 
 .intercampus__subtitulo-ruta {
   font-size: 14.5px;
   color: var(--gris);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .intercampus__filtros-franja {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 7px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .intercampus__filtro-btn {
-  padding: 6px 14px;
+  padding: 7px 15px;
   border-radius: 999px;
   border: 1px solid #d0dbe8;
-  background: #fff;
+  background: rgba(255, 255, 255, .7);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   font-family: var(--letra-universidad);
   font-size: 11px;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
+  font-weight: 600;
   color: var(--tinta-suave);
-  transition: all .15s ease;
+  cursor: pointer;
+  transition: all .18s ease;
 }
 
 .intercampus__filtro-btn:hover {
   background: #eaf3fd;
   color: var(--azul);
+  border-color: #bcdbfb;
+  transform: translateY(-1px);
 }
 
 .intercampus__filtro-btn.activo {
-  background: var(--azul-petroleo, #1E1918) !important;
-  color: #ffffff !important;
-  border-color: var(--dorado-ambar, #D4AF37) !important;
-  box-shadow: 0 2px 8px rgba(30, 25, 24, 0.35);
+  background: linear-gradient(135deg, var(--ic-marino), var(--ic-panel));
+  color: #fff;
+  border-color: var(--ic-oro);
+  box-shadow: 0 6px 16px -6px rgba(10, 31, 62, .6);
 }
+
+/* ---------- 5. Grilla de franjas y tickets de hora ---------- */
 
 .franjas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
+  gap: 22px;
 }
 
 .franja-card {
-  background: #fff;
-  border-radius: 20px;
-  border: 1px solid #e2e8f0;
+  position: relative;
+  background: rgba(255, 255, 255, .82);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  border: 1px solid rgba(226, 232, 240, .9);
   padding: 22px 24px;
-  box-shadow: 0 10px 24px -12px rgba(10, 44, 82, .25);
+  box-shadow: 0 16px 36px -22px rgba(10, 44, 82, .4);
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  transition: transform .2s ease, box-shadow .2s ease;
+  gap: 16px;
+  overflow: hidden;
+  transition: transform .28s cubic-bezier(.34, 1.56, .64, 1), box-shadow .28s ease, border-color .28s ease;
+  animation: ic-entrar .5s ease-out both;
+}
+
+/* Entrada escalonada de las primeras tarjetas */
+.franja-card:nth-child(1) { animation-delay: .02s; }
+.franja-card:nth-child(2) { animation-delay: .08s; }
+.franja-card:nth-child(3) { animation-delay: .14s; }
+.franja-card:nth-child(4) { animation-delay: .20s; }
+.franja-card:nth-child(5) { animation-delay: .26s; }
+.franja-card:nth-child(6) { animation-delay: .32s; }
+
+@keyframes ic-entrar {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cinta de color en el borde izquierdo */
+.franja-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #bcdbfb, #e2e8f0);
+  transition: background .28s ease;
 }
 
 .franja-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 28px -10px rgba(10, 44, 82, .3);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 44px -20px rgba(10, 44, 82, .45);
+  border-color: #bcdbfb;
+}
+
+.franja-card:hover::before {
+  background: linear-gradient(180deg, var(--ic-oro), var(--ic-marino));
 }
 
 .franja-card--activa {
-  border: 2px solid var(--azul);
-  background: linear-gradient(180deg, #fff 0%, #f4f9ff 100%);
+  border-color: var(--ic-oro);
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(248, 175, 60, .1) 0%, transparent 55%),
+    rgba(255, 255, 255, .92);
+  box-shadow: 0 24px 48px -20px rgba(10, 44, 82, .4), 0 0 0 1px rgba(248, 175, 60, .35);
+}
+
+.franja-card--activa::before {
+  background: linear-gradient(180deg, var(--ic-oro), #e08f1e);
 }
 
 .franja-card__encabezado {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 12px;
-  border-bottom: 1px solid #edf2f7;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed #d8e2ee;
 }
 
 .franja-card__numero {
@@ -266,7 +483,7 @@
   gap: 6px;
   font-family: var(--letra-universidad);
   font-size: 13.5px;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--azul-marino);
   font-weight: 700;
@@ -274,134 +491,193 @@
 
 .franja-card__tag {
   font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .08em;
+  font-weight: 700;
+  letter-spacing: .07em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 4px 11px;
   border-radius: 999px;
   background: #e9f3ff;
   color: var(--azul);
+  border: 1px solid #d3e6fb;
 }
 
 .franja-card--activa .franja-card__tag {
-  background: var(--azul);
-  color: #fff;
+  background: linear-gradient(135deg, var(--ic-marino), var(--ic-panel));
+  color: var(--ic-oro);
+  border-color: var(--ic-oro);
 }
 
 .franja-card__horarios {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 9px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
+/* Hora como mini-ticket de embarque con muescas laterales */
 .hora-chip {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 7px 14px;
-  border-radius: 12px;
+  padding: 8px 15px;
+  border-radius: 10px;
   background: #f1f5f9;
   border: 1px solid #e2e8f0;
   font-family: var(--letra-titulo);
   font-size: 14.5px;
   letter-spacing: .04em;
   color: var(--azul-marino);
-  transition: all .15s ease;
+  font-variant-numeric: tabular-nums;
+  transition: transform .16s ease, background .16s ease, border-color .16s ease, box-shadow .16s ease;
 }
 
 .hora-chip:hover {
   background: #e2effd;
   border-color: var(--azul);
-  transform: scale(1.04);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px -6px rgba(22, 103, 194, .5);
 }
 
+/* Próxima salida: ticket dorado iluminado */
 .hora-chip--proxima {
-  background: var(--azul);
+  background: linear-gradient(135deg, var(--ic-marino), var(--ic-panel));
   color: #fff;
-  border-color: var(--azul-oscuro);
-  box-shadow: 0 4px 12px rgba(22, 103, 194, .45);
-  animation: pulso-hora 2s infinite;
+  border-color: var(--ic-oro);
+  box-shadow: 0 8px 20px -6px rgba(10, 31, 62, .7), 0 0 0 3px rgba(248, 175, 60, .22);
+  animation: ic-latido 2s ease-in-out infinite;
 }
 
-@keyframes pulso-hora {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.06); }
+.hora-chip--proxima::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ic-oro);
+  box-shadow: 0 0 10px var(--ic-oro);
+}
+
+@keyframes ic-latido {
+  0%, 100% { transform: scale(1); box-shadow: 0 8px 20px -6px rgba(10, 31, 62, .7), 0 0 0 3px rgba(248, 175, 60, .22); }
+  50% { transform: scale(1.05); box-shadow: 0 12px 26px -6px rgba(10, 31, 62, .8), 0 0 0 6px rgba(248, 175, 60, .12); }
 }
 
 .hora-chip--pasada {
-  opacity: .5;
+  opacity: .45;
   background: #f8fafc;
   color: #94a3b8;
+  text-decoration: line-through;
+  text-decoration-color: rgba(148, 163, 184, .5);
 }
 
-/* ---------- 4. Diagrama "¿Cómo funciona?" ---------- */
+.hora-chip--pasada:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: #e2e8f0;
+  background: #f8fafc;
+}
+
+/* ---------- 6. Diagrama "¿Cómo funciona?" ---------- */
 
 .guia-intercampus {
-  margin-top: 56px;
-  padding: 36px 36px;
-  border-radius: 26px;
-  background: #ffffff;
-  border: 2px solid #bcdbfb;
-  box-shadow: 0 16px 40px -20px rgba(10, 44, 82, .3);
+  margin-top: 60px;
+  padding: 40px 38px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, .85);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(188, 219, 251, .9);
+  box-shadow: 0 24px 56px -28px rgba(10, 44, 82, .4);
 }
 
 .guia-intercampus__titulo {
   font-family: var(--letra-universidad);
-  font-size: clamp(20px, 3vw, 26px);
-  letter-spacing: .1em;
+  font-size: clamp(20px, 3vw, 27px);
+  letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--azul-marino);
   text-align: center;
+  font-weight: 700;
 }
 
 .guia-intercampus__semestre {
   display: block;
+  width: fit-content;
+  margin: 10px auto 0;
+  padding: 4px 16px;
+  border-radius: 999px;
+  background: var(--ic-oro-suave);
+  border: 1px solid rgba(248, 175, 60, .4);
   font-family: var(--letra-universidad);
-  font-size: 13px;
-  letter-spacing: .16em;
+  font-size: 12.5px;
+  letter-spacing: .14em;
   text-transform: uppercase;
-  color: var(--azul);
-  text-align: center;
-  margin-top: 4px;
+  color: #a06a0e;
+  font-weight: 700;
 }
 
 .diagrama-rutas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 32px 0 36px;
-  padding: 24px;
-  border-radius: 20px;
-  background: linear-gradient(145deg, #0a1f3e 0%, #11284d 100%);
+  margin: 34px 0 38px;
+  padding: 34px 24px;
+  border-radius: 22px;
+  background:
+    radial-gradient(90% 120% at 50% -20%, rgba(248, 175, 60, .14) 0%, transparent 55%),
+    linear-gradient(145deg, #0a1f3e 0%, #11284d 100%);
   color: #fff;
   position: relative;
   overflow: hidden;
 }
 
+/* Puntos de constelación de fondo */
+.diagrama-rutas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, .12) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(70% 90% at 50% 50%, #000 0%, transparent 80%);
+  -webkit-mask-image: radial-gradient(70% 90% at 50% 50%, #000 0%, transparent 80%);
+  pointer-events: none;
+}
+
 .diagrama-rutas__flujo {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
   flex-wrap: wrap;
   width: 100%;
 }
 
 .campus-nodo {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 14px 24px;
-  border-radius: 999px;
-  background: var(--azul);
-  border: 2px solid #fff;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, .3);
+  padding: 16px 26px;
+  border-radius: 18px;
+  background: linear-gradient(160deg, #1e3a6d 0%, #11284d 100%);
+  border: 1px solid rgba(248, 175, 60, .45);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, .35), inset 0 1px 0 rgba(255, 255, 255, .1);
   text-align: center;
   min-width: 160px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.campus-nodo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .45), 0 0 0 1px var(--ic-oro);
 }
 
 .campus-nodo small {
@@ -409,89 +685,126 @@
   font-size: 10px;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: #bce0fd;
+  color: var(--ic-oro);
 }
 
 .campus-nodo strong {
   font-family: var(--letra-titulo);
-  font-size: 17px;
-  letter-spacing: .06em;
+  font-size: 18px;
+  letter-spacing: .05em;
   text-transform: uppercase;
   color: #fff;
   line-height: 1.1;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
+/* Conector con línea punteada en movimiento */
 .flecha-conector {
-  color: #a9d1ff;
+  position: relative;
+  color: var(--ic-oro);
   display: flex;
   align-items: center;
+  justify-content: center;
+  min-width: 54px;
+}
+
+.flecha-conector::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  right: -6px;
+  top: 50%;
+  height: 2px;
+  transform: translateY(-50%);
+  background-image: linear-gradient(90deg, var(--ic-oro) 0 6px, transparent 6px 12px);
+  background-size: 12px 2px;
+  background-repeat: repeat-x;
+  opacity: .55;
+  animation: ic-flujo 1s linear infinite;
+}
+
+@keyframes ic-flujo {
+  to { background-position: 12px 0; }
 }
 
 .flecha-conector svg {
+  position: relative;
   width: 28px;
   height: 28px;
+  filter: drop-shadow(0 0 6px rgba(248, 175, 60, .5));
 }
 
 .diagrama-rutas__retorno {
-  margin-top: 18px;
-  padding: 8px 18px;
+  position: relative;
+  margin-top: 22px;
+  padding: 9px 18px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .12);
-  border: 1px dashed #a9d1ff;
+  background: rgba(248, 175, 60, .12);
+  border: 1px dashed rgba(248, 175, 60, .55);
   font-size: 13px;
-  color: #cfe4fa;
+  color: #ffe4b8;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 9px;
 }
 
 .diagrama-rutas__retorno svg {
   width: 16px;
   height: 16px;
-  color: #a9d1ff;
+  color: var(--ic-oro);
 }
 
 .guia-pasos {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
-  margin: 32px 0 0;
+  margin: 34px 0 0;
   padding: 0;
   list-style: none;
 }
 
 .paso-card {
+  position: relative;
   display: flex;
   gap: 16px;
-  padding: 20px;
+  padding: 22px;
   border-radius: 18px;
-  background: #f8fbfe;
+  background: #fff;
   border: 1px solid #dce8f5;
   align-items: flex-start;
+  transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+}
+
+.paso-card:hover {
+  transform: translateY(-3px);
+  border-color: #bcdbfb;
+  box-shadow: 0 16px 32px -18px rgba(10, 44, 82, .4);
 }
 
 .paso-card__num {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--azul);
-  color: #fff;
+  position: relative;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--ic-marino), var(--ic-panel));
+  color: var(--ic-oro);
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--letra-titulo);
   font-size: 18px;
+  font-weight: 800;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(22, 103, 194, .35);
+  box-shadow: 0 8px 18px -6px rgba(10, 31, 62, .6);
 }
 
 .paso-card__contenido h4 {
   font-family: var(--letra-universidad);
   font-size: 14.5px;
-  letter-spacing: .06em;
+  letter-spacing: .05em;
   color: var(--azul-marino);
   margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .paso-card__contenido p {
@@ -504,11 +817,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin-top: 28px;
-  padding: 14px 20px;
-  border-radius: 16px;
-  background: #e9f5ed;
+  gap: 14px;
+  margin-top: 30px;
+  padding: 16px 22px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #e9f5ed 0%, #f1faf4 100%);
   border: 1px solid #b7e3c5;
   color: #1a532d;
   font-weight: 600;
@@ -523,35 +836,36 @@
   flex-shrink: 0;
 }
 
-/* ---------- 5. Galería de láminas oficiales y modal ---------- */
+/* ---------- 7. Galería de láminas y modal ---------- */
 
 .laminas-seccion {
-  margin-top: 56px;
+  margin-top: 60px;
 }
 
 .laminas-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  margin-top: 24px;
+  gap: 22px;
+  margin-top: 26px;
 }
 
 .lamina-card {
+  position: relative;
   background: #fff;
-  border-radius: 20px;
+  border-radius: 22px;
   overflow: hidden;
   border: 1px solid #e1e6ed;
-  box-shadow: 0 10px 24px -12px rgba(10, 44, 82, .25);
+  box-shadow: 0 16px 34px -20px rgba(10, 44, 82, .4);
   cursor: pointer;
-  transition: all .25s ease;
+  transition: transform .3s cubic-bezier(.34, 1.56, .64, 1), box-shadow .3s ease, border-color .3s ease;
   display: flex;
   flex-direction: column;
 }
 
 .lamina-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -10px rgba(10, 44, 82, .35);
-  border-color: var(--azul);
+  transform: translateY(-6px);
+  box-shadow: 0 28px 48px -18px rgba(10, 44, 82, .5);
+  border-color: var(--ic-oro);
 }
 
 .lamina-card__img-wrap {
@@ -565,22 +879,22 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .3s ease;
+  transition: transform .4s ease;
 }
 
 .lamina-card:hover .lamina-card__img-wrap img {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 .lamina-card__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(10, 44, 82, .45);
+  background: linear-gradient(to top, rgba(10, 31, 62, .75) 0%, rgba(10, 31, 62, .2) 60%, transparent 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity .2s ease;
+  transition: opacity .25s ease;
   color: #fff;
 }
 
@@ -589,23 +903,36 @@
 }
 
 .lamina-card__overlay svg {
-  width: 38px;
-  height: 38px;
+  width: 42px;
+  height: 42px;
+  padding: 9px;
+  border-radius: 50%;
+  background: rgba(248, 175, 60, .25);
+  border: 1px solid var(--ic-oro);
+  color: var(--ic-oro);
   filter: drop-shadow(0 2px 8px rgba(0, 0, 0, .5));
+  transform: scale(.8);
+  transition: transform .25s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+.lamina-card:hover .lamina-card__overlay svg {
+  transform: scale(1);
 }
 
 .lamina-card__info {
   padding: 16px 18px;
   background: #fff;
   text-align: center;
+  border-top: 2px solid #f1f5f9;
 }
 
 .lamina-card__titulo {
   font-family: var(--letra-universidad);
   font-size: 13.5px;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--azul-marino);
+  font-weight: 700;
 }
 
 .lamina-card__sub {
@@ -619,13 +946,19 @@
   position: fixed;
   inset: 0;
   z-index: 100;
-  background: rgba(10, 44, 82, .88);
-  backdrop-filter: blur(6px);
+  background: rgba(5, 16, 34, .9);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
-  animation: aparecer .2s ease-out;
+  animation: aparecer .25s ease-out;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 .modal-visor[hidden] {
@@ -639,36 +972,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ic-zoom .3s cubic-bezier(.34, 1.56, .64, 1);
+}
+
+@keyframes ic-zoom {
+  from { opacity: 0; transform: scale(.9); }
+  to   { opacity: 1; transform: scale(1); }
 }
 
 .modal-visor__cuerpo img {
   max-width: 100%;
   max-height: 85vh;
   object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, .6);
+  border-radius: 14px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .7), 0 0 0 1px rgba(248, 175, 60, .3);
 }
 
 .modal-visor__cerrar {
   position: absolute;
-  top: -16px;
-  right: -16px;
-  width: 40px;
-  height: 40px;
+  top: -18px;
+  right: -18px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: #fff;
+  background: var(--ic-oro);
   border: none;
   color: var(--azul-marino);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .4);
-  transition: transform .15s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, .5);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
 .modal-visor__cerrar:hover {
-  transform: scale(1.1);
+  transform: scale(1.12) rotate(90deg);
+  box-shadow: 0 8px 22px rgba(248, 175, 60, .5);
 }
 
 .modal-visor__cerrar svg {
@@ -676,31 +1016,33 @@
   height: 22px;
 }
 
-/* ---------- 6. Módulo Conexión Metro ---------- */
+/* ---------- 8. Módulo Conexión Metro ---------- */
 
 .metro-contenedor {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 30px;
 }
 
 .metro-estaciones-grid {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 30px;
 }
 
 .metro-estacion-card {
-  background: #ffffff;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, .9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-radius: 22px;
   border: 1px solid #dce8f5;
-  box-shadow: 0 10px 24px -12px rgba(10, 44, 82, .25);
+  box-shadow: 0 16px 34px -20px rgba(10, 44, 82, .4);
   overflow: hidden;
-  transition: transform .2s ease, box-shadow .2s ease;
+  transition: transform .22s ease, box-shadow .22s ease;
 }
 
 .metro-estacion-card:hover {
-  box-shadow: 0 14px 28px -10px rgba(10, 44, 82, .3);
+  box-shadow: 0 22px 44px -18px rgba(10, 44, 82, .45);
 }
 
 .metro-estacion-card__encabezado {
@@ -708,10 +1050,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px 24px;
-  background: linear-gradient(135deg, #0a1f3e 0%, #11284d 100%);
+  padding: 20px 26px;
+  background:
+    radial-gradient(120% 140% at 0% 0%, rgba(248, 175, 60, .16) 0%, transparent 55%),
+    linear-gradient(135deg, #0a1f3e 0%, #11284d 100%);
   color: #fff;
-  border-bottom: 2px solid rgba(255, 255, 255, .1);
+  border-bottom: 1px solid rgba(248, 175, 60, .3);
 }
 
 .metro-estacion-card__meta {
@@ -725,36 +1069,39 @@
   font-size: 11px;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: #bce0fd;
+  color: var(--ic-oro);
+  font-weight: 700;
 }
 
 .metro-estacion-card__nombre {
   font-family: var(--letra-universidad);
   font-size: clamp(17px, 2.2vw, 21px);
-  letter-spacing: .08em;
+  letter-spacing: .06em;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #fff;
   margin: 0;
+  font-weight: 700;
 }
 
 .metro-estacion-card__rutas-badge {
-  padding: 5px 14px;
+  padding: 6px 15px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, .18);
-  border: 1px solid rgba(255, 255, 255, .3);
+  background: rgba(248, 175, 60, .18);
+  border: 1px solid rgba(248, 175, 60, .45);
   font-family: var(--letra-universidad);
   font-size: 12px;
-  letter-spacing: .12em;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: #fff;
+  color: var(--ic-oro);
   white-space: nowrap;
+  font-weight: 700;
 }
 
 .metro-tabla-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   background: #fff;
-  padding: 14px 18px 22px;
+  padding: 16px 18px 24px;
 }
 
 .metro-tabla {
@@ -768,7 +1115,7 @@
   padding: 14px 10px;
   font-family: var(--letra-universidad);
   font-size: 13px;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   color: var(--azul-marino);
   background: #f1f6fc;
@@ -781,6 +1128,10 @@
   border-top-left-radius: 12px;
   border-bottom-left-radius: 12px;
   min-width: 130px;
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: #f1f6fc;
 }
 
 .metro-tabla thead th:last-child {
@@ -806,12 +1157,15 @@
 }
 
 .metro-tabla tbody tr {
-  border-bottom: 1px solid #edf2f7;
   transition: background .15s ease;
 }
 
 .metro-tabla tbody tr:hover {
-  background: #f8fafc;
+  background: #f4f9ff;
+}
+
+.metro-tabla tbody tr:hover .metro-td-parada {
+  background: #f4f9ff;
 }
 
 .metro-td-parada {
@@ -823,6 +1177,10 @@
   color: var(--azul-marino);
   border-bottom: 1px solid #edf2f7;
   white-space: nowrap;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: #fff;
 }
 
 .metro-parada-indicador {
@@ -830,8 +1188,9 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--azul);
-  margin-right: 8px;
+  background: var(--ic-oro);
+  box-shadow: 0 0 0 3px rgba(248, 175, 60, .2);
+  margin-right: 9px;
   vertical-align: middle;
 }
 
@@ -862,10 +1221,12 @@
 .metro-nota {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 20px;
-  border-radius: 14px;
-  background: #f1f5f9;
+  gap: 11px;
+  padding: 15px 20px;
+  border-radius: 16px;
+  background: rgba(241, 245, 249, .8);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   border: 1px solid #e2e8f0;
   font-size: 13.5px;
   color: var(--tinta-suave);
@@ -881,41 +1242,45 @@
 .metro-banner-lamina {
   display: grid;
   grid-template-columns: 140px 1fr;
-  gap: 24px;
+  gap: 26px;
   align-items: center;
-  padding: 20px 26px;
-  border-radius: 20px;
-  background: #fff;
-  border: 2px solid #bcdbfb;
-  box-shadow: 0 10px 24px -10px rgba(10, 44, 82, .2);
+  padding: 22px 28px;
+  border-radius: 22px;
+  background:
+    radial-gradient(90% 140% at 100% 0%, rgba(248, 175, 60, .1) 0%, transparent 55%),
+    rgba(255, 255, 255, .9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid #bcdbfb;
+  box-shadow: 0 16px 34px -18px rgba(10, 44, 82, .35);
   cursor: pointer;
-  transition: all .25s ease;
+  transition: transform .28s cubic-bezier(.34, 1.56, .64, 1), box-shadow .28s ease, border-color .28s ease;
 }
 
 .metro-banner-lamina:hover {
-  transform: translateY(-3px);
-  border-color: var(--azul);
-  box-shadow: 0 14px 30px -8px rgba(10, 44, 82, .3);
+  transform: translateY(-4px);
+  border-color: var(--ic-oro);
+  box-shadow: 0 24px 44px -16px rgba(10, 44, 82, .45);
 }
 
 .metro-banner-lamina__miniatura {
   position: relative;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   aspect-ratio: 9 / 14;
   background: var(--azul-marino);
-  box-shadow: 0 4px 12px rgba(10, 44, 82, .25);
+  box-shadow: 0 8px 20px rgba(10, 44, 82, .3);
 }
 
 .metro-banner-lamina__miniatura img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform .3s ease;
+  transition: transform .4s ease;
 }
 
 .metro-banner-lamina:hover .metro-banner-lamina__miniatura img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
 .metro-banner-lamina__info {
@@ -925,21 +1290,28 @@
 }
 
 .metro-banner-lamina__tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 3px 12px;
+  border-radius: 999px;
+  background: var(--ic-oro-suave);
+  border: 1px solid rgba(248, 175, 60, .4);
   font-family: var(--letra-universidad);
   font-size: 11px;
-  letter-spacing: .14em;
+  letter-spacing: .12em;
   text-transform: uppercase;
-  color: var(--azul);
+  color: #a06a0e;
   font-weight: 700;
 }
 
 .metro-banner-lamina__info h4 {
   font-family: var(--letra-universidad);
   font-size: 18px;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
   text-transform: uppercase;
   color: var(--azul-marino);
+  font-weight: 700;
 }
 
 .metro-banner-lamina__info p {
@@ -955,10 +1327,16 @@
   margin-top: 6px;
   font-family: var(--letra-universidad);
   font-size: 12.5px;
-  letter-spacing: .1em;
+  letter-spacing: .09em;
   text-transform: uppercase;
   color: var(--azul);
   font-weight: 700;
+  transition: gap .2s ease, color .2s ease;
+}
+
+.metro-banner-lamina:hover .metro-banner-lamina__link {
+  gap: 12px;
+  color: #a06a0e;
 }
 
 .metro-banner-lamina__link svg {
@@ -980,40 +1358,66 @@
   color: #1a532d;
   font-family: var(--letra-universidad);
   font-size: 12px;
-  letter-spacing: .08em;
+  letter-spacing: .07em;
   text-transform: uppercase;
   text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
   font-weight: 700;
+  transition: color .18s ease;
 }
 
 .metro-aviso__btn:hover {
   color: #0f361c;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- 9. Responsive ---------- */
 
 @media (max-width: 768px) {
+  .intercampus__tabs {
+    width: 100%;
+    border-radius: 20px;
+    padding: 8px;
+  }
   .proxima-salida {
     grid-template-columns: 1fr;
     text-align: center;
-    padding: 22px 20px;
+    padding: 24px 20px;
   }
   .proxima-salida__meta {
     align-items: center;
   }
+  .proxima-salida__etiqueta {
+    align-self: center;
+  }
   .diagrama-rutas__flujo {
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
+  }
+  .flecha-conector {
+    min-width: 0;
   }
   .flecha-conector svg {
     transform: rotate(90deg);
+  }
+  .flecha-conector::before {
+    left: 50%;
+    right: auto;
+    top: -8px;
+    bottom: -8px;
+    width: 2px;
+    height: auto;
+    transform: translateX(-50%);
+    background-image: linear-gradient(180deg, var(--ic-oro) 0 6px, transparent 6px 12px);
+    background-size: 2px 12px;
+    background-repeat: repeat-y;
+    animation: ic-flujo-v 1s linear infinite;
   }
   .campus-nodo {
     width: 100%;
   }
   .guia-intercampus {
-    padding: 24px 18px;
+    padding: 26px 18px;
   }
   .intercampus__cabecera-ruta {
     flex-direction: column;
@@ -1027,7 +1431,38 @@
     max-width: 140px;
     margin: 0 auto;
   }
+  .metro-banner-lamina__tag,
   .metro-banner-lamina__link {
+    align-self: center;
     justify-content: center;
+  }
+}
+
+@keyframes ic-flujo-v {
+  to { background-position: 0 12px; }
+}
+
+/* ---------- Accesibilidad: respeta reducción de movimiento ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .intercampus::before,
+  .proxima-salida,
+  .proxima-salida__caja::after,
+  .proxima-salida__pulso,
+  .franja-card,
+  .hora-chip--proxima,
+  .hora-chip--proxima::before,
+  .flecha-conector::before,
+  .intercampus__tab-btn.activo::after {
+    animation: none !important;
+  }
+  .intercampus__tab-btn,
+  .franja-card,
+  .hora-chip,
+  .lamina-card,
+  .paso-card,
+  .metro-banner-lamina,
+  .campus-nodo {
+    transition-duration: .01ms !important;
   }
 }
